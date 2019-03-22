@@ -1,0 +1,46 @@
+QTabBar,
+QTabBar::tab {
+    font-size: 16px;
+    padding: 3px;
+    border: 0px;
+    background-color: transparent;
+    margin-right: 10px;
+    color: #383838;
+}
+
+QTabBar::tab {
+    min-width: 80px;
+    max-height: 20px;
+}
+
+QTabBar::tab:hover {
+    text-decoration: none;
+    background-color: #F0F0F0;
+    border-radius: 13px;
+}
+
+QTabBar::tab:selected {
+    background-color: #2692D9;
+    color: #FFFFFF;
+    border-radius: 13px;
+}
+
+QTableView {
+    alternate-background-color: #FAFAFA;
+    border: none;
+}
+
+QHeaderView::section {
+    background-color: rgb(255, 255, 255);
+    border: none;
+    height: 32px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+}
+
+QHeaderView::section:horizontal {
+    border-bottom: 1px solid #F2F2F2;
+    border-right: 1px solid #F2F2F2;
+    padding-left: 15px;
+}

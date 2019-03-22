@@ -1,0 +1,13 @@
+sysbro (0.2) unstable; urgency=medium
+  * 高分屏支持
+  * 支持清理 bash 终端历史记录
+  * 首页系统信息增加开机时间
+  * 系统清理列表添加展开/收缩图标
+  * 系统清理授权框优化
+  * 首页环形进度条百分比支持显示小数
+
+sysbro (0.1-1) unstable; urgency=medium
+
+  * Initial Release.
+
+ -- Deepin Packages Builder <packages@deepin.com>  Wed, 11 Oct 2017 17:38:35 +0800

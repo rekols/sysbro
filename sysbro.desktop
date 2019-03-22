@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Sysbro
+Exec=sysbro
+Comment=A deepin assistant
+Icon=sysbro
+Type=Application
+Terminal=false
+Encoding=UTF-8
+Categories=Utility;

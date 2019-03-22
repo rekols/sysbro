@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/style.qss</file>
+        <file>resources/sysbro.svg</file>
+        <file>resources/cleaner.svg</file>
+        <file>resources/crash.svg</file>
+        <file>resources/app_cache.svg</file>
+        <file>resources/app_logs.svg</file>
+        <file>resources/packages.svg</file>
+        <file>resources/sysbro-express.svg</file>
+        <file>resources/sysbro-network-test.svg</file>
+        <file>resources/sysbro-startup-apps.svg</file>
+        <file>resources/speedup.svg</file>
+        <file>resources/settings.svg</file>
+        <file>resources/settings_disabled.svg</file>
+    </qresource>
+</RCC>
