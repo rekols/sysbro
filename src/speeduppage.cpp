@@ -17,7 +17,7 @@ SpeedupPage::SpeedupPage(QWidget *parent)
     QLabel *iconLabel = new QLabel;
     iconLabel->setPixmap(Utils::renderSVG(":/resources/speedup.svg", QSize(80, 80)));
 
-    QLabel *bottomLabel = new QLabel("关闭没有必要的启动服务可以提升开机速度");
+    QLabel *bottomLabel = new QLabel(tr("Turn off unnecessary startup services can enhance boot spped"));
     m_tipsLabel->setStyleSheet("QLabel { color: #666666; font-size: 30px; }");
     bottomLabel->setStyleSheet("QLabel { color: #666666; }");
 
@@ -50,5 +50,5 @@ SpeedupPage::SpeedupPage(QWidget *parent)
 
 void SpeedupPage::setItemsNumber(int number)
 {
-    m_tipsLabel->setText(QString("您的电脑有%1个启动项").arg(number));
+    m_tipsLabel->setText(QString(tr("Your computer has %1 startup items")).arg(number));
 }

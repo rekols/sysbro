@@ -53,7 +53,7 @@ void ServiceItemDelegate::paint(QPainter *painter, const QStyleOptionViewItem &o
         painter->drawText(totalRect, Qt::AlignTop | Qt::AlignLeft, descriptionStr);
     } else if (column == 1) {
         bool status = index.data(ServiceModel::Status).toBool();
-        painter->drawText(rect, Qt::AlignCenter, (status ? "已启用" : "已禁用"));
+        painter->drawText(rect, Qt::AlignCenter, (status ? tr("Enabled") : tr("Disabled")));
     } /*else if (column == 2) {
         QStyleOptionButton button;
         button.rect = option.rect.marginsRemoved(QMargins(10, 10, 10, 10));

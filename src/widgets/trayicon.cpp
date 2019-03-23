@@ -3,8 +3,8 @@
 TrayIcon::TrayIcon(QObject *parent)
     : QSystemTrayIcon(parent),
       m_menu(new QMenu),
-      m_openAction(new QAction(tr("打开"), m_menu)),
-      m_exitAction(new QAction(tr("退出"), m_menu))
+      m_openAction(new QAction(tr("Open"), m_menu)),
+      m_exitAction(new QAction(tr("Quit"), m_menu))
 {
     m_menu->addAction(m_openAction);
     m_menu->addAction(m_exitAction);

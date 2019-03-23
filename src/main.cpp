@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     a.setApplicationAcknowledgementPage("https://github.com/rekols");
     a.setProductIcon(QIcon(":/resources/sysbro.svg"));
     a.setProductName(DApplication::translate("Main", "SysBro"));
-    a.setApplicationDescription(DApplication::translate("Main", "Sysbro是一款系统助手，可以实时监控CPU、内存占用率、磁盘占用率等等信息，系统清理功能。"));
+    a.setApplicationDescription(DApplication::translate("Main", "Sysbro is a system assistant that monitors CPU, memory and more..."));
 
     if (!a.setSingleInstance("assistant")) {
         return 0;

@@ -9,8 +9,8 @@
 
 CleanerPage::CleanerPage(QWidget *parent)
     : QWidget(parent),
-      m_scanButton(new QPushButton("扫描垃圾")),
-      m_clearButton(new QPushButton("一键清理")),
+      m_scanButton(new QPushButton(tr("Scan now"))),
+      m_clearButton(new QPushButton(tr("Clean up"))),
       m_scannedWidget(new ScannedWidget),
       m_stackedLayout(new QStackedLayout),
       m_spinner(new DSpinner),
@@ -21,8 +21,8 @@ CleanerPage::CleanerPage(QWidget *parent)
     QVBoxLayout *tipsLayout = new QVBoxLayout;
 
     QSvgWidget *cleanerIcon = new QSvgWidget(":/resources/cleaner.svg");
-    QLabel *tips1Label = new QLabel("系统清理，释放磁盘空间");
-    m_tips2Label->setText("支持以下分类的清理");
+    QLabel *tips1Label = new QLabel(tr("Clean up disk space"));
+    m_tips2Label->setText(tr("Support scanning the following items"));
 
     cleanerIcon->setFixedSize(120, 120);
 
@@ -33,6 +33,9 @@ CleanerPage::CleanerPage(QWidget *parent)
 
     m_scanButton->setFocusPolicy(Qt::NoFocus);
     m_clearButton->setFocusPolicy(Qt::NoFocus);
+
+    tips1Label->setWordWrap(true);
+    m_tips2Label->setWordWrap(true);
 
     tipsLayout->addWidget(tips1Label, 0, Qt::AlignBottom);
     tipsLayout->addWidget(m_tips2Label, 0, Qt::AlignTop);
@@ -69,19 +72,19 @@ void CleanerPage::init()
     infoPage->setLayout(infoLayout);
 
     IconLabel *cacheLabel = new IconLabel;
-    cacheLabel->setTitle("应用缓存");
+    cacheLabel->setTitle(tr("Application Caches"));
     cacheLabel->setIconPixmap(Utils::renderSVG(":/resources/app_cache.svg", QSize(64, 64)));
 
     IconLabel *logsLabel = new IconLabel;
-    logsLabel->setTitle("应用日志");
+    logsLabel->setTitle(tr("Application Logs"));
     logsLabel->setIconPixmap(Utils::renderSVG(":/resources/app_logs.svg", QSize(64, 64)));
 
     IconLabel *crashLabel = new IconLabel;
-    crashLabel->setTitle("崩溃报告");
+    crashLabel->setTitle(tr("Crash Reports"));
     crashLabel->setIconPixmap(Utils::renderSVG(":/resources/crash.svg", QSize(64, 64)));
 
     IconLabel *packagesLabel = new IconLabel;
-    packagesLabel->setTitle("软件包缓存");
+    packagesLabel->setTitle(tr("Package Caches"));
     packagesLabel->setIconPixmap(Utils::renderSVG(":/resources/packages.svg", QSize(64, 64)));
 
     infoLayout->addWidget(cacheLabel);
@@ -111,12 +114,12 @@ void CleanerPage::handleScanBtnClicked()
     m_scannedWidget->start();
 
     m_scanButton->setEnabled(false);
-    m_tips2Label->setText("正在扫描，请稍后...");
+    m_tips2Label->setText(tr("Scanning, please wait..."));
 }
 
 void CleanerPage::handleScanFinished(quint64 totalSize)
 {
-    m_tips2Label->setText(QString("扫描成功，本次共发现%1垃圾，您可以选择清理").arg(Utils::formatBytes(totalSize)));
+    m_tips2Label->setText(QString(tr("Scan is successful, and a total of %1 files were found this time")).arg(Utils::formatBytes(totalSize)));
 
     m_stackedLayout->setCurrentIndex(2);
     m_spinner->stop();
@@ -128,7 +131,7 @@ void CleanerPage::handleScanFinished(quint64 totalSize)
 
 void CleanerPage::handleClearFinished(quint64 totalSize)
 {
-    m_tips2Label->setText(QString("清理完成，本次共清理%1垃圾").arg(Utils::formatBytes(totalSize)));
+    m_tips2Label->setText(tr("Clean up successfully, clean up a total of %1 files").arg(Utils::formatBytes(totalSize)));
     m_stackedLayout->setCurrentIndex(0);
     m_scanButton->setEnabled(true);
     m_scanButton->setVisible(true);

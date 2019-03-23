@@ -46,7 +46,7 @@ void ServiceView::mousePressEvent(QMouseEvent *e)
         bool status = index.data(ServiceModel::Status).toBool();
 
         QMenu *menu = new QMenu;
-        QAction *switchAction = new QAction((status ? "禁用" : "启用"));
+        QAction *switchAction = new QAction((status ? tr("Disable") : tr("Enable")));
 
         connect(switchAction, &QAction::triggered, this, [=] {
             emit switchActionTriggered(index);

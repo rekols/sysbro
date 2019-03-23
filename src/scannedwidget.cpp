@@ -16,7 +16,7 @@ ScannedWidget::ScannedWidget(QWidget *parent)
 
     m_treeWidget->setColumnCount(2);
     m_treeWidget->setColumnWidth(0, 600);
-    m_treeWidget->setHeaderLabels({"文件名称", "大小"});
+    m_treeWidget->setHeaderLabels({tr("File Name"), tr("File Size")});
 
     layout->addWidget(m_treeWidget);
     layout->setContentsMargins(30, 0, 30, 0);
@@ -95,14 +95,14 @@ void ScannedWidget::scan()
     m_treeWidget->clear();
 
     // addRoot(TRASH, "Trash", { QFileInfo(QString("%1/.local/share/Trash/").arg(Utils::getHomePath())) }, true);
-    addRoot(APPLICATION_CACHES, "应用缓存", Utils::getAppCaches());
-    addRoot(APPLICATION_LOGS, "应用日志", Utils::getAppLogs());
-    addRoot(CRASH_REPORTS, "崩溃报告", Utils::getCrashReports());
-    addRoot(PACKAGE_CACHE, "软件包缓存", Utils::getDpkgPackages());
+    addRoot(APPLICATION_CACHES, tr("Application Caches"), Utils::getAppCaches());
+    addRoot(APPLICATION_LOGS, tr("Application Log"), Utils::getAppLogs());
+    addRoot(CRASH_REPORTS, tr("Crash Reports"), Utils::getCrashReports());
+    addRoot(PACKAGE_CACHE, tr("Package Caches"), Utils::getDpkgPackages());
 
     QFileInfo bashShellHistory(QDir::homePath() + "/.bash_history");
     if (bashShellHistory.exists()) {
-        addRoot(BASHSHELL_HISTORY, "Shell 终端历史记录", { bashShellHistory });
+        addRoot(BASHSHELL_HISTORY, tr("Shell Terminal History"), { bashShellHistory });
     }
 
     m_treeWidget->update();

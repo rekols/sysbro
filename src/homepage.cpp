@@ -19,15 +19,15 @@ HomePage::HomePage(QWidget *parent)
     QVBoxLayout *systemInfoLayout = new QVBoxLayout;
     QVBoxLayout *networkInfoLayout = new QVBoxLayout;
 
-    m_systemInfo = new QLabel(tr("系统信息"));
-    m_platform = new QLabel(tr("Platform: "));
-    m_distribution = new QLabel("Distribution: ");
-    m_bootTime = new QLabel("");
-    m_kernel = new QLabel("Kernel Release: ");
-    m_cpuModel = new QLabel("Cpu Model: ");
-    m_cpuCoreCount = new QLabel("Cpu Core: ");
-    m_uploadInfo = new QLabel("上传");
-    m_downloadInfo = new QLabel("下载");
+    m_systemInfo = new QLabel(tr("SYSTEM INFO"));
+    m_platform = new QLabel;
+    m_distribution = new QLabel;
+    m_bootTime = new QLabel;
+    m_kernel = new QLabel;
+    m_cpuModel = new QLabel;
+    m_cpuCoreCount = new QLabel;
+    m_uploadInfo = new QLabel(tr("UPLOAD"));
+    m_downloadInfo = new QLabel(tr("DOWNLOAD"));
     m_uploadLabel = new QLabel("↑ 0.0B/s");
     m_downloadLabel = new QLabel("↓ 0.0B/s");
 
@@ -89,12 +89,12 @@ void HomePage::initUI()
     QString strCpuCore("");
     Utils::getCpuInfo(strCpuModel, strCpuCore);
 
-    m_platform->setText("平台: " + Utils::getPlatform());
-    m_distribution->setText("发行版: " + Utils::getDistribution());
-    m_bootTime->setText("开机时间: " + Utils::getBootTime());
-    m_kernel->setText("内核版本: " + Utils::getKernel());
-    m_cpuModel->setText("CPU型号: " + strCpuModel);
-    m_cpuCoreCount->setText("CPU核心: " + strCpuCore);
+    m_platform->setText(tr("Platform: %1").arg(Utils::getPlatform()));
+    m_distribution->setText(tr("Distribution: %1").arg(Utils::getDistribution()));
+    m_bootTime->setText(tr("Startup time: %1").arg(Utils::getBootTime()));
+    m_kernel->setText(tr("Kernal Release: %1").arg(Utils::getKernel()));
+    m_cpuModel->setText(tr("CPU Model: %1").arg(strCpuModel));
+    m_cpuCoreCount->setText(tr("CPU Core: %1").arg(strCpuCore));
 
     QFont font;
     font.setPointSize(18);
@@ -116,9 +116,9 @@ void HomePage::initUI()
 
     // init monitor widgets.
     m_cpuMonitorWidget->setTitle("CPU");
-    m_cpuMonitorWidget->setTips(tr("CPU 空闲"));
-    m_memoryMonitorWidget->setTitle(tr("内存"));
-    m_diskMonitorWidget->setTitle(tr("磁盘"));
+    m_cpuMonitorWidget->setTips(tr("CPU Idle"));
+    m_memoryMonitorWidget->setTitle(tr("MEMORY"));
+    m_diskMonitorWidget->setTitle(tr("DISK"));
 
     m_memoryMonitorWidget->setColor("#18BD9B");
     m_diskMonitorWidget->setColor("#6F5BEC");
@@ -129,9 +129,9 @@ void HomePage::updateCpuPercent(float cpuPercent)
     m_cpuMonitorWidget->setPercentValue(cpuPercent);
 
     if (cpuPercent > 0 && cpuPercent < 50) {
-        m_cpuMonitorWidget->setTips("CPU 空闲");
+        m_cpuMonitorWidget->setTips("CPU Idle");
     } else if (cpuPercent >= 50 && cpuPercent < 100) {
-        m_cpuMonitorWidget->setTips("CPU 忙碌");
+        m_cpuMonitorWidget->setTips("CPU Busy");
     }
 }
 
@@ -155,7 +155,7 @@ void HomePage::updateNetworkSpeed(QString upload, QString download)
 
 void HomePage::updateNetworkTotal(QString upload, QString download)
 {
-    m_uploadInfo->setText(QString("上传 (%1)").arg(upload));
-    m_downloadInfo->setText(QString("下载 (%1)").arg(download));
+    m_uploadInfo->setText(tr("UPLOAD") + QString(" (%1)").arg(upload));
+    m_downloadInfo->setText(tr("DOWNLOAD") + QString(" (%1)").arg(download));
 }
 

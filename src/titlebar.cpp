@@ -11,10 +11,10 @@ TitleBar::TitleBar(QWidget *parent)
 
     QTabBar *tabbar = new QTabBar;
     tabbar->setFocusPolicy(Qt::NoFocus);
-    tabbar->addTab("首 页");
-    tabbar->addTab("系统清理");
-    tabbar->addTab("优化加速");
-    tabbar->addTab("工具箱");
+    tabbar->addTab(tr("Home"));
+    tabbar->addTab(tr("Cleaner"));
+    tabbar->addTab(tr("Speed up"));
+    tabbar->addTab(tr("Tools"));
 
     m_layout->setMargin(0);
     m_layout->addSpacing(10);

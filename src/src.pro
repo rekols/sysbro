@@ -24,6 +24,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
+TRANSLATIONS += translations/sysbro.ts
 
 SOURCES += \
     main.cpp \
@@ -93,7 +94,13 @@ icon.files = $$PWD/resources/sysbro.svg
 policy.path = /usr/share/polkit-1/actions
 policy.files = com.sysbro.pkexec.delete-files.policy
 
-INSTALLS += target desktop icon policy
+# Automating generation .qm files from .ts files
+!system($$PWD/translate_generation.sh): error("Failed to generate translation")
+
+translations.path = /usr/share/sysbro/translations
+translations.files = $$PWD/translations/*.qm
+
+INSTALLS += target desktop icon policy translations
 
 DISTFILES += \
     resources/sysbro-network-test.svg \

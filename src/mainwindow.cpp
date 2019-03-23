@@ -12,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
       m_toolsPage(new ToolsPage),
       m_trayIcon(new TrayIcon),
       m_settings(new QSettings("sysbro")),
-      m_trayIconAction(new QAction("托盘显示"))
+      m_trayIconAction(new QAction(tr("Display tray icon")))
 {
     QWidget *centralWidget = new QWidget;
     centralWidget->setLayout(m_stackedLayout);

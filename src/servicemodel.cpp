@@ -139,9 +139,9 @@ QVariant ServiceModel::headerData(int section, Qt::Orientation orientation, int 
 
     switch (section) {
     case 0:
-        return "服务名称";
+        return tr("Service Name");
     case 1:
-        return "当前状态";
+        return tr("Status");
 //    case 2:
 //        return "设置状态";
     }
