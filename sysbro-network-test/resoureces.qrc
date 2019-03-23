@@ -3,5 +3,7 @@
         <file>images/icon.svg</file>
         <file>images/network.svg</file>
         <file>images/split_line.svg</file>
+        <file>images/success.svg</file>
+        <file>images/failed.svg</file>
     </qresource>
 </RCC>

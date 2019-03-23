@@ -38,8 +38,12 @@ HomePage::HomePage(QWidget *parent) : QWidget(parent)
 
     DLinkButton *btn = new DLinkButton("立即测速");
 
-    layout->addSpacing(50);
+    QLabel *tipsLabel = new QLabel("测速前请关闭占用网络资源的软件");
+
+    layout->addSpacing(30);
     layout->addWidget(iconLabel, 0, Qt::AlignHCenter);
+    layout->addSpacing(20);
+    layout->addWidget(tipsLabel, 0, Qt::AlignHCenter);
     layout->addSpacing(20);
     layout->addWidget(splitLine, 0, Qt::AlignHCenter);
     layout->addSpacing(20);

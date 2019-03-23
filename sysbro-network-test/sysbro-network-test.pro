@@ -28,11 +28,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    homepage.cpp
+    homepage.cpp \
+    networkmanager.cpp
 
 HEADERS += \
         mainwindow.h \
-    homepage.h
+    homepage.h \
+    networkmanager.h
 
 target.path = /usr/bin
 
@@ -40,3 +42,6 @@ INSTALLS += target
 
 RESOURCES += \
     resoureces.qrc
+
+DISTFILES += \
+    images/success.svg
