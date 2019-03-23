@@ -32,6 +32,7 @@ HomePage::HomePage(QWidget *parent)
     m_downloadLabel = new QLabel("↓ 0.0B/s");
 
     systemInfoLayout->addStretch();
+
     systemInfoLayout->addWidget(m_systemInfo);
     systemInfoLayout->addWidget(m_platform);
     systemInfoLayout->addWidget(m_distribution);
@@ -129,9 +130,9 @@ void HomePage::updateCpuPercent(float cpuPercent)
     m_cpuMonitorWidget->setPercentValue(cpuPercent);
 
     if (cpuPercent > 0 && cpuPercent < 50) {
-        m_cpuMonitorWidget->setTips("CPU Idle");
+        m_cpuMonitorWidget->setTips(tr("CPU Idle"));
     } else if (cpuPercent >= 50 && cpuPercent < 100) {
-        m_cpuMonitorWidget->setTips("CPU Busy");
+        m_cpuMonitorWidget->setTips(tr("CPU Busy"));
     }
 }
 

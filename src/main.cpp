@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     a.setApplicationVersion(DApplication::buildVersion("1.0"));
     a.setApplicationAcknowledgementPage("https://github.com/rekols");
     a.setProductIcon(QIcon(":/resources/sysbro.svg"));
-    a.setProductName(DApplication::translate("Main", "SysBro"));
+    a.setProductName("Sysbro");
     a.setApplicationDescription(DApplication::translate("Main", "Sysbro is a system assistant that monitors CPU, memory and more..."));
 
     if (!a.setSingleInstance("assistant")) {

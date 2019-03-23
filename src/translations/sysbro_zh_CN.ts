@@ -68,73 +68,74 @@
     </message>
     <message>
         <location filename="../homepage.cpp" line="29"/>
-        <location filename="../homepage.cpp" line="158"/>
+        <location filename="../homepage.cpp" line="159"/>
         <source>UPLOAD</source>
         <translation>上传</translation>
     </message>
     <message>
         <location filename="../homepage.cpp" line="30"/>
-        <location filename="../homepage.cpp" line="159"/>
+        <location filename="../homepage.cpp" line="160"/>
         <source>DOWNLOAD</source>
         <translation>下载</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="92"/>
+        <location filename="../homepage.cpp" line="93"/>
         <source>Platform: %1</source>
         <translation>平台：%1</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="93"/>
+        <location filename="../homepage.cpp" line="94"/>
         <source>Distribution: %1</source>
         <translation>发行版：%1</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="94"/>
+        <location filename="../homepage.cpp" line="95"/>
         <source>Startup time: %1</source>
         <translation>开机时间：%1</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="95"/>
+        <location filename="../homepage.cpp" line="96"/>
         <source>Kernal Release: %1</source>
         <translation>内核版本：%1</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="96"/>
+        <location filename="../homepage.cpp" line="97"/>
         <source>CPU Model: %1</source>
         <translation>CPU 型号：%1</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="97"/>
+        <location filename="../homepage.cpp" line="98"/>
         <source>CPU Core: %1</source>
         <translation>CPU 核数：%1</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="119"/>
+        <location filename="../homepage.cpp" line="120"/>
+        <location filename="../homepage.cpp" line="133"/>
         <source>CPU Idle</source>
         <translation>CPU 空闲</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="120"/>
+        <location filename="../homepage.cpp" line="121"/>
         <source>MEMORY</source>
         <translation>内存</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="121"/>
+        <location filename="../homepage.cpp" line="122"/>
         <source>DISK</source>
         <translation>磁盘</translation>
+    </message>
+    <message>
+        <location filename="../homepage.cpp" line="135"/>
+        <source>CPU Busy</source>
+        <translation>CPU 忙碌</translation>
     </message>
 </context>
 <context>
     <name>Main</name>
     <message>
-        <location filename="../main.cpp" line="19"/>
-        <source>SysBro</source>
-        <translation></translation>
-    </message>
-    <message>
         <location filename="../main.cpp" line="20"/>
         <source>Sysbro is a system assistant that monitors CPU, memory and more...</source>
-        <translation>Sysbro是一款系统助手，可以监控CPU，内存等等...</translation>
+        <translation>Sysbro 是一款系统助手，可以监控 CPU，内存等等...</translation>
     </message>
 </context>
 <context>
@@ -143,29 +144,6 @@
         <location filename="../mainwindow.cpp" line="15"/>
         <source>Display tray icon</source>
         <translation>显示托盘图标</translation>
-    </message>
-</context>
-<context>
-    <name>QObject</name>
-    <message>
-        <location filename="../toolslistmodel.cpp" line="5"/>
-        <source>Startup Apps Manager</source>
-        <translation>应用自启动管理</translation>
-    </message>
-    <message>
-        <location filename="../toolslistmodel.cpp" line="6"/>
-        <source>File Shredder</source>
-        <translation>文件粉碎机</translation>
-    </message>
-    <message>
-        <location filename="../toolslistmodel.cpp" line="7"/>
-        <source>Network Spped Test</source>
-        <translation>网速测试</translation>
-    </message>
-    <message>
-        <location filename="../toolslistmodel.cpp" line="8"/>
-        <source>Express Inquiry</source>
-        <translation>快递查询助手</translation>
     </message>
 </context>
 <context>

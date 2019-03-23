@@ -68,69 +68,70 @@
     </message>
     <message>
         <location filename="../homepage.cpp" line="29"/>
-        <location filename="../homepage.cpp" line="158"/>
+        <location filename="../homepage.cpp" line="159"/>
         <source>UPLOAD</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../homepage.cpp" line="30"/>
-        <location filename="../homepage.cpp" line="159"/>
+        <location filename="../homepage.cpp" line="160"/>
         <source>DOWNLOAD</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="92"/>
+        <location filename="../homepage.cpp" line="93"/>
         <source>Platform: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="93"/>
+        <location filename="../homepage.cpp" line="94"/>
         <source>Distribution: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="94"/>
+        <location filename="../homepage.cpp" line="95"/>
         <source>Startup time: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="95"/>
+        <location filename="../homepage.cpp" line="96"/>
         <source>Kernal Release: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="96"/>
+        <location filename="../homepage.cpp" line="97"/>
         <source>CPU Model: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="97"/>
+        <location filename="../homepage.cpp" line="98"/>
         <source>CPU Core: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="119"/>
+        <location filename="../homepage.cpp" line="120"/>
+        <location filename="../homepage.cpp" line="133"/>
         <source>CPU Idle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="120"/>
+        <location filename="../homepage.cpp" line="121"/>
         <source>MEMORY</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="121"/>
+        <location filename="../homepage.cpp" line="122"/>
         <source>DISK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../homepage.cpp" line="135"/>
+        <source>CPU Busy</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Main</name>
-    <message>
-        <location filename="../main.cpp" line="19"/>
-        <source>SysBro</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <location filename="../main.cpp" line="20"/>
         <source>Sysbro is a system assistant that monitors CPU, memory and more...</source>
