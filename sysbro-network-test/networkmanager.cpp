@@ -35,9 +35,9 @@ void NetworkManager::startTest()
 
 void NetworkManager::handleFakeReplyFinished()
 {
-    if (m_fakeReply == nullptr) {
-        return;
-    }
+//    if (m_fakeReply == nullptr) {
+//        return;
+//    }
 
     int statusCode = m_fakeReply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
     if (statusCode == 302) {
@@ -63,16 +63,23 @@ void NetworkManager::handleFakeReplyFinished()
             if (m_speedList.size() >= 60) {
                 m_realReply->abort();
 
-                quint64 total = 0;
+                // quint64 total = 0;
+                // for (quint64 bytes : m_speedList) {
+                //     total += bytes;
+                // }
+
+                // total = total / m_speedList.size();
+
+                quint64 speedBytes = 0;
                 for (quint64 bytes : m_speedList) {
-                    total += bytes;
+                    if (bytes > speedBytes) {
+                        speedBytes = bytes;
+                    }
                 }
 
-                total = total / m_speedList.size();
+                qDebug() << "success: " << formatBytes(speedBytes);
 
-                qDebug() << "success: " << formatBytes(total);
-
-                emit testSuccess(total, formatBytes(total));
+                emit testSuccess(speedBytes, formatBytes(speedBytes));
             }
         });
     } else {

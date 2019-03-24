@@ -137,7 +137,7 @@ void MainWindow::handleSuccess(quint64 speed, QString speedStr)
 
     m_stackedLayout->setCurrentIndex(2);
     m_spinner->stop();
-    m_resultLabel->setText(QString("您的上网速度为 %1").arg(speedStr));
+    m_resultLabel->setText(QString("最大的接入速度为 %1").arg(speedStr));
 }
 
 void MainWindow::updateStatus(QString speed)
