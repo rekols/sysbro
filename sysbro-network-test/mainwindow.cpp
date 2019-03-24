@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "dtitlebar.h"
+#include "dlinkbutton.h"
 #include <QVBoxLayout>
 #include <QApplication>
 #include <QImageReader>
@@ -50,7 +51,7 @@ MainWindow::MainWindow(QWidget *parent)
     QVBoxLayout *resultLayout = new QVBoxLayout;
     QLabel *successIconLabel = new QLabel;
     QPixmap iconPixmap = renderSVG(":/images/success.svg", QSize(128, 128));
-    QPushButton *returnBtn = new QPushButton("返回首页");
+    DLinkButton *returnBtn = new DLinkButton("重新测速");
     successIconLabel->setPixmap(iconPixmap);
     resultLayout->addSpacing(30);
     resultLayout->addWidget(successIconLabel, 0, Qt::AlignHCenter);
@@ -66,7 +67,7 @@ MainWindow::MainWindow(QWidget *parent)
     QLabel *failedIconLabel = new QLabel;
     QPixmap failedIconPixmap = renderSVG(":/images/failed.svg", QSize(128, 128));
     QLabel *failedTipsLabel = new QLabel("网络连接失败，请检查您的网络");
-    QPushButton *failedReturnBtn = new QPushButton("返回首页");
+    DLinkButton *restartButton = new DLinkButton("重新测速");
 
     failedIconLabel->setPixmap(failedIconPixmap);
     failedPage->setLayout(failedLayout);
@@ -76,7 +77,7 @@ MainWindow::MainWindow(QWidget *parent)
     failedLayout->addSpacing(10);
     failedLayout->addWidget(failedTipsLabel, 0, Qt::AlignHCenter);
     failedLayout->addSpacing(30);
-    failedLayout->addWidget(failedReturnBtn, 0, Qt::AlignHCenter);
+    failedLayout->addWidget(restartButton, 0, Qt::AlignHCenter);
     failedLayout->addStretch();
 
     m_stackedLayout->addWidget(m_homePage);
@@ -96,8 +97,8 @@ MainWindow::MainWindow(QWidget *parent)
     setWindowTitle("网络测速");
     setFixedSize(500, 420);
 
-    connect(returnBtn, &QPushButton::clicked, this, &MainWindow::switchToHomePage);
-    connect(failedReturnBtn, &QPushButton::clicked, this, &MainWindow::switchToHomePage);
+    connect(returnBtn, &QPushButton::clicked, this, &MainWindow::handleTestBtnClicked);
+    connect(restartButton, &QPushButton::clicked, this, &MainWindow::handleTestBtnClicked);
     connect(m_homePage, &HomePage::startButtonClicked, this, &MainWindow::handleTestBtnClicked);
     connect(m_networkManager, &NetworkManager::statusChanged, this, &MainWindow::updateStatus);
     connect(m_networkManager, &NetworkManager::testFailed, this, &MainWindow::switchToFailedPage);

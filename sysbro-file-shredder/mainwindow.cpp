@@ -62,10 +62,11 @@ MainWindow::MainWindow(QWidget *parent)
 
     setWindowIcon(QIcon(":/images/sysbro-file-shredder.svg"));
     setCentralWidget(centralWidget);
+    setBorderColor(QColor("#BFBFBF"));
     setWindowTitle("文件粉碎机");
-    resize(700, 500);
     setAcceptDrops(true);
     setWindowRadius(16);
+    resize(700, 500);
 
     connect(m_fileModel, &FileModel::removeAllFilesFinished, this, &MainWindow::popupSuccessDialog);
     connect(m_deleteBtn, &QPushButton::clicked, m_fileModel, &FileModel::removeAllFiles);

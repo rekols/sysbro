@@ -42,7 +42,7 @@ MainWindow::MainWindow(QWidget *parent)
     setWindowTitle("SysBro");
     setCentralWidget(centralWidget);
     setWindowRadius(16);
-    setBorderColor(QColor("#989898"));
+    setBorderColor(QColor("#BFBFBF"));
     setFixedSize(800, 560);
     initTrayIcon();
     // resize(800, 560);
