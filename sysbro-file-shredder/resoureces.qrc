@@ -1,5 +1,8 @@
 <RCC>
     <qresource prefix="/">
         <file>images/icon.svg</file>
+        <file>images/sysbro-file-shredder.svg</file>
+        <file>images/folder.svg</file>
+        <file>images/file.svg</file>
     </qresource>
 </RCC>

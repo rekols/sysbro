@@ -7,7 +7,7 @@
   <vendor_url>https://github.com/rekols</vendor_url>
   <action id="com.sysbro.pkexec.delete-files">
     <message>Password is required to clear</message>
-    <message xml:lang="zh_CN">系统清理需要权限</message>
+    <message xml:lang="zh_CN">当前操作需要权限</message>
     <icon_name>sysbro</icon_name>
     <defaults>
       <allow_any>no</allow_any>

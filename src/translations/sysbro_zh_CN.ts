@@ -233,7 +233,7 @@
     <message>
         <location filename="../speeduppage.cpp" line="53"/>
         <source>Your computer has %1 startup items</source>
-        <translation>您的电脑有%1个启动项</translation>
+        <translation>您的电脑有%1个服务启动项</translation>
     </message>
 </context>
 <context>

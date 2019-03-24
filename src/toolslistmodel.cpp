@@ -11,7 +11,7 @@ ToolsListModel::ToolsListModel(QObject *parent)
     : QAbstractListModel(parent),
       m_currentIndex(QModelIndex())
 {
-    m_list << "sysbro-startup-apps" // << "sysbro-file-shredder"
+    m_list << "sysbro-startup-apps" << "sysbro-file-shredder"
            << "sysbro-network-test" << "sysbro-express";
 }
 

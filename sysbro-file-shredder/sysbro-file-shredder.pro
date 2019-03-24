@@ -27,10 +27,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    utils.cpp \
+    fileview.cpp \
+    fileitemdelegate.cpp \
+    filemodel.cpp
 
 HEADERS += \
-        mainwindow.h 
+        mainwindow.h \ 
+    utils.h \
+    fileview.h \
+    fileitemdelegate.h \
+    filemodel.h
 
 target.path = /usr/bin
 
@@ -38,3 +46,6 @@ INSTALLS += target
 
 RESOURCES += \
     resoureces.qrc
+
+DISTFILES += \
+    images/sysbro-file-shredder.svg
