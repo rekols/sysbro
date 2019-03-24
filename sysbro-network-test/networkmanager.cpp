@@ -1,6 +1,8 @@
 #include "networkmanager.h"
 #include <QNetworkReply>
 #include <QNetworkProxy>
+#include <QRegularExpression>
+#include <QDebug>
 
 static QString formatBytes(quint64 bytes)
 {

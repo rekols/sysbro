@@ -227,6 +227,11 @@ QString Utils::formatBytes(unsigned long long bytes)
 
     else if (bytes / 1024 / 1024 / 1024 < 1024)
         return QString::number(bytes / 1024.0 / 1024.0 / 1024.0, 'r', 1) + "GB";
+
+    else if (bytes / 1024 / 1024 / 1024 / 1024 < 1024)
+        return QString::number(bytes / 1024.0 / 1024.0 / 1024.0 / 1024.0, 'r', 1) + "TB";
+
+    return QString("");
 }
 
 quint64 Utils::getFileSize(const QString &path)
