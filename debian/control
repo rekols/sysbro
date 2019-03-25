@@ -2,11 +2,11 @@ Source: sysbro
 Section: utils
 Priority: optional
 Maintainer: Rekols <rekols@foxmail.com>
-Build-Depends: debhelper (>= 9), pkg-config, qt5-qmake, qt5-default, libdtkwidget-dev, libqt5svg5-dev
+Build-Depends: debhelper (>= 9), pkg-config, qt5-qmake, qt5-default, qttools5-dev-tools, libdtkwidget-dev, libqt5svg5-dev
 Standards-Version: 3.9.8
 Homepage: http://www.deepin.org
 
 Package: sysbro
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: A DeepinOS assistant.
+Description: Sysbro is a system assistant for deepin.
