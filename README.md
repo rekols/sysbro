@@ -2,21 +2,25 @@
 
 A system assistant for deepin/ubuntu18.10.
 
-Sysbro是一款系统助手，可以实时监控信息，系统清理、优化加速功能。
+![](screenshots/20190327025127.png)
 
-[下载最新64为deb软件包](https://github.com/rekols/sysbro/releases)
+[Downloads](https://github.com/rekols/sysbro/releases)
 
-## 编译依赖
+## Dependencies
 
-* sudo apt install g++ qt5-default libdtkwidget-dev
+* sudo apt install g++ qt5-default qttools5-dev-tools libdtkwidget-dev
 
-## 编译步骤
+## Build
 
 * mkdir build
 * cd build
 * qmake ..
 * make
 
+## Packaging
+
+* dpkg-buildpackage -b
+
 ## License
 
-遵循 GPLv3 协议
+sysbro is licensed under GPLv3.

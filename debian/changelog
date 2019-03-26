@@ -1,3 +1,9 @@
+sysbro (0.4) unstable; urgency=medium
+  * 修复崩溃问题(单位转换函数出错)
+  * 加入文件粉碎机
+  * 网速测速使用结果使用最大速度,不使用平均值
+  * 其它优化
+
 sysbro (0.3) unstable; urgency=medium
   * 重新实现获取磁盘容量方法
   * 加入优化加速页面
