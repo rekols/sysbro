@@ -31,6 +31,7 @@ FileView::FileView(QWidget *parent)
                   "QHeaderView::section:horizontal {"
                   "border-top: 1px solid #F2F2F2;"
                   "border-bottom: 1px solid #F2F2F2;"
+                  "border-right: 1px solid #F2F2F2;"
                   "padding-left: 15px;"
                   "}");
 }
