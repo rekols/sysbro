@@ -1,8 +1,10 @@
 #include "toolsview.h"
+#include <QMouseEvent>
 #include <QEvent>
 
 ToolsView::ToolsView(QWidget *parent)
-    : QListView(parent)
+    : QListView(parent),
+      m_currentIndex(QModelIndex())
 {
     // viewport()->installEventFilter(this);
 
@@ -19,6 +21,17 @@ ToolsView::ToolsView(QWidget *parent)
 
 ToolsView::~ToolsView()
 {
+}
+
+void ToolsView::mouseMoveEvent(QMouseEvent *e)
+{
+    QModelIndex idx = indexAt(e->pos());
+
+    if (m_currentIndex != idx) {
+        m_currentIndex = idx;
+
+        emit entered(m_currentIndex);
+    }
 }
 
 // bool ToolsView::eventFilter(QObject *object, QEvent *e)
