@@ -21,12 +21,14 @@ MainWindow::MainWindow(QWidget *parent)
     QVBoxLayout *layout = new QVBoxLayout;
     centralWidget->setLayout(layout);
 
+    ItemDelegate *itemDelegate = new ItemDelegate;
+
     m_tipsLabel->setStyleSheet("QLabel { color: #666666; font-size: 25px; }");
     m_tipsLabel->setText("未发现开机启动应用");
     m_tipsLabel->setVisible(false);
 
     m_listView->setModel(m_listModel);
-    m_listView->setItemDelegate(new ItemDelegate);
+    m_listView->setItemDelegate(itemDelegate);
 
     layout->addWidget(m_listView);
     layout->addWidget(m_tipsLabel, 0, Qt::AlignCenter);
@@ -56,7 +58,18 @@ MainWindow::MainWindow(QWidget *parent)
     setWindowRadius(16);
     checkAutoStartApp();
 
-    connect(m_listView, &ListView::entered, m_listModel, &ListModel::setCurrentIndex);
+    connect(m_listView, &ListView::entered, this, [=] (QModelIndex idx) {
+        for (int i = 0; i < m_listModel->rowCount(QModelIndex()); ++i) {
+            QModelIndex index = m_listModel->index(i, 0);
+            m_listView->closePersistentEditor(index);
+        }
+
+        m_listView->openPersistentEditor(idx);
+        m_listModel->setCurrentIndex(idx);
+    });
+
+    connect(itemDelegate, &ItemDelegate::removeBtnClicked, m_listModel, &ListModel::removeCurrentIndex);
+
     connect(m_listView, &ListView::rightClicked, this, &MainWindow::popupRightMenu);
     connect(m_autoStartManager, &AutoStartManager::dataChanged, this, &MainWindow::checkAutoStartApp);
 }

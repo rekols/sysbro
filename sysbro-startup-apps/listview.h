@@ -16,6 +16,8 @@ signals:
     void rightClicked(QModelIndex idx);
 
 protected:
+    void mouseMoveEvent(QMouseEvent *);
+    void enterEvent(QEvent *);
     void leaveEvent(QEvent *);
 };
 

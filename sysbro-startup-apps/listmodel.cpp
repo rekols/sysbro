@@ -15,6 +15,8 @@ ListModel::ListModel(QObject *parent)
 
 int ListModel::rowCount(const QModelIndex &parent) const
 {
+    Q_UNUSED(parent);
+
     return m_autoStartManager->appList().size();
 }
 
@@ -47,4 +49,13 @@ void ListModel::setCurrentIndex(QModelIndex idx)
     m_currentIndex = idx;
 
     emit dataChanged(m_currentIndex, m_currentIndex);
+}
+
+void ListModel::removeCurrentIndex()
+{
+    if (m_currentIndex.isValid()) {
+        QFile file(m_currentIndex.data(ListModel::AppPathRole).toString());
+        file.remove();
+        file.close();
+    }
 }

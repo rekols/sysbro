@@ -1,6 +1,9 @@
 #include "itemdelegate.h"
 #include "listmodel.h"
+#include "dimagebutton.h"
 #include <QApplication>
+
+DWIDGET_USE_NAMESPACE
 
 const QPixmap getThemeIcon(const QString &iconName, const int size)
 {
@@ -65,5 +68,33 @@ void ItemDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, 
 
 QSize ItemDelegate::sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
+    Q_UNUSED(option);
+    Q_UNUSED(index);
+
     return QSize(-1, 55);
+}
+
+QWidget *ItemDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const
+{
+    Q_UNUSED(option);
+    Q_UNUSED(index);
+
+    DImageButton *removeBtn = new DImageButton(":/images/close_normal.svg",
+                                               ":/images/close_hover.svg",
+                                               ":/images/close_press.svg", parent);
+    connect(removeBtn, &DImageButton::clicked, this, &ItemDelegate::removeBtnClicked);
+    return removeBtn;
+}
+
+void ItemDelegate::updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option, const QModelIndex &index) const
+{
+    Q_UNUSED(index);
+
+    DImageButton *btn = static_cast<DImageButton *>(editor);
+    btn->setFixedSize(QPixmap(btn->getNormalPic()).size());
+    QRect rect = option.rect;
+    btn->setGeometry(rect.x() + rect.width() - btn->width() * 2,
+                     rect.y() + (rect.height() - btn->height()) / 2,
+                     btn->width(),
+                     btn->height());
 }

@@ -23,6 +23,7 @@ public:
     QVariant data(const QModelIndex &index, int role) const;
 
     void setCurrentIndex(QModelIndex idx);
+    void removeCurrentIndex();
 
 private:
     QStringList m_list;

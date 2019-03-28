@@ -21,6 +21,18 @@ void ListView::mousePressEvent(QMouseEvent *e)
     }
 }
 
+void ListView::mouseMoveEvent(QMouseEvent *e)
+{
+    QModelIndex idx = indexAt(e->pos());
+
+    emit entered(idx);
+}
+
+void ListView::enterEvent(QEvent *e)
+{
+    e->ignore();
+}
+
 void ListView::leaveEvent(QEvent *e)
 {
     QListView::leaveEvent(e);
