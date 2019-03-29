@@ -1,4 +1,5 @@
 #include "toolslistmodel.h"
+#include <QLocale>
 
 static const QMap<QString, QString> nameMap {
     {"sysbro-startup-apps", "开机自启动管理"},
@@ -13,10 +14,17 @@ ToolsListModel::ToolsListModel(QObject *parent)
 {
     m_list << "sysbro-startup-apps" << "sysbro-file-shredder"
            << "sysbro-network-test" << "sysbro-express";
+
+    if (QLocale::system().name() != "zh_CN") {
+        m_list.removeOne("sysbro-express");
+        m_list.removeOne("sysbro-network-test");
+    }
 }
 
 int ToolsListModel::rowCount(const QModelIndex &parent) const
 {
+    Q_UNUSED(parent);
+
     return m_list.size();
 }
 
