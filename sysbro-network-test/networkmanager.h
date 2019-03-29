@@ -12,6 +12,7 @@ public:
     explicit NetworkManager(QObject *parent = nullptr);
 
     void startTest();
+    void realTest();
 
 signals:
     void statusChanged(QString speed);
@@ -19,6 +20,7 @@ signals:
     void testFailed();
 
 private:
+    void handleDownloadProgress(qint64 bytesReceived, qint64 bytesTotal);
     void handleFakeReplyFinished();
 
 private:
@@ -26,6 +28,8 @@ private:
     QNetworkReply *m_fakeReply;
     QNetworkReply *m_realReply;
     QList<qint64> m_speedList;
+    QTime m_downloadTime;
+    QString m_realUrl;
 };
 
 #endif // NETWORKMANAGER_H
