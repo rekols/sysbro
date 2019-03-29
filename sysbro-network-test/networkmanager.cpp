@@ -54,6 +54,10 @@ void NetworkManager::handleFakeReplyFinished()
 
         m_speedList.clear();
 
+        connect(m_realReply, &QNetworkReply::finished, this, [=] {
+            emit testFailed();
+        });
+
         connect(m_realReply, &QNetworkReply::downloadProgress, this, [=] (qint64 bytesReceived, qint64 bytesTotal) {
             quint64 speed = bytesReceived * 1000.0 / downloadTime.elapsed();
             m_speedList << speed;
