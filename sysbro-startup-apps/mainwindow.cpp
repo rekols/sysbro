@@ -55,7 +55,7 @@ MainWindow::MainWindow(QWidget *parent)
     setCentralWidget(centralWidget);
     setWindowTitle("应用开机启动管理`");
     setMinimumSize(500, 450);
-    setWindowRadius(16);
+    // setWindowRadius(16);
     checkAutoStartApp();
 
     connect(m_listView, &ListView::entered, this, [=] (QModelIndex idx) {
@@ -175,4 +175,3 @@ void MainWindow::deleteAllApps()
         file.remove();
     }
 }
-

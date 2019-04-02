@@ -93,7 +93,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     setWindowIcon(QIcon(":/images/icon.svg"));
     setCentralWidget(centralWidget);
-    setWindowRadius(16);
+    // setWindowRadius(16);
     setWindowTitle("网络测速");
     setFixedSize(500, 420);
 

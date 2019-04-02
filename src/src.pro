@@ -90,7 +90,11 @@ desktop.path = $$INSTROOT$$APPDIR
 desktop.files = $$PWD/../sysbro.desktop
 
 icon.path = $$PREFIX/share/icons/hicolor/scalable/apps/
-icon.files = $$PWD/resources/sysbro.svg
+icon.files += $$PWD/resources/sysbro.svg \
+              $$PWD/resources/sysbro-express.svg \
+              $$PWD/resources/sysbro-file-shredder.svg \
+              $$PWD/resources/sysbro-network-test.svg \
+              $$PWD/resources/sysbro-startup-apps.svg
 
 policy.path = /usr/share/polkit-1/actions
 policy.files = com.sysbro.pkexec.delete-files.policy

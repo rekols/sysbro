@@ -29,7 +29,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     setWindowIcon(QIcon(":/sysbro-express.svg"));
     setWindowTitle("快递查询助手");
-    setWindowRadius(16);
+    // setWindowRadius(16);
 
     http = new QNetworkAccessManager;
     mainWidget = new QWidget;
