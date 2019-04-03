@@ -15,8 +15,7 @@ int main(int argc, char *argv[])
     a.setApplicationVersion(DApplication::buildVersion("1.0"));
     a.setApplicationAcknowledgementPage("https://github.com/rekols");
     a.setProductIcon(QIcon(":/images/icon.svg"));
-    a.setProductName(DApplication::translate("Main", "应用开机启动管理"));
-//    a.setApplicationDescription(DApplication::translate("Main", "应用开机启动管理"));
+    a.setProductName(DApplication::translate("Main", "App start-up management"));
 
     if (!a.setSingleInstance("sysbro-startup-apps")) {
         return 0;

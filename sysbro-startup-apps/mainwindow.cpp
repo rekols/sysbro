@@ -24,7 +24,7 @@ MainWindow::MainWindow(QWidget *parent)
     ItemDelegate *itemDelegate = new ItemDelegate;
 
     m_tipsLabel->setStyleSheet("QLabel { color: #666666; font-size: 25px; }");
-    m_tipsLabel->setText("未发现开机启动应用");
+    m_tipsLabel->setText(tr("No boot application found"));
     m_tipsLabel->setVisible(false);
 
     m_listView->setModel(m_listModel);
@@ -35,8 +35,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     if (titlebar()) {
         QMenu *menu = new QMenu;
-        QAction *createAction = new QAction("新建应用");
-        QAction *selectAction = new QAction("选择文件");
+        QAction *createAction = new QAction(tr("New Application"));
+        QAction *selectAction = new QAction(tr("Select file"));
 
         menu->addAction(createAction);
         menu->addAction(selectAction);
@@ -45,7 +45,7 @@ MainWindow::MainWindow(QWidget *parent)
         titlebar()->setBackgroundTransparent(true);
         titlebar()->setIcon(QIcon(":/images/icon.svg"));
         titlebar()->setMenu(menu);
-        titlebar()->setTitle("开机启动管理");
+        titlebar()->setTitle("");
 
         connect(createAction, &QAction::triggered, this, &MainWindow::popupCreateWindow);
         connect(selectAction, &QAction::triggered, this, &MainWindow::popupFileDialog);
@@ -53,9 +53,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     setWindowIcon(QIcon(":/images/icon.svg"));
     setCentralWidget(centralWidget);
-    setWindowTitle("应用开机启动管理`");
+    setWindowTitle(tr("App start-up management"));
     setMinimumSize(500, 450);
-    // setWindowRadius(16);
+    setWindowRadius(16);
     checkAutoStartApp();
 
     connect(m_listView, &ListView::entered, this, [=] (QModelIndex idx) {
@@ -89,8 +89,8 @@ void MainWindow::popupRightMenu(QModelIndex idx)
     QMenu *menu = new QMenu;
 
     if (idx.isValid()) {
-        QAction *modifyAction = new QAction("修改");
-        QAction *deleteAction = new QAction("删除");
+        QAction *modifyAction = new QAction(tr("Modify"));
+        QAction *deleteAction = new QAction(tr("Delete"));
         menu->addAction(modifyAction);
         menu->addAction(deleteAction);
 
@@ -105,7 +105,7 @@ void MainWindow::popupRightMenu(QModelIndex idx)
         });
     }
 
-    QAction *deleteAllAction = new QAction("删除所有");
+    QAction *deleteAllAction = new QAction(tr("Delete all"));
     menu->addAction(deleteAllAction);
 
     connect(deleteAllAction, &QAction::triggered, this, &MainWindow::deleteAllApps);

@@ -99,9 +99,6 @@ icon.files += $$PWD/resources/sysbro.svg \
 policy.path = /usr/share/polkit-1/actions
 policy.files = com.sysbro.pkexec.delete-files.policy
 
-# Automating generation .qm files from .ts files
-!system($$PWD/translate_generation.sh): error("Failed to generate translation")
-
 translations.path = /usr/share/sysbro/translations
 translations.files = $$PWD/translations/*.qm
 

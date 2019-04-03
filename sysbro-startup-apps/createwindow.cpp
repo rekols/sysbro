@@ -11,11 +11,8 @@ CreateWindow::CreateWindow(QWidget *parent)
     QVBoxLayout *layout = new QVBoxLayout;
     QFormLayout *formLayout = new QFormLayout;
 
-    QLabel *appNameLabel = new QLabel("应用名称: ");
-    QLabel *appExecLabel = new QLabel("应用命令: ");
-
-    m_appNameEdit->setPlaceholderText("必填");
-    m_appExecEdit->setPlaceholderText("必填");
+    QLabel *appNameLabel = new QLabel(tr("Application Name:"));
+    QLabel *appExecLabel = new QLabel(tr("Application Exec:"));
 
     formLayout->addRow(appNameLabel, m_appNameEdit);
     formLayout->addRow(appExecLabel, m_appExecEdit);
@@ -23,11 +20,12 @@ CreateWindow::CreateWindow(QWidget *parent)
     layout->addLayout(formLayout);
     widget->setLayout(layout);
 
-    addButton("取消");
-    addButton("确定", true, DDialog::ButtonRecommend);
+    addButton(tr("Cancel"));
+    addButton(tr("OK"), true, DDialog::ButtonRecommend);
     setOnButtonClickedClose(false);
     addContent(widget);
-    setFixedSize(300, 170);
+//    setFixedSize(300, 170);
+    setFixedHeight(170);
 
     connect(this, &CreateWindow::buttonClicked, this, &CreateWindow::handleButtonClicked);
 }
