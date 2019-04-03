@@ -65,7 +65,7 @@ void FileView::mousePressEvent(QMouseEvent *e)
             return;
 
         QMenu *menu = new QMenu;
-        QAction *removeAction = new QAction("从列表中删除");
+        QAction *removeAction = new QAction(tr("Remove from list"));
 
         connect(removeAction, &QAction::triggered, this, [=] {
             emit removeItem(idx);

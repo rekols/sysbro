@@ -24,6 +24,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
+TRANSLATIONS += translations/sysbro-file-shredder.ts \
+                translations/sysbro-file-shredder_zh_CN.ts
 
 SOURCES += \
         main.cpp \
@@ -42,7 +44,10 @@ HEADERS += \
 
 target.path = /usr/bin
 
-INSTALLS += target
+translations.path = /usr/share/sysbro-file-shredder/translations
+translations.files = $$PWD/translations/*.qm
+
+INSTALLS += target translations
 
 RESOURCES += \
     resoureces.qrc

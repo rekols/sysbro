@@ -49,9 +49,9 @@ QVariant FileModel::headerData(int section, Qt::Orientation orientation, int rol
 
     switch (section) {
     case 0:
-        return "文件名";
+        return tr("File Name");
     case 1:
-        return "文件路径";
+        return tr("File Path");
     }
 
     return QVariant();

@@ -15,15 +15,15 @@
 MainWindow::MainWindow(QWidget *parent)
     : DMainWindow(parent),
       m_fileModel(new FileModel),
-      m_deleteBtn(new QPushButton("粉碎文件"))
+      m_deleteBtn(new QPushButton(tr("Shredding files")))
 {
     QVBoxLayout *mainLayout = new QVBoxLayout;
     QWidget *centralWidget = new QWidget;
     QHBoxLayout *topLayout = new QHBoxLayout;
 
     QVBoxLayout *tipsLayout = new QVBoxLayout;
-    QLabel *topTipsLabel = new QLabel("粉碎无法删除的文件或文件夹");
-    QLabel *bottomTipsLabel = new QLabel("您可以点击添加文件或直接拖拽到本窗口，请谨慎粉碎文件");
+    QLabel *topTipsLabel = new QLabel(tr("Shred files or folders that cannot be deleted"));
+    QLabel *bottomTipsLabel = new QLabel(tr("You can click to add a file or drag and drop directly to this window"));
 
     QLabel *tipsLabel = new QLabel;
     QPixmap tipsPixmap = Utils::renderSVG(":/images/sysbro-file-shredder.svg", QSize(64, 64));
@@ -42,7 +42,7 @@ MainWindow::MainWindow(QWidget *parent)
     fileView->setModel(m_fileModel);
 
     QHBoxLayout *bottomLayout = new QHBoxLayout;
-    DLinkButton *addButton = new DLinkButton("添加文件");
+    DLinkButton *addButton = new DLinkButton(tr("Add file"));
     bottomLayout->addWidget(addButton, 0, Qt::AlignLeft);
     bottomLayout->addWidget(m_deleteBtn, 0, Qt::AlignRight);
 
@@ -63,7 +63,7 @@ MainWindow::MainWindow(QWidget *parent)
     setWindowIcon(QIcon(":/images/sysbro-file-shredder.svg"));
     setCentralWidget(centralWidget);
     setBorderColor(QColor("#BFBFBF"));
-    setWindowTitle("文件粉碎机");
+    setWindowTitle(tr("File Shredder"));
     setAcceptDrops(true);
     setWindowRadius(16);
     resize(700, 500);
@@ -96,10 +96,10 @@ void MainWindow::popupSuccessDialog(int count)
     DDialog msgDialog(this);
     msgDialog.setFixedWidth(400);
     msgDialog.setIcon(QIcon(":/images/sysbro-file-shredder.svg"), QSize(64, 64));
-    msgDialog.setTitle("文件粉碎机");
+    msgDialog.setTitle(tr("File Shredder"));
     msgDialog.setTextFormat(Qt::AutoText);
-    msgDialog.setMessage(QString("粉碎成功，%1个文件(文件夹)已成功粉碎").arg(count));
-    msgDialog.insertButton(0, "确定", false, DDialog::ButtonRecommend);
+    msgDialog.setMessage(QString(tr("Success, %1 file(s) have been successfully deleted")).arg(count));
+    msgDialog.insertButton(0, tr("OK"), false, DDialog::ButtonRecommend);
     msgDialog.exec();
 }
 

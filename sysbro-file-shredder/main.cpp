@@ -15,8 +15,7 @@ int main(int argc, char *argv[])
     a.setApplicationVersion(DApplication::buildVersion("1.0"));
     a.setApplicationAcknowledgementPage("https://github.com/rekols");
     a.setProductIcon(QIcon(":/images/sysbro-file-shredder.svg"));
-    a.setProductName(DApplication::translate("Main", "文件粉碎机"));
-//    a.setApplicationDescription(DApplication::translate("Main", "网络测速"));
+    a.setProductName(DApplication::translate("Main", "File Shredder"));
 
     if (!a.setSingleInstance("sysbro-file-shredder")) {
         return 0;
