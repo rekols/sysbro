@@ -2,8 +2,8 @@
 #include <QLocale>
 
 static const QMap<QString, QString> nameMap {
-    {"sysbro-startup-apps", "开机自启动管理"},
-    {"sysbro-file-shredder", "文件粉碎机"},
+    {"sysbro-startup-apps", QObject::tr("App start-up management")},
+    {"sysbro-file-shredder", QObject::tr("File Shredder")},
     {"sysbro-network-test", "网速测试"},
     {"sysbro-express", "快递查询助手"}
 };

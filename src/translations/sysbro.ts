@@ -147,6 +147,19 @@
     </message>
 </context>
 <context>
+    <name>QObject</name>
+    <message>
+        <location filename="../toolslistmodel.cpp" line="5"/>
+        <source>App start-up management</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../toolslistmodel.cpp" line="6"/>
+        <source>File Shredder</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ScannedWidget</name>
     <message>
         <location filename="../scannedwidget.cpp" line="19"/>

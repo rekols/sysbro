@@ -147,6 +147,19 @@
     </message>
 </context>
 <context>
+    <name>QObject</name>
+    <message>
+        <location filename="../toolslistmodel.cpp" line="5"/>
+        <source>App start-up management</source>
+        <translation>开机自启动管理</translation>
+    </message>
+    <message>
+        <location filename="../toolslistmodel.cpp" line="6"/>
+        <source>File Shredder</source>
+        <translation>文件粉碎机</translation>
+    </message>
+</context>
+<context>
     <name>ScannedWidget</name>
     <message>
         <location filename="../scannedwidget.cpp" line="19"/>
