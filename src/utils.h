@@ -18,6 +18,8 @@ public:
     static QString getDistribution();
     static QString getKernel();
     static QString getBootTime();
+    static QString getDebianVersion();
+
     static void getCpuInfo(QString &cpuModel, QString &cpuCore);
     static void getCpuTime(unsigned long long &workTime, unsigned long long &totalTime);
     static void getMemoryInfo(QString &memory, float &percent);

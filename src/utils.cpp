@@ -86,6 +86,18 @@ QString Utils::getBootTime()
     return bootTime;
 }
 
+QString Utils::getDebianVersion()
+{
+    QFile file("/etc/debian_version");
+
+    // e.g. "9.0"
+    if (file.open(QIODevice::ReadOnly)) {
+        return file.readAll();
+    }
+
+    return QString();
+}
+
 void Utils::getCpuInfo(QString &cpuModel, QString &cpuCore)
 {
     QFile file("/proc/cpuinfo");
