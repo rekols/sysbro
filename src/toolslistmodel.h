@@ -23,6 +23,7 @@ public:
 private:
     QStringList m_list;
     QModelIndex m_currentIndex;
+    QMap<QString, QString> m_nameMap;
 };
 
 #endif // TOOLSLISTMODEL_H

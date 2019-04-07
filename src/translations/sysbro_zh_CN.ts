@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1">
+<TS version="2.1" language="zh_CN">
 <context>
     <name>CleanerPage</name>
     <message>
@@ -149,14 +149,12 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../toolslistmodel.cpp" line="5"/>
         <source>App start-up management</source>
-        <translation>开机自启动管理</translation>
+        <translation type="vanished">开机自启动管理</translation>
     </message>
     <message>
-        <location filename="../toolslistmodel.cpp" line="6"/>
         <source>File Shredder</source>
-        <translation>文件粉碎机</translation>
+        <translation type="vanished">文件粉碎机</translation>
     </message>
 </context>
 <context>
@@ -270,6 +268,19 @@
         <location filename="../titlebar.cpp" line="17"/>
         <source>Tools</source>
         <translation>工具箱</translation>
+    </message>
+</context>
+<context>
+    <name>ToolsListModel</name>
+    <message>
+        <location filename="../toolslistmodel.cpp" line="12"/>
+        <source>App start-up management</source>
+        <translation>开机自启动管理</translation>
+    </message>
+    <message>
+        <location filename="../toolslistmodel.cpp" line="13"/>
+        <source>File Shredder</source>
+        <translation>文件粉碎机</translation>
     </message>
 </context>
 <context>
