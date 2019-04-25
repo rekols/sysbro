@@ -31,8 +31,12 @@ void MonitorThread::run()
         Utils::getCpuTime(currentWorkTime, currentTotalTime);
         Utils::getNetworkBandWidth(recv, send);
 
+        // 2 is delay value.
+        unsigned long long uploadSpeed = ((send - prevSend)) / 2;
+        unsigned long long downloadSpeed = ((recv - prevRecv)) / 2;
+
         emit updateNetworkTotal(Utils::formatBytes(send), Utils::formatBytes(recv));
-        emit updateNetworkSpeed(Utils::formatBytes(send - prevSend), Utils::formatBytes(recv - prevRecv));
+        emit updateNetworkSpeed(Utils::formatBytes(uploadSpeed), Utils::formatBytes(downloadSpeed));
         emit updateCpuPercent((currentWorkTime - prevWorkTime) * 100.0 / (currentTotalTime - prevTotalTime));
     }
 }
