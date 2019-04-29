@@ -65,7 +65,6 @@ MainWindow::MainWindow(QWidget *parent)
     setBorderColor(QColor("#BFBFBF"));
     setWindowTitle(tr("File Shredder"));
     setAcceptDrops(true);
-    setWindowRadius(16);
     resize(700, 500);
 
     connect(m_fileModel, &FileModel::removeAllFilesFinished, this, &MainWindow::popupSuccessDialog);

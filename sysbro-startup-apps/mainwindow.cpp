@@ -55,7 +55,6 @@ MainWindow::MainWindow(QWidget *parent)
     setCentralWidget(centralWidget);
     setWindowTitle(tr("App start-up management"));
     setMinimumSize(500, 450);
-    setWindowRadius(16);
     checkAutoStartApp();
 
     connect(m_listView, &ListView::entered, this, [=] (QModelIndex idx) {
