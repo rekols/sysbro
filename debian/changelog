@@ -1,3 +1,6 @@
+sysbro (0.5) unstable; urgency=medium
+  * 打包兼容 deepin 15.10
+
 sysbro (0.4) unstable; urgency=medium
   * 修复崩溃问题(单位转换函数出错)
   * 加入文件粉碎机
