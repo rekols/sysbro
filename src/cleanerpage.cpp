@@ -4,7 +4,6 @@
 #include "widgets/iconlabel.h"
 #include <QVBoxLayout>
 #include <QPushButton>
-#include <QSvgWidget>
 #include <QLabel>
 
 CleanerPage::CleanerPage(QWidget *parent)
@@ -20,11 +19,13 @@ CleanerPage::CleanerPage(QWidget *parent)
     QHBoxLayout *topLayout = new QHBoxLayout;
     QVBoxLayout *tipsLayout = new QVBoxLayout;
 
-    QSvgWidget *cleanerIcon = new QSvgWidget(":/resources/cleaner.svg");
+    QPixmap cleanerPixmap = Utils::renderSVG(":/resources/cleaner.svg", QSize(120, 120));
+    QLabel *cleanerIcon = new QLabel;
+    cleanerIcon->setPixmap(cleanerPixmap);
+    cleanerIcon->setFixedSize(120, 120);
+
     QLabel *tips1Label = new QLabel(tr("Clean up disk space"));
     m_tips2Label->setText(tr("Support scanning the following items"));
-
-    cleanerIcon->setFixedSize(120, 120);
 
     tips1Label->setStyleSheet("QLabel { font-size: 30px; color: #454747; }");
     m_tips2Label->setStyleSheet("QLabel { font-size: 15px; color: #454747; }");

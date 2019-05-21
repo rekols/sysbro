@@ -38,7 +38,6 @@ find_package(Qt5Widgets REQUIRED)
 find_package(Qt5DBus REQUIRED)
 find_package(Qt5Concurrent REQUIRED)
 find_package(Qt5Gui REQUIRED)
-find_package(Qt5Svg REQUIRED)
 find_package(DtkWidget REQUIRED)
 find_package(DtkCore REQUIRED)
 
@@ -51,7 +50,6 @@ target_link_libraries(sysbro
     ${Qt5Widgets_LIBRARIES}
     ${Qt5DBus_LIBRARIES}
     ${Qt5Concurrent_LIBRARIES}
-    ${Qt5Svg_LIBRARIES}
 )
 
 set(CMAKE_INSTALL_PREFIX /usr)

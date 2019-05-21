@@ -1,13 +1,15 @@
 #include "titlebar.h"
+#include "utils.h"
 #include <QTabBar>
-#include <QSvgWidget>
+#include <QLabel>
 
 TitleBar::TitleBar(QWidget *parent)
     : QWidget(parent),
       m_layout(new QHBoxLayout)
 {
-    QSvgWidget *iconWidget = new QSvgWidget(":/resources/sysbro.svg");
-    iconWidget->setFixedSize(22, 22);
+    QPixmap iconPixmap = Utils::renderSVG(":/resources/sysbro.svg", QSize(22, 22));
+    QLabel *iconLabel = new QLabel;
+    iconLabel->setPixmap(iconPixmap);
 
     QTabBar *tabbar = new QTabBar;
     tabbar->setFocusPolicy(Qt::NoFocus);
@@ -18,7 +20,7 @@ TitleBar::TitleBar(QWidget *parent)
 
     m_layout->setMargin(0);
     m_layout->addSpacing(10);
-    m_layout->addWidget(iconWidget);
+    m_layout->addWidget(iconLabel);
     m_layout->addSpacing(10);
     m_layout->addWidget(tabbar);
     m_layout->addStretch();
