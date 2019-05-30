@@ -47,12 +47,13 @@ QPixmap Utils::renderSVG(const QString &path, const QSize &size)
 
 QString Utils::getUserName()
 {
-    QString name = qgetenv("USER");
+    std::string user_name = std::getenv("USER");
 
-    if (name.isEmpty())
-        name = qgetenv("USERNAME");
+    if (user_name.empty()) {
+        user_name = std::getenv("USERNAME");
+    }
 
-    return name;
+    return QString::fromStdString(user_name);
 }
 
 QString Utils::getPlatform()

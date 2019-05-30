@@ -19,6 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     if (titlebar()) {
         titlebar()->setCustomWidget(m_titleBar, Qt::AlignVCenter, 0);
+        titlebar()->setBackgroundTransparent(true);
         titlebar()->setSeparatorVisible(true);
         titlebar()->setFixedHeight(43);
 

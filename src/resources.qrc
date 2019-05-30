@@ -14,5 +14,8 @@
         <file>resources/settings.svg</file>
         <file>resources/settings_disabled.svg</file>
         <file>resources/sysbro-file-shredder.svg</file>
+        <file>resources/network.svg</file>
+        <file>resources/upload.svg</file>
+        <file>resources/download.svg</file>
     </qresource>
 </RCC>

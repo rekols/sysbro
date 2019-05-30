@@ -28,8 +28,8 @@ HomePage::HomePage(QWidget *parent)
     m_cpuCoreCount = new QLabel;
     m_uploadInfo = new QLabel(tr("UPLOAD"));
     m_downloadInfo = new QLabel(tr("DOWNLOAD"));
-    m_uploadLabel = new QLabel("↑ 0.0B/s");
-    m_downloadLabel = new QLabel("↓ 0.0B/s");
+    m_uploadLabel = new QLabel("0.0 B/s");
+    m_downloadLabel = new QLabel("0.0 B/s");
 
     systemInfoLayout->addStretch();
 
@@ -42,11 +42,35 @@ HomePage::HomePage(QWidget *parent)
     systemInfoLayout->addWidget(m_cpuCoreCount);
     systemInfoLayout->addStretch();
 
+    // network layout.
+    QLabel *networkIcon = new QLabel;
+    QPixmap networkPixmap = Utils::renderSVG(":/resources/network.svg", QSize(16, 16));
+    networkIcon->setFixedSize(16, 16);
+    networkIcon->setPixmap(networkPixmap);
+
+    QLabel *uploadIcon = new QLabel;
+    QPixmap uploadPixmap = Utils::renderSVG(":/resources/upload.svg", QSize(16, 16));
+    uploadIcon->setFixedSize(16, 16);
+    uploadIcon->setPixmap(uploadPixmap);
+
+    QLabel *downloadIcon = new QLabel;
+    QPixmap downloadPixmap = Utils::renderSVG(":/resources/download.svg", QSize(16, 16));
+    downloadIcon->setFixedSize(16, 16);
+    downloadIcon->setPixmap(downloadPixmap);
+
+    QHBoxLayout *uploadLayout = new QHBoxLayout;
+    uploadLayout->addWidget(uploadIcon);
+    uploadLayout->addWidget(m_uploadLabel);
+
+    QHBoxLayout *downloadLayout = new QHBoxLayout;
+    downloadLayout->addWidget(downloadIcon);
+    downloadLayout->addWidget(m_downloadLabel);
+
     networkInfoLayout->addWidget(m_uploadInfo);
-    networkInfoLayout->addWidget(m_uploadLabel);
+    networkInfoLayout->addLayout(uploadLayout);
     networkInfoLayout->addSpacing(20);
     networkInfoLayout->addWidget(m_downloadInfo);
-    networkInfoLayout->addWidget(m_downloadLabel);
+    networkInfoLayout->addLayout(downloadLayout);
     networkInfoLayout->addStretch();
 
     bottomLayout->addSpacing(25);
@@ -150,8 +174,8 @@ void HomePage::updateDisk(QString disk, float percent)
 
 void HomePage::updateNetworkSpeed(QString upload, QString download)
 {
-    m_uploadLabel->setText(QString::fromUtf8("↑ ") + upload + "/s");
-    m_downloadLabel->setText(QString::fromUtf8("↓ ") + download + "/s");
+    m_uploadLabel->setText(upload + "/s");
+    m_downloadLabel->setText(download + "/s");
 }
 
 void HomePage::updateNetworkTotal(QString upload, QString download)
