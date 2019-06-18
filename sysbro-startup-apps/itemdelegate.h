@@ -22,6 +22,9 @@ protected:
 
     QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const;
     void updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem &option, const QModelIndex &index) const;
+
+private:
+    QPixmap m_defaultIconPixmap;
 };
 
 #endif // ITEMDELEGATE_H

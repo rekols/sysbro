@@ -2,8 +2,27 @@
 #include "listmodel.h"
 #include "dimagebutton.h"
 #include <QApplication>
+#include <QImageReader>
 
 DWIDGET_USE_NAMESPACE
+
+const QPixmap renderSVG(const QString &path, const QSize &size)
+{
+    QImageReader reader;
+    QPixmap pixmap;
+    reader.setFileName(path);
+
+    if (reader.canRead()) {
+        const qreal ratio = qApp->devicePixelRatio();
+        reader.setScaledSize(size * ratio);
+        pixmap = QPixmap::fromImage(reader.read());
+        pixmap.setDevicePixelRatio(ratio);
+    } else {
+        pixmap.load(path);
+    }
+
+    return pixmap;
+}
 
 const QPixmap getThemeIcon(const QString &iconName, const int size)
 {
@@ -24,7 +43,7 @@ const QPixmap getThemeIcon(const QString &iconName, const int size)
 ItemDelegate::ItemDelegate(QObject *parent)
     : QAbstractItemDelegate(parent)
 {
-
+    m_defaultIconPixmap = renderSVG(":/images/application-x-executable.svg", QSize(32, 32));
 }
 
 void ItemDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const
@@ -55,6 +74,11 @@ void ItemDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option, 
 
     int iconSize = 32;
     QPixmap iconPixmap = getThemeIcon(appIcon, iconSize);
+
+    if (iconPixmap.isNull()) {
+        iconPixmap = m_defaultIconPixmap;
+    }
+
     int iconY = rect.top() + (rect.height() - iconPixmap.height() / iconPixmap.devicePixelRatio()) / 2;
     painter->drawPixmap(QRect(10, iconY,
                               iconPixmap.width() / iconPixmap.devicePixelRatio(),

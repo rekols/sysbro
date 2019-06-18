@@ -44,3 +44,5 @@ QHeaderView::section:horizontal {
     border-right: 1px solid #F2F2F2;
     padding-left: 15px;
 }
+
+

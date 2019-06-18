@@ -3,6 +3,8 @@
 #include <QTabBar>
 #include <QLabel>
 
+#include <QPushButton>
+
 TitleBar::TitleBar(QWidget *parent)
     : QWidget(parent),
       m_layout(new QHBoxLayout)
