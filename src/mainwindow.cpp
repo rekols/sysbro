@@ -44,7 +44,6 @@ MainWindow::MainWindow(QWidget *parent)
     setCentralWidget(centralWidget);
     setBorderColor(QColor("#BFBFBF"));
     setFixedSize(800, 560);
-    setWindowRadius(8);
     initTrayIcon();
     // resize(800, 560);
 

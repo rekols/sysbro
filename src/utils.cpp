@@ -166,11 +166,15 @@ void Utils::getDiskInfo(QString &disk, float &percent)
     QList<QStorageInfo> storageInfoList = QStorageInfo::mountedVolumes();
 
     long long totalSize = 0, totalFree = 0, totalUsed = 0;
+    QStringList devices;
 
     for (const QStorageInfo &info : storageInfoList) {
-        totalSize += info.bytesTotal();
-        totalFree += info.bytesFree();
-        totalUsed += info.bytesTotal() - info.bytesFree();
+        if (!devices.contains(info.device())) {
+            totalSize += info.bytesTotal();
+            totalFree += info.bytesFree();
+            totalUsed += info.bytesTotal() - info.bytesFree();
+            devices << info.device();
+        }
     }
 
     disk = QString("%1 / %2").arg(formatBytes(totalSize - totalFree)).arg(formatBytes(totalSize));
