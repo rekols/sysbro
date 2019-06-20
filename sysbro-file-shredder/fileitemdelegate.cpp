@@ -17,7 +17,13 @@ void FileItemDelegate::paint(QPainter *painter, const QStyleOptionViewItem &opti
     rect = rect.marginsRemoved(QMargins(5, 0, 5, 0));
 
     painter->setRenderHint(QPainter::Antialiasing);
-    painter->setPen(QColor("#303030"));
+
+    if (option.state & QStyle::State_Selected) {
+        painter->fillRect(option.rect, QColor("#2CA7F8"));
+        painter->setPen(Qt::white);
+    } else {
+        painter->setPen(QColor("#303030"));
+    }
 
     if (column == 0) {
         bool isFile = index.data(FileModel::IsFile).toBool();
