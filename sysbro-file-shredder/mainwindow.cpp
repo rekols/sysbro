@@ -5,6 +5,7 @@
 #include "fileitemdelegate.h"
 #include "dlinkbutton.h"
 #include "ddialog.h"
+#include "dtoast.h"
 #include <QVBoxLayout>
 #include <QFileDialog>
 #include <QDropEvent>
@@ -92,14 +93,24 @@ void MainWindow::popupFileDialog()
 
 void MainWindow::popupSuccessDialog(int count)
 {
-    DDialog msgDialog(this);
-    msgDialog.setFixedWidth(400);
-    msgDialog.setIcon(QIcon(":/images/sysbro-file-shredder.svg"), QSize(64, 64));
-    msgDialog.setTitle(tr("File Shredder"));
-    msgDialog.setTextFormat(Qt::AutoText);
-    msgDialog.setMessage(QString(tr("Success, %1 file(s) have been successfully deleted")).arg(count));
-    msgDialog.insertButton(0, tr("OK"), false, DDialog::ButtonRecommend);
-    msgDialog.exec();
+//    DDialog msgDialog(this);
+//    msgDialog.setFixedWidth(400);
+//    msgDialog.setIcon(QIcon(":/images/sysbro-file-shredder.svg"), QSize(64, 64));
+//    msgDialog.setTitle(tr("File Shredder"));
+//    msgDialog.setTextFormat(Qt::AutoText);
+//    msgDialog.setMessage(QString(tr("Success, %1 file(s) have been successfully deleted")).arg(count));
+//    msgDialog.insertButton(0, tr("OK"), false, DDialog::ButtonRecommend);
+//    msgDialog.exec();
+
+
+    DToast *toast = new DToast(this);
+    toast->setText(QString(tr("Success, %1 file(s) have been successfully deleted")).arg(count));
+    toast->setIcon(QIcon(":/images/sysbro-file-shredder.svg"), QSize(32, 32));
+    toast->pop();
+
+    int paddingBottom = qMin(height() - toast->height() / 2, 100);
+    toast->move((width() - toast->width()) / 2,
+                height() - toast->height() - paddingBottom);
 }
 
 void MainWindow::dragEnterEvent(QDragEnterEvent *e)
