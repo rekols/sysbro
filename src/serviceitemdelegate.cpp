@@ -22,7 +22,13 @@ void ServiceItemDelegate::paint(QPainter *painter, const QStyleOptionViewItem &o
     const int column(index.column());
 
     painter->setRenderHint(QPainter::Antialiasing);
-    painter->setPen(QColor("#303030"));
+
+    if (option.state & QStyle::State_Selected) {
+        painter->fillRect(option.rect, QColor("#D0E8FA"));
+        painter->setPen(QColor("#000000"));
+    } else {
+        painter->setPen(QColor("#303030"));
+    }
 
     // painting each column item.
     if (column == 0) {
