@@ -19,8 +19,8 @@ void FileItemDelegate::paint(QPainter *painter, const QStyleOptionViewItem &opti
     painter->setRenderHint(QPainter::Antialiasing);
 
     if (option.state & QStyle::State_Selected) {
-        painter->fillRect(option.rect, QColor("#2CA7F8"));
-        painter->setPen(Qt::white);
+        painter->fillRect(option.rect, QColor("#D0E8FA"));
+        painter->setPen(QColor("#2CA7F8"));
     } else {
         painter->setPen(QColor("#303030"));
     }
