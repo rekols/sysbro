@@ -1,3 +1,9 @@
+sysbro (0.5.1) unstable; urgency=medium
+  * 移除 QT SVG 依赖
+  * 修复磁盘计算错误(针对btrfs分区)
+  * 优化UI细节
+  * 文件粉碎后不弹窗口提示，而是悬浮消息方式
+
 sysbro (0.5) unstable; urgency=medium
   * 打包兼容 deepin 15.10
 
