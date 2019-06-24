@@ -1,3 +1,7 @@
+sysbro (0.6) unstable; urgency=medium
+  * 首页加入进程总数信息
+  * 首页优化网络信息栏
+
 sysbro (0.5.1) unstable; urgency=medium
   * 移除 QT SVG 依赖
   * 修复磁盘计算错误(针对btrfs分区)
