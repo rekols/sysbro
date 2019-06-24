@@ -4,57 +4,57 @@
 <context>
     <name>CleanerPage</name>
     <message>
-        <location filename="../cleanerpage.cpp" line="12"/>
+        <location filename="../cleanerpage.cpp" line="11"/>
         <source>Scan now</source>
         <translation>立即扫描</translation>
     </message>
     <message>
-        <location filename="../cleanerpage.cpp" line="13"/>
+        <location filename="../cleanerpage.cpp" line="12"/>
         <source>Clean up</source>
         <translation>立即清理</translation>
     </message>
     <message>
-        <location filename="../cleanerpage.cpp" line="24"/>
+        <location filename="../cleanerpage.cpp" line="27"/>
         <source>Clean up disk space</source>
         <translation>系统清理，释放磁盘空间</translation>
     </message>
     <message>
-        <location filename="../cleanerpage.cpp" line="25"/>
+        <location filename="../cleanerpage.cpp" line="28"/>
         <source>Support scanning the following items</source>
         <translation>支持以下分类的清理</translation>
     </message>
     <message>
-        <location filename="../cleanerpage.cpp" line="75"/>
+        <location filename="../cleanerpage.cpp" line="76"/>
         <source>Application Caches</source>
         <translation>应用缓存</translation>
     </message>
     <message>
-        <location filename="../cleanerpage.cpp" line="79"/>
+        <location filename="../cleanerpage.cpp" line="80"/>
         <source>Application Logs</source>
         <translation>应用日志</translation>
     </message>
     <message>
-        <location filename="../cleanerpage.cpp" line="83"/>
+        <location filename="../cleanerpage.cpp" line="84"/>
         <source>Crash Reports</source>
         <translation>崩溃报告</translation>
     </message>
     <message>
-        <location filename="../cleanerpage.cpp" line="87"/>
+        <location filename="../cleanerpage.cpp" line="88"/>
         <source>Package Caches</source>
         <translation>软件包缓存</translation>
     </message>
     <message>
-        <location filename="../cleanerpage.cpp" line="117"/>
+        <location filename="../cleanerpage.cpp" line="118"/>
         <source>Scanning, please wait...</source>
         <translation>正在扫描，请稍后...</translation>
     </message>
     <message>
-        <location filename="../cleanerpage.cpp" line="122"/>
+        <location filename="../cleanerpage.cpp" line="123"/>
         <source>Scan is successful, and a total of %1 files were found this time</source>
         <translation>扫描成功，本次共发现%1垃圾，您可以选择清理</translation>
     </message>
     <message>
-        <location filename="../cleanerpage.cpp" line="134"/>
+        <location filename="../cleanerpage.cpp" line="135"/>
         <source>Clean up successfully, clean up a total of %1 files</source>
         <translation>清理成功，本次共清理%1垃圾</translation>
     </message>
@@ -62,72 +62,94 @@
 <context>
     <name>HomePage</name>
     <message>
-        <location filename="../homepage.cpp" line="22"/>
+        <location filename="../homepage.cpp" line="23"/>
         <source>SYSTEM INFO</source>
         <translation>系统信息</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="29"/>
-        <location filename="../homepage.cpp" line="159"/>
         <source>UPLOAD</source>
-        <translation>上传</translation>
+        <translation type="vanished">上传</translation>
+    </message>
+    <message>
+        <source>DOWNLOAD</source>
+        <translation type="vanished">下载</translation>
     </message>
     <message>
         <location filename="../homepage.cpp" line="30"/>
-        <location filename="../homepage.cpp" line="160"/>
-        <source>DOWNLOAD</source>
-        <translation>下载</translation>
+        <source>NETWORK</source>
+        <translation>网络</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="93"/>
+        <location filename="../homepage.cpp" line="35"/>
+        <source>PROCESS</source>
+        <translation>进程</translation>
+    </message>
+    <message>
+        <location filename="../homepage.cpp" line="36"/>
+        <source>Loadding...</source>
+        <translation>加载中...</translation>
+    </message>
+    <message>
+        <location filename="../homepage.cpp" line="130"/>
         <source>Platform: %1</source>
         <translation>平台：%1</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="94"/>
+        <location filename="../homepage.cpp" line="131"/>
         <source>Distribution: %1</source>
         <translation>发行版：%1</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="95"/>
+        <location filename="../homepage.cpp" line="132"/>
         <source>Startup time: %1</source>
         <translation>开机时间：%1</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="96"/>
+        <location filename="../homepage.cpp" line="133"/>
         <source>Kernal Release: %1</source>
         <translation>内核版本：%1</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="97"/>
+        <location filename="../homepage.cpp" line="134"/>
         <source>CPU Model: %1</source>
         <translation>CPU 型号：%1</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="98"/>
+        <location filename="../homepage.cpp" line="135"/>
         <source>CPU Core: %1</source>
         <translation>CPU 核数：%1</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="120"/>
-        <location filename="../homepage.cpp" line="133"/>
+        <location filename="../homepage.cpp" line="160"/>
+        <location filename="../homepage.cpp" line="173"/>
         <source>CPU Idle</source>
         <translation>CPU 空闲</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="121"/>
+        <location filename="../homepage.cpp" line="161"/>
         <source>MEMORY</source>
         <translation>内存</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="122"/>
+        <location filename="../homepage.cpp" line="162"/>
         <source>DISK</source>
         <translation>磁盘</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="135"/>
+        <location filename="../homepage.cpp" line="175"/>
         <source>CPU Busy</source>
         <translation>CPU 忙碌</translation>
+    </message>
+    <message>
+        <location filename="../homepage.cpp" line="199"/>
+        <location filename="../homepage.cpp" line="200"/>
+        <source>total</source>
+        <translation>总量</translation>
+    </message>
+    <message>
+        <location filename="../homepage.cpp" line="205"/>
+        <source>%1 processes are running</source>
+        <translation>%1 个进程正在运行</translation>
     </message>
 </context>
 <context>
@@ -141,7 +163,7 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="15"/>
+        <location filename="../mainwindow.cpp" line="16"/>
         <source>Display tray icon</source>
         <translation>显示托盘图标</translation>
     </message>
@@ -198,12 +220,12 @@
 <context>
     <name>ServiceItemDelegate</name>
     <message>
-        <location filename="../serviceitemdelegate.cpp" line="56"/>
+        <location filename="../serviceitemdelegate.cpp" line="62"/>
         <source>Enabled</source>
         <translation>已启用</translation>
     </message>
     <message>
-        <location filename="../serviceitemdelegate.cpp" line="56"/>
+        <location filename="../serviceitemdelegate.cpp" line="62"/>
         <source>Disabled</source>
         <translation>已禁用</translation>
     </message>
@@ -250,22 +272,22 @@
 <context>
     <name>TitleBar</name>
     <message>
-        <location filename="../titlebar.cpp" line="14"/>
+        <location filename="../titlebar.cpp" line="18"/>
         <source>Home</source>
         <translation>首 页</translation>
     </message>
     <message>
-        <location filename="../titlebar.cpp" line="15"/>
+        <location filename="../titlebar.cpp" line="19"/>
         <source>Cleaner</source>
         <translation>系统清理</translation>
     </message>
     <message>
-        <location filename="../titlebar.cpp" line="16"/>
+        <location filename="../titlebar.cpp" line="20"/>
         <source>Speed up</source>
         <translation>优化加速</translation>
     </message>
     <message>
-        <location filename="../titlebar.cpp" line="17"/>
+        <location filename="../titlebar.cpp" line="21"/>
         <source>Tools</source>
         <translation>工具箱</translation>
     </message>

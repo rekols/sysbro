@@ -4,57 +4,57 @@
 <context>
     <name>CleanerPage</name>
     <message>
-        <location filename="../cleanerpage.cpp" line="12"/>
+        <location filename="../cleanerpage.cpp" line="11"/>
         <source>Scan now</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../cleanerpage.cpp" line="13"/>
+        <location filename="../cleanerpage.cpp" line="12"/>
         <source>Clean up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../cleanerpage.cpp" line="24"/>
+        <location filename="../cleanerpage.cpp" line="27"/>
         <source>Clean up disk space</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../cleanerpage.cpp" line="25"/>
+        <location filename="../cleanerpage.cpp" line="28"/>
         <source>Support scanning the following items</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../cleanerpage.cpp" line="75"/>
+        <location filename="../cleanerpage.cpp" line="76"/>
         <source>Application Caches</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../cleanerpage.cpp" line="79"/>
+        <location filename="../cleanerpage.cpp" line="80"/>
         <source>Application Logs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../cleanerpage.cpp" line="83"/>
+        <location filename="../cleanerpage.cpp" line="84"/>
         <source>Crash Reports</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../cleanerpage.cpp" line="87"/>
+        <location filename="../cleanerpage.cpp" line="88"/>
         <source>Package Caches</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../cleanerpage.cpp" line="117"/>
+        <location filename="../cleanerpage.cpp" line="118"/>
         <source>Scanning, please wait...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../cleanerpage.cpp" line="122"/>
+        <location filename="../cleanerpage.cpp" line="123"/>
         <source>Scan is successful, and a total of %1 files were found this time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../cleanerpage.cpp" line="134"/>
+        <location filename="../cleanerpage.cpp" line="135"/>
         <source>Clean up successfully, clean up a total of %1 files</source>
         <translation type="unfinished"></translation>
     </message>
@@ -62,71 +62,85 @@
 <context>
     <name>HomePage</name>
     <message>
-        <location filename="../homepage.cpp" line="22"/>
+        <location filename="../homepage.cpp" line="23"/>
         <source>SYSTEM INFO</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="29"/>
-        <location filename="../homepage.cpp" line="159"/>
-        <source>UPLOAD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../homepage.cpp" line="30"/>
-        <location filename="../homepage.cpp" line="160"/>
-        <source>DOWNLOAD</source>
+        <source>NETWORK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="93"/>
+        <location filename="../homepage.cpp" line="35"/>
+        <source>PROCESS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../homepage.cpp" line="36"/>
+        <source>Loadding...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../homepage.cpp" line="130"/>
         <source>Platform: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="94"/>
+        <location filename="../homepage.cpp" line="131"/>
         <source>Distribution: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="95"/>
+        <location filename="../homepage.cpp" line="132"/>
         <source>Startup time: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="96"/>
+        <location filename="../homepage.cpp" line="133"/>
         <source>Kernal Release: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="97"/>
+        <location filename="../homepage.cpp" line="134"/>
         <source>CPU Model: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="98"/>
+        <location filename="../homepage.cpp" line="135"/>
         <source>CPU Core: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="120"/>
-        <location filename="../homepage.cpp" line="133"/>
+        <location filename="../homepage.cpp" line="160"/>
+        <location filename="../homepage.cpp" line="173"/>
         <source>CPU Idle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="121"/>
+        <location filename="../homepage.cpp" line="161"/>
         <source>MEMORY</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="122"/>
+        <location filename="../homepage.cpp" line="162"/>
         <source>DISK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="135"/>
+        <location filename="../homepage.cpp" line="175"/>
         <source>CPU Busy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../homepage.cpp" line="199"/>
+        <location filename="../homepage.cpp" line="200"/>
+        <source>total</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../homepage.cpp" line="205"/>
+        <source>%1 processes are running</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -141,7 +155,7 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="15"/>
+        <location filename="../mainwindow.cpp" line="16"/>
         <source>Display tray icon</source>
         <translation type="unfinished"></translation>
     </message>
@@ -187,12 +201,12 @@
 <context>
     <name>ServiceItemDelegate</name>
     <message>
-        <location filename="../serviceitemdelegate.cpp" line="56"/>
+        <location filename="../serviceitemdelegate.cpp" line="62"/>
         <source>Enabled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../serviceitemdelegate.cpp" line="56"/>
+        <location filename="../serviceitemdelegate.cpp" line="62"/>
         <source>Disabled</source>
         <translation type="unfinished"></translation>
     </message>
@@ -239,22 +253,22 @@
 <context>
     <name>TitleBar</name>
     <message>
-        <location filename="../titlebar.cpp" line="14"/>
+        <location filename="../titlebar.cpp" line="18"/>
         <source>Home</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../titlebar.cpp" line="15"/>
+        <location filename="../titlebar.cpp" line="19"/>
         <source>Cleaner</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../titlebar.cpp" line="16"/>
+        <location filename="../titlebar.cpp" line="20"/>
         <source>Speed up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../titlebar.cpp" line="17"/>
+        <location filename="../titlebar.cpp" line="21"/>
         <source>Tools</source>
         <translation type="unfinished"></translation>
     </message>

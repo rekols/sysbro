@@ -22,6 +22,9 @@ void MonitorThread::run()
         Utils::getMemoryInfo(memory, memoryPercent);
         Utils::getDiskInfo(disk, diskPercent);
 
+        QList<int> pidList = Utils::getTaskIdList();
+        emit updateProcessNumber(pidList.size());
+
         emit updateMemory(memory, memoryPercent);
         emit updateDisk(disk, diskPercent);
 
@@ -38,5 +41,6 @@ void MonitorThread::run()
         emit updateNetworkTotal(Utils::formatBytes(send), Utils::formatBytes(recv));
         emit updateNetworkSpeed(Utils::formatBytes(uploadSpeed), Utils::formatBytes(downloadSpeed));
         emit updateCpuPercent((currentWorkTime - prevWorkTime) * 100.0 / (currentTotalTime - prevTotalTime));
+
     }
 }

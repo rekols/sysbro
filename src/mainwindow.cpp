@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "dtitlebar.h"
 #include <QCloseEvent>
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent)
     : DMainWindow(parent),
@@ -45,6 +46,7 @@ MainWindow::MainWindow(QWidget *parent)
     setBorderColor(QColor("#BFBFBF"));
     setFixedSize(800, 560);
     initTrayIcon();
+    // setMinimumSize(800, 560);
     // resize(800, 560);
 
     connect(m_trayIcon, &TrayIcon::openActionTriggered, this, &MainWindow::activeWindow);

@@ -1,6 +1,7 @@
 #include "homepage.h"
 #include "utils.h"
 #include "widgets/horizontalseparator.h"
+#include <QFormLayout>
 
 HomePage::HomePage(QWidget *parent)
     : QWidget(parent),
@@ -17,7 +18,7 @@ HomePage::HomePage(QWidget *parent)
 
     QHBoxLayout *bottomLayout = new QHBoxLayout;
     QVBoxLayout *systemInfoLayout = new QVBoxLayout;
-    QVBoxLayout *networkInfoLayout = new QVBoxLayout;
+    QVBoxLayout *rightInfoLayout = new QVBoxLayout;
 
     m_systemInfo = new QLabel(tr("SYSTEM INFO"));
     m_platform = new QLabel;
@@ -26,12 +27,13 @@ HomePage::HomePage(QWidget *parent)
     m_kernel = new QLabel;
     m_cpuModel = new QLabel;
     m_cpuCoreCount = new QLabel;
-    m_uploadInfo = new QLabel(tr("UPLOAD"));
-    m_downloadInfo = new QLabel(tr("DOWNLOAD"));
+    m_networkInfo = new QLabel(tr("NETWORK"));
     m_uploadLabel = new QLabel("0.0 B/s");
+    m_uploadTotalLabel = new QLabel;
+    m_downloadTotalLabel = new QLabel;
     m_downloadLabel = new QLabel("0.0 B/s");
-
-    systemInfoLayout->addStretch();
+    m_processInfo = new QLabel(tr("PROCESS"));
+    m_allProcessLabel = new QLabel(tr("Loadding..."));
 
     systemInfoLayout->addWidget(m_systemInfo);
     systemInfoLayout->addWidget(m_platform);
@@ -58,25 +60,35 @@ HomePage::HomePage(QWidget *parent)
     downloadIcon->setFixedSize(16, 16);
     downloadIcon->setPixmap(downloadPixmap);
 
-    QHBoxLayout *uploadLayout = new QHBoxLayout;
+    QWidget *uploadWidget = new QWidget;
+    QHBoxLayout *uploadLayout = new QHBoxLayout(uploadWidget);
+    uploadLayout->setMargin(0);
     uploadLayout->addWidget(uploadIcon);
     uploadLayout->addWidget(m_uploadLabel);
 
-    QHBoxLayout *downloadLayout = new QHBoxLayout;
+    QWidget *downloadWidget = new QWidget;
+    QHBoxLayout *downloadLayout = new QHBoxLayout(downloadWidget);
+    downloadLayout->setMargin(0);
     downloadLayout->addWidget(downloadIcon);
     downloadLayout->addWidget(m_downloadLabel);
 
-    networkInfoLayout->addWidget(m_uploadInfo);
-    networkInfoLayout->addLayout(uploadLayout);
-    networkInfoLayout->addSpacing(20);
-    networkInfoLayout->addWidget(m_downloadInfo);
-    networkInfoLayout->addLayout(downloadLayout);
-    networkInfoLayout->addStretch();
+    QFormLayout *networkLayout = new QFormLayout;
+    networkLayout->setVerticalSpacing(10);
+    networkLayout->setHorizontalSpacing(15);
+    networkLayout->addRow(uploadWidget, m_uploadTotalLabel);
+    networkLayout->addRow(downloadWidget, m_downloadTotalLabel);
+
+    rightInfoLayout->addWidget(m_networkInfo);
+    rightInfoLayout->addLayout(networkLayout);
+    rightInfoLayout->addSpacing(10);
+    rightInfoLayout->addWidget(m_processInfo);
+    rightInfoLayout->addWidget(m_allProcessLabel);
+    rightInfoLayout->addStretch();
 
     bottomLayout->addSpacing(25);
     bottomLayout->addLayout(systemInfoLayout);
     bottomLayout->addSpacing(25);
-    bottomLayout->addLayout(networkInfoLayout);
+    bottomLayout->addLayout(rightInfoLayout);
     bottomLayout->addSpacing(25);
 
     m_layout->addLayout(topLayout);
@@ -93,6 +105,7 @@ HomePage::HomePage(QWidget *parent)
     connect(m_monitorThread, &MonitorThread::updateDisk, this, &HomePage::updateDisk);
     connect(m_monitorThread, &MonitorThread::updateNetworkSpeed, this, &HomePage::updateNetworkSpeed);
     connect(m_monitorThread, &MonitorThread::updateNetworkTotal, this, &HomePage::updateNetworkTotal);
+    connect(m_monitorThread, &MonitorThread::updateProcessNumber, this, &HomePage::updateProcessNumber);
 }
 
 void HomePage::startMonitor()
@@ -124,12 +137,11 @@ void HomePage::initUI()
     QFont font;
     font.setPointSize(18);
     m_systemInfo->setFont(font);
-    m_uploadInfo->setFont(font);
-    m_downloadInfo->setFont(font);
+    m_processInfo->setFont(font);
+    m_networkInfo->setFont(font);
 
     m_systemInfo->setStyleSheet("QLabel { color: #4088C6 }");
-    m_uploadInfo->setStyleSheet("QLabel { color: #31A38C }");
-    m_downloadInfo->setStyleSheet("QLabel { color: #C45045 }");
+    m_networkInfo->setStyleSheet("QLabel { color: #2CA7F8 }");
     m_platform->setStyleSheet("QLabel { color: #505050 }");
     m_distribution->setStyleSheet("QLabel { color: #505050 }");
     m_kernel->setStyleSheet("QLabel { color: #505050 }");
@@ -138,6 +150,10 @@ void HomePage::initUI()
     m_cpuCoreCount->setStyleSheet("QLabel { color: #505050 }");
     m_uploadLabel->setStyleSheet("QLabel { color: #505050 }");
     m_downloadLabel->setStyleSheet("QLabel { color: #505050 }");
+    m_processInfo->setStyleSheet("QLabel { color: #31A38C }");
+    m_allProcessLabel->setStyleSheet("QLabel { color: #505050 }");
+    m_downloadTotalLabel->setStyleSheet("QLabel { color: #505050 }");
+    m_uploadTotalLabel->setStyleSheet("QLabel { color: #505050 }");
 
     // init monitor widgets.
     m_cpuMonitorWidget->setTitle("CPU");
@@ -180,7 +196,12 @@ void HomePage::updateNetworkSpeed(QString upload, QString download)
 
 void HomePage::updateNetworkTotal(QString upload, QString download)
 {
-    m_uploadInfo->setText(tr("UPLOAD") + QString(" (%1)").arg(upload));
-    m_downloadInfo->setText(tr("DOWNLOAD") + QString(" (%1)").arg(download));
+    m_uploadTotalLabel->setText(tr("total") + " " + upload);
+    m_downloadTotalLabel->setText(tr("total") + " " + download);
+}
+
+void HomePage::updateProcessNumber(int num)
+{
+    m_allProcessLabel->setText(tr("%1 processes are running").arg(num));
 }
 

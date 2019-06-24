@@ -25,6 +25,7 @@ private:
     void updateDisk(QString disk, float percent);
     void updateNetworkSpeed(QString upload, QString download);
     void updateNetworkTotal(QString upload, QString download);
+    void updateProcessNumber(int num);
 
 private:
     QVBoxLayout *m_layout;
@@ -40,10 +41,13 @@ private:
     QLabel *m_kernel;
     QLabel *m_cpuModel;
     QLabel *m_cpuCoreCount;
-    QLabel *m_uploadInfo;
-    QLabel *m_downloadInfo;
+    QLabel *m_networkInfo;
     QLabel *m_uploadLabel;
+    QLabel *m_uploadTotalLabel;
+    QLabel *m_downloadTotalLabel;
     QLabel *m_downloadLabel;
+    QLabel *m_processInfo;
+    QLabel *m_allProcessLabel;
 };
 
 #endif // HOMEPAGE_H

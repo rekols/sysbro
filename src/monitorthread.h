@@ -18,6 +18,7 @@ signals:
     void updateDisk(const QString disk, float percent);
     void updateNetworkSpeed(const QString upload, const QString download);
     void updateNetworkTotal(const QString upload, const QString download);
+    void updateProcessNumber(int num);
 };
 
 #endif // MONITORTHREAD_H
