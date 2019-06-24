@@ -15,7 +15,7 @@ ServiceView::ServiceView(QWidget *parent)
     setAlternatingRowColors(false);
     setRootIsDecorated(false);
     setSortingEnabled(false);
-    setAutoScroll(false);
+    setAutoScroll(true);
 }
 
 void ServiceView::setModel(QAbstractItemModel *model)

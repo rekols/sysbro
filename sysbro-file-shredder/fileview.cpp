@@ -14,7 +14,7 @@ FileView::FileView(QWidget *parent)
     setAlternatingRowColors(false);
     setSortingEnabled(false);
     setShowGrid(false);
-    setAutoScroll(false);
+    setAutoScroll(true);
 
     setStyleSheet("QTableView {"
                   "border: none;"
