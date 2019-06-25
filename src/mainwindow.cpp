@@ -41,7 +41,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     m_trayIconAction->setCheckable(true);
 
-    setWindowTitle("SysBro");
+    setWindowTitle("Sysbro");
     setCentralWidget(centralWidget);
     setBorderColor(QColor("#BFBFBF"));
     setFixedSize(800, 560);

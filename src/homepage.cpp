@@ -35,6 +35,8 @@ HomePage::HomePage(QWidget *parent)
     m_processInfo = new QLabel(tr("PROCESS"));
     m_allProcessLabel = new QLabel(tr("Loadding..."));
 
+    m_cpuModel->setWordWrap(true);
+
     systemInfoLayout->addWidget(m_systemInfo);
     systemInfoLayout->addWidget(m_platform);
     systemInfoLayout->addWidget(m_distribution);

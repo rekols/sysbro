@@ -92,9 +92,10 @@ MainWindow::MainWindow(QWidget *parent)
     }
 
     setWindowIcon(QIcon(":/images/icon.svg"));
+    setBorderColor(QColor("#BFBFBF"));
     setCentralWidget(centralWidget);
     setWindowTitle("网络测速");
-    setFixedSize(500, 420);
+    setFixedSize(350, 420);
 
     connect(returnBtn, &QPushButton::clicked, this, &MainWindow::handleTestBtnClicked);
     connect(restartButton, &QPushButton::clicked, this, &MainWindow::handleTestBtnClicked);
