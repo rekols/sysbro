@@ -58,12 +58,12 @@ MainWindow::MainWindow(QWidget *parent)
     checkAutoStartApp();
 
     connect(m_listView, &ListView::entered, this, [=] (QModelIndex idx) {
-        for (int i = 0; i < m_listModel->rowCount(QModelIndex()); ++i) {
-            QModelIndex index = m_listModel->index(i, 0);
-            m_listView->closePersistentEditor(index);
-        }
+//        for (int i = 0; i < m_listModel->rowCount(QModelIndex()); ++i) {
+//            QModelIndex index = m_listModel->index(i, 0);
+//            m_listView->closePersistentEditor(index);
+//        }
 
-        m_listView->openPersistentEditor(idx);
+//        m_listView->openPersistentEditor(idx);
         m_listModel->setCurrentIndex(idx);
     });
 
