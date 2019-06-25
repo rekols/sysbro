@@ -36,6 +36,12 @@ void NetworkManager::startTest()
         QNetworkRequest request(QUrl("http://dlied6.qq.com/invc/xfspeed/qqpcmgr/download/Test216MB.dat"));
         m_fakeReply = m_networkManager->get(request);
         connect(m_fakeReply, &QNetworkReply::finished, this, &NetworkManager::handleFakeReplyFinished);
+        connect(m_fakeReply, &QNetworkReply::downloadProgress, this, [=] (qint64 bytesReceived, qint64 bytesTotal) {
+            if (bytesTotal > 9999) {
+                m_fakeReply->abort();
+                emit testFailed();
+            }
+        });
     } else {
         realTest();
     }

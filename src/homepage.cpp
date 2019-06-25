@@ -142,6 +142,19 @@ void HomePage::initUI()
     m_processInfo->setFont(font);
     m_networkInfo->setFont(font);
 
+    font.setPointSize(11);
+    m_platform->setFont(font);
+    m_distribution->setFont(font);
+    m_bootTime->setFont(font);
+    m_kernel->setFont(font);
+    m_cpuModel->setFont(font);
+    m_cpuCoreCount->setFont(font);
+    m_uploadLabel->setFont(font);
+    m_downloadLabel->setFont(font);
+    m_allProcessLabel->setFont(font);
+    m_downloadTotalLabel->setFont(font);
+    m_uploadTotalLabel->setFont(font);
+
     m_systemInfo->setStyleSheet("QLabel { color: #4088C6 }");
     m_networkInfo->setStyleSheet("QLabel { color: #2CA7F8 }");
     m_platform->setStyleSheet("QLabel { color: #505050 }");
