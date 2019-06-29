@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>661</width>
-    <height>326</height>
+    <width>683</width>
+    <height>344</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,8 +24,7 @@
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-image: url(:/icon/background);
-color: rgb(25, 186, 255);</string>
+      <string notr="true">color: rgb(25, 186, 255);</string>
      </property>
     </widget>
    </item>

@@ -15,12 +15,6 @@ Widget::Widget(QWidget *parent) :
 
     转换程序 = QCoreApplication::applicationDirPath() + "/ssf2skin";
 
-    this->setWindowIcon(QIcon(QPixmap(":/icon/logo")));
-
-    //让打开时界面显示在正中
-    QDesktopWidget *deskdop = QApplication::desktop();
-    move((deskdop->width() - this->width())/2, (deskdop->height() - this->height())/2);
-
     //new变量和建立一些局部变量
     安装存放目录_字符串 = QString(QDir::homePath() + "/.config/fcitx/skin/");
     QDir 安装存放目录(安装存放目录_字符串);
@@ -32,11 +26,21 @@ Widget::Widget(QWidget *parent) :
         QMessageBox::warning(0,tr("提示"),QString("安装存放目录“%1”不存在，请检查！").arg(安装存放目录_字符串),QMessageBox::Ok);
     }
 
+
+    //检查 转换程序 是否存在
+    QtConcurrent::run([=](){
+        QFileInfo fileInfo(转换程序);
+        if(!fileInfo.isFile())
+        {
+            QMessageBox::warning(0,tr("提示"),QString("缺少组件%1,请重新安装软件！").arg(转换程序),QMessageBox::Ok);
+        }
+    });
+
     //设置背景图片
-    this->setAutoFillBackground(true);
-    QPalette palette = this->palette();
-    palette.setBrush(QPalette::Window,QBrush(QPixmap(":/icon/background").scaled(this->size(),Qt::IgnoreAspectRatio,Qt::SmoothTransformation)));// 使用平滑的缩放方式
-    this->setPalette(palette);// 给widget加上背景图
+    //    this->setAutoFillBackground(true);
+    //    QPalette palette = this->palette();
+    //    palette.setBrush(QPalette::Window,QBrush(QPixmap(":/icon/background").scaled(this->size(),Qt::IgnoreAspectRatio,Qt::SmoothTransformation)));// 使用平滑的缩放方式
+    //    this->setPalette(palette);// 给widget加上背景图
 
 
     //QListWidget设置多选
@@ -50,6 +54,9 @@ Widget::~Widget()
 
 void Widget::on_pushButtonImport_clicked()
 {
+    ui->pushButtonDeleteLocationSkin->setEnabled(false);
+    ui->pushButtonTransformation->setEnabled(true);
+
     ssf文件 = QFileDialog::getOpenFileNames(
                 this,
                 tr("请选择ssf文件（搜狗皮肤）"),
@@ -79,8 +86,9 @@ void Widget::on_pushButtonTransformation_clicked()
     for(QString 单个文件: ssf文件){
         int first = 单个文件.lastIndexOf ("/");
         QString 保存文件名 = 单个文件.right (单个文件.length ()-first-1);
+        保存文件名 = 保存文件名.replace(".ssf","");
         保存文件名 = 安装存放目录_字符串 + 保存文件名;
-        qDebug() << 保存文件名;
+        //qDebug() << 保存文件名;
         process->start(转换程序 , QStringList() << "-i" << 单个文件 << "-o" << 保存文件名);
         process->waitForFinished();
     }
@@ -91,6 +99,9 @@ void Widget::on_pushButtonTransformation_clicked()
 
 void Widget::on_pushButtonViewLocationSkin_clicked()
 {
+    ui->pushButtonDeleteLocationSkin->setEnabled(true);
+    ui->pushButtonTransformation->setEnabled(false);
+
     ui->listWidget->clear();
     int fileCount = 0;
     QDir 本地皮肤存放目录(安装存放目录_字符串);
@@ -129,10 +140,10 @@ void Widget::on_pushButtonDeleteLocationSkin_clicked()
     for(int i = 0;i < ui->listWidget->selectedItems().count() ;i++){
         QString 要删除的目录 = 安装存放目录_字符串 + QString(ui->listWidget->selectedItems()[i]->text());
         if(!DeleteDirectory(要删除的目录)){
-          选中状态 = QMessageBox::warning(this,tr("提示"),QString("删除“%1”失败！点击OK继续，否则将停止删除！").arg(要删除的目录),QMessageBox::Ok,QMessageBox::Cancel);
-          if(选中状态 == QMessageBox::Cancel){
-              break;
-          }
+            选中状态 = QMessageBox::warning(this,tr("提示"),QString("删除“%1”失败！点击OK继续，否则将停止删除！").arg(要删除的目录),QMessageBox::Ok,QMessageBox::Cancel);
+            if(选中状态 == QMessageBox::Cancel){
+                break;
+            }
         }
     }
 
