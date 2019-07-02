@@ -2,6 +2,7 @@
 #include <QRegularExpression>
 #include <QProcess>
 #include <QtConcurrent>
+#include <QDebug>
 
 ServiceModel::ServiceModel(QObject *parent)
     : QAbstractTableModel(parent)
@@ -93,7 +94,7 @@ void ServiceModel::checkEnableItem()
         }
     }
 
-    emit requestServicesNumber(num);
+    emit requestServicesNumber(num + 1);
 }
 
 int ServiceModel::rowCount(const QModelIndex &parent) const

@@ -13,7 +13,7 @@ TreeWidget::TreeWidget(QWidget *parent)
     setFrameShape(QFrame::NoFrame);
     setSelectionMode(NoSelection);
     setHeaderHidden(true);
-    setAnimated(false);
+    // setAnimated(false);
 
     setStyleSheet("QTreeView {"
                   "border: none;"
