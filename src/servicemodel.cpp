@@ -37,7 +37,13 @@ const QMap<QString, QString> descriptions = {
     {"miracle-wifid", "Miraclecast WIFI 守护进程"},
     {"ModemManager", "调制解调管理器"},
     {"network-manager", "网络管理器"},
-    {"networking", "提升网络接口"}
+    {"networking", "提升网络接口"},
+    {"nmbd", "Samba NMB 守护进程"},
+    {"openvpn", "OpenVPN 服务"},
+    {"smbd", "Samba SMB 守护进程"},
+    {"sudo", "为特定用户提供有限的超级用户权限"},
+    {"udisks2", "磁盘管理"},
+    {"upower", "电源管理守护进程"}
 };
 
 ServiceModel::ServiceModel(QObject *parent)
