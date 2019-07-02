@@ -19,10 +19,10 @@ CleanerPage::CleanerPage(QWidget *parent)
     QHBoxLayout *topLayout = new QHBoxLayout;
     QVBoxLayout *tipsLayout = new QVBoxLayout;
 
-    QPixmap cleanerPixmap = Utils::renderSVG(":/resources/cleaner.svg", QSize(120, 120));
+    QPixmap cleanerPixmap = Utils::renderSVG(":/resources/cleaner.svg", QSize(80, 80));
     QLabel *cleanerIcon = new QLabel;
     cleanerIcon->setPixmap(cleanerPixmap);
-    cleanerIcon->setFixedSize(120, 120);
+    cleanerIcon->setFixedSize(80, 80);
 
     QLabel *tips1Label = new QLabel(tr("Clean up disk space"));
     m_tips2Label->setText(tr("Support scanning the following items"));
@@ -42,17 +42,17 @@ CleanerPage::CleanerPage(QWidget *parent)
     tipsLayout->addWidget(m_tips2Label, 0, Qt::AlignTop);
 
     topLayout->addWidget(cleanerIcon);
-    topLayout->addSpacing(25);
+    topLayout->addSpacing(20);
     topLayout->addLayout(tipsLayout);
     topLayout->addWidget(m_scanButton);
     topLayout->addWidget(m_clearButton);
-    topLayout->setContentsMargins(30, 20, 30, 0);
+    topLayout->setContentsMargins(30, 10, 30, 0);
 
     HorizontalSeparator *hsep = new HorizontalSeparator;
     hsep->setFixedWidth(700);
 
     layout->addLayout(topLayout);
-    layout->addSpacing(30);
+    layout->addSpacing(20);
     layout->addWidget(hsep, 0, Qt::AlignHCenter);
     layout->addSpacing(10);
     layout->addLayout(m_stackedLayout);
