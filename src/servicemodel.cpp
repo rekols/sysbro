@@ -4,6 +4,42 @@
 #include <QtConcurrent>
 #include <QDebug>
 
+const QMap<QString, QString> descriptions = {
+    {"accounts-daemon", "账户服务"},
+    {"acpid", "ACPI 事件守护进程"},
+    {"binfmt-support", "启用对其他可执行二进制格式的支持"},
+    {"bluetooth", "蓝牙服务"},
+    {"console-getty", "控制台 getty 服务"},
+    {"cron", "常规后台程序处理守护进程"},
+    {"cups", "CUPS 打印系统调度"},
+    {"dbus-org.bluez", "蓝牙服务"},
+    {"dbus-org.freedesktop.miracle.wfd", "Miraclecast WIFI 显示服务"},
+    {"dbus-org.freedesktop.miracle.wifi", "Miraclecast WIFI 守护进程"},
+    {"dbus-org.freedesktop.ModemManager1", "调制解调器管理器"},
+    {"dbus-org.freedesktop.network1", "网络服务"},
+    {"dbus-org.freedesktop.resolve1", "网络名称解析"},
+    {"dde-filemanager-daemon", "深度文件管理器守护进程"},
+    {"deepin-accounts-daemon", "深度系统账户服务"},
+    {"deepin-anything-monitor", "深度 anything 服务"},
+    {"deepin-anything-tool", "深度 anything 工具服务"},
+    {"deepin-login-sound", "深度系统登录声音"},
+    {"deepin-shutdown-sound", "深度系统关机声音"},
+    {"display-manager", "显示管理器"},
+    {"dm-event", "设备映射事件守护进程"},
+    {"driver-installer", "深度显卡驱动管理器安装程序"},
+    {"laptop-mode", "笔记本模式工具"},
+    {"lightdm", "lightdm 显示管理器"},
+    {"lmt-poll", "笔记本模式工具 - 电池服务"},
+    {"lvm2-lvmetad", "LVM2 元数据守护进程"},
+    {"lvm2-lvmpolld", "LVM2 调查守护进程"},
+    {"lvm2-monitor", "监视 LVM2 镜像, 快照等"},
+    {"miracle-dispd", "Miraclecast WIFI 显示服务"},
+    {"miracle-wifid", "Miraclecast WIFI 守护进程"},
+    {"ModemManager", "调制解调管理器"},
+    {"network-manager", "网络管理器"},
+    {"networking", "提升网络接口"}
+};
+
 ServiceModel::ServiceModel(QObject *parent)
     : QAbstractTableModel(parent)
 {
@@ -51,12 +87,17 @@ QString ServiceModel::getDescription(const QString &name)
     process->deleteLater();
 
     QStringList content = output.split('\n').filter(QRegularExpression("^Description"));
+    bool isChinese = QLocale::system().name() == "zh_CN";
 
     if (content.size() > 0) {
         QStringList desc = content.first().split('=');
         if (desc.size() > 0) {
             result = desc.last();
         }
+    }
+
+    if (isChinese && descriptions.contains(name)) {
+        result = descriptions[name];
     }
 
     return result;

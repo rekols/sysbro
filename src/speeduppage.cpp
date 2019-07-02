@@ -30,7 +30,7 @@ SpeedupPage::SpeedupPage(QWidget *parent)
     topLayout->addLayout(infoLayout);
     topLayout->addStretch();
 
-    layout->setContentsMargins(30, 30, 30, 0);
+    layout->setContentsMargins(30, 20, 30, 0);
     layout->addLayout(topLayout);
     layout->addSpacing(20);
     layout->addWidget(m_listView);
