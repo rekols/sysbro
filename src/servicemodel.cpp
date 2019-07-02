@@ -69,7 +69,7 @@ void ServiceModel::switchStatus(QModelIndex idx)
 
     QProcess *process = new QProcess;
     bool failed = false;
-    process->start("pkexec", QStringList() << "systemctl" << (status ? "enable" : "disable") << name);
+    process->start("pkexec", QStringList() << "sysbro-service-mgr" << (status ? "enable" : "disable") << name);
     process->waitForFinished(-1);
     failed |= process->exitCode();
 

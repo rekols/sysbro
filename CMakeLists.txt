@@ -58,6 +58,7 @@ target_link_libraries(sysbro
 set(CMAKE_INSTALL_PREFIX /usr)
 
 add_subdirectory("sysbro-delete-files")
+add_subdirectory("sysbro-service-mgr")
 add_subdirectory("sysbro-express")
 add_subdirectory("sysbro-file-shredder")
 add_subdirectory("sysbro-network-test")
@@ -73,6 +74,7 @@ install(FILES src/resources/sysbro.svg DESTINATION share/icons/hicolor/scalable/
 
 # Install policy file
 install(FILES src/com.sysbro.pkexec.delete-files.policy DESTINATION share/polkit-1/actions)
+install(FILES src/com.sysbro.pkexec.service.mgr.policy DESTINATION share/polkit-1/actions)
 
 install(TARGETS sysbro DESTINATION bin)
 install(FILES sysbro.desktop DESTINATION share/applications)
