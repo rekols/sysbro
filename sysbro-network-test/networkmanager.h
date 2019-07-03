@@ -11,7 +11,7 @@ class NetworkManager : public QObject
 public:
     explicit NetworkManager(QObject *parent = nullptr);
 
-    void startTest();
+    void startTest(int server_index);
     void realTest();
 
 signals:
@@ -21,11 +21,9 @@ signals:
 
 private:
     void handleDownloadProgress(qint64 bytesReceived, qint64 bytesTotal);
-    void handleFakeReplyFinished();
 
 private:
     QNetworkAccessManager *m_networkManager;
-    QNetworkReply *m_fakeReply;
     QNetworkReply *m_realReply;
     QList<qint64> m_speedList;
     QTime m_downloadTime;

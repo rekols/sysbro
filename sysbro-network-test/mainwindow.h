@@ -21,7 +21,7 @@ public:
 private:
     void switchToHomePage();
     void switchToFailedPage();
-    void handleTestBtnClicked();
+    void handleTestBtnClicked(int server_index);
     void handleSuccess(quint64 speed, QString speedStr);
     void updateStatus(QString speed);
 

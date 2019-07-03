@@ -51,7 +51,7 @@ MainWindow::MainWindow(QWidget *parent)
     QVBoxLayout *resultLayout = new QVBoxLayout;
     QLabel *successIconLabel = new QLabel;
     QPixmap iconPixmap = renderSVG(":/images/success.svg", QSize(128, 128));
-    DLinkButton *returnBtn = new DLinkButton("重新测速");
+    DLinkButton *returnBtn = new DLinkButton("返回首页");
     successIconLabel->setPixmap(iconPixmap);
     resultLayout->addSpacing(45);
     resultLayout->addWidget(successIconLabel, 0, Qt::AlignHCenter);
@@ -97,7 +97,7 @@ MainWindow::MainWindow(QWidget *parent)
     setWindowTitle("网络测速");
     setFixedSize(350, 420);
 
-    connect(returnBtn, &QPushButton::clicked, this, &MainWindow::handleTestBtnClicked);
+    connect(returnBtn, &QPushButton::clicked, this, &MainWindow::switchToHomePage);
     connect(restartButton, &QPushButton::clicked, this, &MainWindow::handleTestBtnClicked);
     connect(m_homePage, &HomePage::startButtonClicked, this, &MainWindow::handleTestBtnClicked);
     connect(m_networkManager, &NetworkManager::statusChanged, this, &MainWindow::updateStatus);
@@ -122,9 +122,9 @@ void MainWindow::switchToFailedPage()
     m_spinner->stop();
 }
 
-void MainWindow::handleTestBtnClicked()
+void MainWindow::handleTestBtnClicked(int server_index)
 {
-    m_networkManager->startTest();
+    m_networkManager->startTest(server_index);
     m_stackedLayout->setCurrentIndex(1);
     m_spinner->start();
 

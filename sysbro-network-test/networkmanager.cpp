@@ -24,31 +24,38 @@ static QString formatBytes(quint64 bytes)
 NetworkManager::NetworkManager(QObject *parent)
     : QObject(parent),
       m_networkManager(new QNetworkAccessManager(this)),
-      m_fakeReply(nullptr),
       m_realReply(nullptr)
 {
     m_networkManager->setProxy(QNetworkProxy::NoProxy);
 }
 
-void NetworkManager::startTest()
+void NetworkManager::startTest(int server_index)
 {
-    if (m_realUrl.isEmpty()) {
-        QNetworkRequest request(QUrl("http://dlied6.qq.com/invc/xfspeed/qqpcmgr/download/Test216MB.dat"));
-        m_fakeReply = m_networkManager->get(request);
-        connect(m_fakeReply, &QNetworkReply::finished, this, &NetworkManager::handleFakeReplyFinished);
-        connect(m_fakeReply, &QNetworkReply::downloadProgress, this, [=] (qint64 bytesReceived, qint64 bytesTotal) {
-            if (bytesTotal > 9999) {
-                m_fakeReply->abort();
-                emit testFailed();
-            }
-        });
-    } else {
-        realTest();
+    switch (server_index) {
+    case 0:
+        // 百度服务器
+        m_realUrl = "http://bos.nj.bpc.baidu.com/v1/baiduplayer/player/BaiduPlayer5Setup_5.exe";
+        break;
+    case 1:
+        // 阿里服务器
+        m_realUrl = "https://download.alicdn.com/wangwang/AliIM2019_taobao(9.12.07C).exe";
+        break;
+    case 2:
+        // 腾讯服务器
+        m_realUrl = "https://dldir1.qq.com/qqfile/qq/PCQQ9.1.5/25530/QQ9.1.5.25530.exe";
+        break;
+    default:
+        m_realUrl = "";
+        break;
     }
+
+    realTest();
 }
 
 void NetworkManager::realTest()
 {
+    qDebug() << "start: " << m_realUrl;
+
     QNetworkRequest request(m_realUrl);
     m_realReply = m_networkManager->get(request);
 
@@ -68,7 +75,7 @@ void NetworkManager::handleDownloadProgress(qint64 bytesReceived, qint64 bytesTo
 
     emit statusChanged(formatBytes(speed));
 
-    if (m_speedList.size() >= 60) {
+    if (m_speedList.size() >= 60 || bytesReceived == bytesTotal) {
         m_realReply->abort();
         m_realReply->deleteLater();
 
@@ -90,22 +97,4 @@ void NetworkManager::handleDownloadProgress(qint64 bytesReceived, qint64 bytesTo
 
         emit testSuccess(speedBytes, formatBytes(speedBytes));
     }
-}
-
-void NetworkManager::handleFakeReplyFinished()
-{
-    if (m_fakeReply == nullptr) {
-        return;
-    }
-
-    int statusCode = m_fakeReply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
-    if (statusCode == 302) {
-        m_realUrl = m_fakeReply->attribute(QNetworkRequest::RedirectionTargetAttribute).toString();
-        qDebug() << "redirected to: " << m_realUrl;
-        realTest();
-    } else {
-        emit testFailed();
-    }
-
-    m_fakeReply->deleteLater();
 }
