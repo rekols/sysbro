@@ -1,3 +1,10 @@
+sysbro (0.7) unstable; urgency=medium
+  * 修复首页显示进程数不正确
+  * 修复服务启动项数目不正确
+  * 添加一些服务启动项中文描述
+  * 优化网络测速器
+  * 网络测速器添加服务器选项
+
 sysbro (0.6) unstable; urgency=medium
   * 首页加入进程总数信息
   * 首页优化网络信息栏

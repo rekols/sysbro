@@ -8,17 +8,17 @@ ToolsListModel::ToolsListModel(QObject *parent)
     m_list << "sysbro-startup-apps" << "sysbro-file-shredder"
            << "sysbro-network-test" << "sysbro-express";
 
-    m_nameMap = { 
+    m_nameMap = {
         {"sysbro-startup-apps", tr("App start-up management")},
         {"sysbro-file-shredder", tr("File Shredder")},
         {"sysbro-network-test", "网速测试"},
         {"sysbro-express", "快递查询助手"}
     };
 
-    if (QLocale::system().name() != "zh_CN") {
-        m_list.removeOne("sysbro-express");
-        m_list.removeOne("sysbro-network-test");
-    }
+//    if (QLocale::system().name() != "zh_CN") {
+//        m_list.removeOne("sysbro-express");
+//        m_list.removeOne("sysbro-network-test");
+//    }
 }
 
 int ToolsListModel::rowCount(const QModelIndex &parent) const
