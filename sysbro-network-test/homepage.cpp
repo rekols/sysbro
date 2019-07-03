@@ -53,13 +53,13 @@ HomePage::HomePage(QWidget *parent)
         m_settings->setValue("server_index", QVariant(2));
     }
 
-    layout->addSpacing(30);
+    layout->addSpacing(15);
     layout->addWidget(iconLabel, 0, Qt::AlignHCenter);
-    layout->addSpacing(10);
+    layout->addSpacing(15);
     layout->addWidget(tipsLabel, 0, Qt::AlignHCenter);
     layout->addSpacing(5);
     layout->addWidget(m_comboBox, 0, Qt::AlignHCenter);
-    layout->addSpacing(10);
+    layout->addSpacing(20);
     layout->addWidget(splitLine, 0, Qt::AlignHCenter);
     layout->addSpacing(20);
     layout->addWidget(btn, 0, Qt::AlignHCenter);
