@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=Sysbro
+Name[zh_CN]=系统助手
 Exec=sysbro
 Comment=A deepin assistant
 Icon=sysbro

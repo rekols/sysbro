@@ -133,7 +133,7 @@
     <message>
         <location filename="../homepage.cpp" line="162"/>
         <source>DISK</source>
-        <translation>磁盘</translation>
+        <translation>磁盘容量</translation>
     </message>
     <message>
         <location filename="../homepage.cpp" line="175"/>
