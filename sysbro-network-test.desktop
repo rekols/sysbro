@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=网络测速器
+Exec=sysbro-network-test     
+Icon=sysbro-network-test
+Type=Application
+Terminal=false
+Encoding=UTF-8
+Categories=Utility;
+NoDisplay=true

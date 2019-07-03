@@ -82,3 +82,7 @@ install(FILES src/com.sysbro.pkexec.service.mgr.policy DESTINATION share/polkit-
 
 install(TARGETS sysbro DESTINATION bin)
 install(FILES sysbro.desktop DESTINATION share/applications)
+install(FILES sysbro-express.desktop DESTINATION share/applications)
+install(FILES sysbro-file-shredder.desktop DESTINATION share/applications)
+install(FILES sysbro-network-test.desktop DESTINATION share/applications)
+install(FILES sysbro-startup-apps.desktop DESTINATION share/applications)

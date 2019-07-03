@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=开机自动启管理
+Exec=sysbro-startup-apps
+Icon=sysbro-startup-apps
+Type=Application
+Terminal=false
+Encoding=UTF-8
+Categories=Utility;
+NoDisplay=true

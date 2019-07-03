@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=文件粉碎机
+Exec=sysbro-file-shredder     
+Icon=sysbro-file-shredder
+Type=Application
+Terminal=false
+Encoding=UTF-8
+Categories=Utility;
+NoDisplay=true
