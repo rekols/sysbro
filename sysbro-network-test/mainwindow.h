@@ -3,10 +3,10 @@
 
 #include <DMainWindow>
 #include <QStackedLayout>
-#include "dspinner.h"
 #include "homepage.h"
 #include "networkmanager.h"
 #include <QLabel>
+#include <DWaterProgress>
 
 DWIDGET_USE_NAMESPACE
 
@@ -29,7 +29,7 @@ private:
     QStackedLayout *m_stackedLayout;
     HomePage *m_homePage;
     NetworkManager *m_networkManager;
-    DSpinner *m_spinner;
+    DWaterProgress *m_progress;
     QLabel *m_statusLabel;
     QLabel *m_resultLabel;
 };

@@ -73,6 +73,7 @@ void NetworkManager::handleDownloadProgress(qint64 bytesReceived, qint64 bytesTo
 
     qDebug() << m_speedList.indexOf(speed) << formatBytes(speed);
 
+    emit requestPercent(m_speedList.indexOf(speed) / 60.0 * 100);
     emit statusChanged(formatBytes(speed));
 
     if (m_speedList.size() >= 60 || bytesReceived == bytesTotal) {
