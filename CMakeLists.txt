@@ -71,6 +71,10 @@ install(FILES ${QM_FILES}
 
 # Install icon file
 install(FILES src/resources/sysbro.svg DESTINATION share/icons/hicolor/scalable/apps)
+install(FILES src/resources/sysbro-express.svg DESTINATION share/icons/hicolor/scalable/apps)
+install(FILES src/resources/sysbro-file-shredder.svg DESTINATION share/icons/hicolor/scalable/apps)
+install(FILES src/resources/sysbro-network-test.svg DESTINATION share/icons/hicolor/scalable/apps)
+install(FILES src/resources/sysbro-startup-apps.svg DESTINATION share/icons/hicolor/scalable/apps)
 
 # Install policy file
 install(FILES src/com.sysbro.pkexec.delete-files.policy DESTINATION share/polkit-1/actions)
