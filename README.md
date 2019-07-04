@@ -1,6 +1,6 @@
 # Sysbro
 
-A system assistant for deepin/ubuntu18.10.
+A system assistant for deepin/Ubuntu18.10.
 
 ![](screenshots/20190327025127.png)
 
@@ -8,7 +8,7 @@ A system assistant for deepin/ubuntu18.10.
 
 ## Dependencies
 
-* sudo apt install g++ qt5-default qttools5-dev-tools libdtkwidget-dev
+* sudo apt install g++ qt5-default qttools5-dev-tools libdtkwidget-dev libprocps-dev
 
 ## Build
 
@@ -17,7 +17,7 @@ A system assistant for deepin/ubuntu18.10.
 * qmake ..
 * make
 
-## Packaging
+## Build a deb package
 
 * dpkg-buildpackage -b
 
