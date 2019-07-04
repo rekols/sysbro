@@ -8,7 +8,7 @@ A system assistant for deepin/Ubuntu18.10.
 
 ## Dependencies
 
-* sudo apt install g++ qt5-default qttools5-dev-tools libdtkwidget-dev libprocps-dev
+* sudo apt install g++ qt5-default qttools5-dev-tools libdtkwidget-dev
 
 ## Build
 

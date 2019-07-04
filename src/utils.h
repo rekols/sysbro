@@ -35,7 +35,7 @@ public:
     static QString getHomePath();
     static QString sudoExec(const QString &cmd, QStringList args);
 
-    static QList<int> getTaskIdList();
+    static QList<int> getTaskPIDList();
 };
 
 #endif // UTILS_H

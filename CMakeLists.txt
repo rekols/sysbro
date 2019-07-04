@@ -41,7 +41,6 @@ find_package(Qt5Concurrent REQUIRED)
 find_package(Qt5Gui REQUIRED)
 find_package(DtkWidget REQUIRED)
 find_package(DtkCore REQUIRED)
-find_package(Procps REQUIRED)
 
 # Tell CMake to create the executable
 add_executable(sysbro ${SRCS} src/resources.qrc)
@@ -52,7 +51,6 @@ target_link_libraries(sysbro
     ${Qt5Widgets_LIBRARIES}
     ${Qt5DBus_LIBRARIES}
     ${Qt5Concurrent_LIBRARIES}
-    procps
 )
 
 set(CMAKE_INSTALL_PREFIX /usr)

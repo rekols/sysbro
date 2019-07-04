@@ -11,10 +11,6 @@
 #include <QFile>
 #include <QDir>
 
-#include <fstream>
-#include <proc/readproc.h>
-#include <proc/sysinfo.h>
-
 Utils::Utils(QObject *parent) : QObject(parent)
 {
 
@@ -346,23 +342,23 @@ QString Utils::sudoExec(const QString &cmd, QStringList args)
     return result;
 }
 
-QList<int> Utils::getTaskIdList()
+QList<int> Utils::getTaskPIDList()
 {
-    QList<int> list;
+    QProcess *process = new QProcess;
+    process->start("ps", QStringList() << "ax" << "-weo" << "pid" << "--no-headings");
+    process->waitForFinished(-1);
 
-    // Read the list of open processes information.
-    PROCTAB* proc = openproc(
-        PROC_FILLMEM |          // memory status: read information from /proc/#pid/statm
-        PROC_FILLSTAT |         // cpu status: read information from /proc/#pid/stat
-        PROC_FILLUSR            // user status: resolve user ids to names via /etc/passwd
-        );
-    static proc_t proc_info;
-    memset(&proc_info, 0, sizeof(proc_t));
+    QString content = process->readAllStandardOutput();
+    QStringList splitList = content.split(QChar('\n'));
+    QList<int> pidList;
 
-    while (readproc(proc, &proc_info) != NULL) {
-        list << proc_info.tid;
+    for (QString line : splitList) {
+        line = line.trimmed();
+
+        if (!line.isEmpty()) {
+            pidList << line.toInt();
+        }
     }
-    closeproc(proc);
 
-    return list;
+    return pidList;
 }
