@@ -22,10 +22,10 @@ SpeedupPage::SpeedupPage(QWidget *parent)
     bottomLabel->setStyleSheet("QLabel { color: #666666; }");
 
     infoLayout->addWidget(m_tipsLabel);
-    infoLayout->addWidget(bottomLabel);
+    infoLayout->addWidget(bottomLabel, 0, Qt::AlignTop);
 
     topLayout->addSpacing(10);
-    topLayout->addWidget(iconLabel);
+    topLayout->addWidget(iconLabel, 0, Qt::AlignTop);
     topLayout->addSpacing(20);
     topLayout->addLayout(infoLayout);
     topLayout->addStretch();
