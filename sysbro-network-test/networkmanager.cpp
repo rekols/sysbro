@@ -62,7 +62,7 @@ void NetworkManager::realTest()
     m_downloadTime.start();
     m_speedList.clear();
 
-    connect(m_realReply, &QNetworkReply::finished, this, &NetworkManager::testFailed);
+    // connect(m_realReply, &QNetworkReply::finished, this, &NetworkManager::testFailed);
     connect(m_realReply, &QNetworkReply::downloadProgress, this, &NetworkManager::handleDownloadProgress);
 }
 
@@ -73,10 +73,10 @@ void NetworkManager::handleDownloadProgress(qint64 bytesReceived, qint64 bytesTo
 
     qDebug() << m_speedList.indexOf(speed) << formatBytes(speed);
 
-    emit requestPercent(m_speedList.indexOf(speed) / 60.0 * 100);
     emit statusChanged(formatBytes(speed));
 
-    if (m_speedList.size() >= 60 || bytesReceived == bytesTotal) {
+    // 如果达到指定的秒数或下载完成，则停止
+    if ((m_downloadTime.elapsed() / 1000) >= 13 || bytesReceived == bytesTotal) {
         m_realReply->abort();
         m_realReply->deleteLater();
 

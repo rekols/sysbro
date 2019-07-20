@@ -31,7 +31,7 @@ MainWindow::MainWindow(QWidget *parent)
       m_networkManager(new NetworkManager),
       m_statusLabel(new QLabel),
       m_resultLabel(new QLabel),
-      m_progress(new DWaterProgress)
+      m_progress(new DSpinner)
 {
     QWidget *centralWidget = new QWidget;
     centralWidget->setLayout(m_stackedLayout);
@@ -39,12 +39,12 @@ MainWindow::MainWindow(QWidget *parent)
     QWidget *spinnerPage = new QWidget;
     QVBoxLayout *spinnerLayout = new QVBoxLayout;
     spinnerPage->setLayout(spinnerLayout);
-    spinnerLayout->addSpacing(45);
+    spinnerLayout->addStretch();
     spinnerLayout->addWidget(m_progress, 0, Qt::AlignHCenter);
     spinnerLayout->addSpacing(20);
     spinnerLayout->addWidget(m_statusLabel, 0, Qt::AlignHCenter);
     spinnerLayout->addStretch();
-    m_progress->setFixedSize(100, 100);
+    m_progress->setFixedSize(50, 50);
     m_progress->stop();
 
     QWidget *resultPage = new QWidget;
@@ -103,9 +103,6 @@ MainWindow::MainWindow(QWidget *parent)
     connect(m_networkManager, &NetworkManager::statusChanged, this, &MainWindow::updateStatus);
     connect(m_networkManager, &NetworkManager::testFailed, this, &MainWindow::switchToFailedPage);
     connect(m_networkManager, &NetworkManager::testSuccess, this, &MainWindow::handleSuccess);
-    connect(m_networkManager, &NetworkManager::requestPercent, this, [=] (int value) {
-         m_progress->setValue(value);
-    });
 }
 
 MainWindow::~MainWindow()
@@ -140,7 +137,6 @@ void MainWindow::handleSuccess(quint64 speed, QString speedStr)
 
     m_stackedLayout->setCurrentIndex(2);
     m_progress->stop();
-    m_progress->setValue(0);
     m_resultLabel->setText(QString("最大的接入速度为 %1").arg(speedStr));
 }
 

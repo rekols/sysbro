@@ -17,7 +17,6 @@ public:
 signals:
     void statusChanged(QString speed);
     void testSuccess(quint64 speed, QString speedStr);
-    void requestPercent(int value);
     void testFailed();
 
 private:
