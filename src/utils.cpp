@@ -84,6 +84,10 @@ QString Utils::getBootTime()
     QRegularExpressionMatch match = reg.match(output);
     QString bootTime = match.captured(0).remove(" = ");
 
+    if (QLocale::system().name() == "zh_CN") {
+        bootTime = bootTime.replace("min", "分").replace("s", "秒");
+    }
+
     return bootTime;
 }
 
