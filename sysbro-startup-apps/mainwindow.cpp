@@ -35,8 +35,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     if (titlebar()) {
         QMenu *menu = new QMenu;
-        QAction *createAction = new QAction(tr("New Application"));
-        QAction *selectAction = new QAction(tr("Select file"));
+        QAction *createAction = new QAction(tr("New Application"), this);
+        QAction *selectAction = new QAction(tr("Select file"), this);
 
         menu->addAction(createAction);
         menu->addAction(selectAction);
@@ -88,8 +88,8 @@ void MainWindow::popupRightMenu(QModelIndex idx)
     QMenu *menu = new QMenu;
 
     if (idx.isValid()) {
-        QAction *modifyAction = new QAction(tr("Modify"));
-        QAction *deleteAction = new QAction(tr("Delete"));
+        QAction *modifyAction = new QAction(tr("Modify"), this);
+        QAction *deleteAction = new QAction(tr("Delete"), this);
         menu->addAction(modifyAction);
         menu->addAction(deleteAction);
 
@@ -104,7 +104,7 @@ void MainWindow::popupRightMenu(QModelIndex idx)
         });
     }
 
-    QAction *deleteAllAction = new QAction(tr("Delete all"));
+    QAction *deleteAllAction = new QAction(tr("Delete all"), this);
     menu->addAction(deleteAllAction);
 
     connect(deleteAllAction, &QAction::triggered, this, &MainWindow::deleteAllApps);

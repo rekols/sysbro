@@ -12,7 +12,6 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 
 if (${CMAKE_SYSTEM_PROCESSOR} MATCHES "sw_64")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mieee")
@@ -24,10 +23,7 @@ if (NOT (${CMAKE_BUILD_TYPE} MATCHES "Debug"))
     # generate qm files
     execute_process(COMMAND bash "translate_generation.sh"
                     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
-else ()
-    set(CMAKE_CXX_COMPILER "clang++")
 endif ()
-
 
 # Sources files
 file(GLOB SRCS "src/*.h" "src/*.cpp"
