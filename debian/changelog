@@ -5,44 +5,10 @@ sysbro (0.7) unstable; urgency=medium
   * 优化网络测速器
   * 网络测速器添加服务器选项
 
-sysbro (0.6) unstable; urgency=medium
-  * 首页加入进程总数信息
-  * 首页优化网络信息栏
-
-sysbro (0.5.1) unstable; urgency=medium
-  * 移除 QT SVG 依赖
-  * 修复磁盘计算错误(针对btrfs分区)
-  * 优化UI细节
-  * 文件粉碎后不弹窗口提示，而是悬浮消息方式
-
-sysbro (0.5) unstable; urgency=medium
-  * 打包兼容 deepin 15.10
-
-sysbro (0.4) unstable; urgency=medium
-  * 修复崩溃问题(单位转换函数出错)
-  * 加入文件粉碎机
-  * 网速测速使用结果使用最大速度,不使用平均值
-  * 其它优化
-
-sysbro (0.3) unstable; urgency=medium
-  * 重新实现获取磁盘容量方法
-  * 加入优化加速页面
-  * 修复应用缓存不能清理的问题
-  * 修复启动管理APP信息读取错误问题
-  * 加入托盘选项
-  * 完成网速测试工具
-  * 添加界面英文支持
-
-sysbro (0.2) unstable; urgency=medium
-  * 高分屏支持
-  * 支持清理 bash 终端历史记录
-  * 首页系统信息增加开机时间
-  * 系统清理列表添加展开/收缩图标
-  * 系统清理授权框优化
-  * 首页环形进度条百分比支持显示小数
+ -- Rekols <rekols@foxmail.com>  Thu, 01 Aug 2019 16:34:35 +0800
 
 sysbro (0.1-1) unstable; urgency=medium
 
   * Initial Release.
 
- -- Deepin Packages Builder <packages@deepin.com>  Wed, 11 Oct 2017 17:38:35 +0800
+ -- Rekols <rekols@foxmail.com>  Wed, 11 Oct 2017 17:38:35 +0800
