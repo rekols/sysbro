@@ -25,6 +25,9 @@ public:
     void setCurrentIndex(QModelIndex idx);
     void removeCurrentIndex();
 
+signals:
+    void closeIndex(const QModelIndex &idx);
+
 private:
     QStringList m_list;
     AutoStartManager *m_autoStartManager;

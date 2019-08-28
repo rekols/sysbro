@@ -57,14 +57,19 @@ MainWindow::MainWindow(QWidget *parent)
     setMinimumSize(500, 450);
     checkAutoStartApp();
 
-    connect(m_listView, &ListView::entered, this, [=] (QModelIndex idx) {
-//        for (int i = 0; i < m_listModel->rowCount(QModelIndex()); ++i) {
+//    connect(m_listView, &ListView::entered, this, [=] (QModelIndex idx) {
+//        for (int i = 0; i <= m_listModel->rowCount(QModelIndex()); ++i) {
 //            QModelIndex index = m_listModel->index(i, 0);
 //            m_listView->closePersistentEditor(index);
 //        }
 
 //        m_listView->openPersistentEditor(idx);
-        m_listModel->setCurrentIndex(idx);
+//        m_listModel->setCurrentIndex(idx);
+//    });
+
+    // click the close button in front to hide the first button.
+    connect(m_listModel, &ListModel::closeIndex, this, [=] (const QModelIndex &idx) {
+        m_listView->closePersistentEditor(idx);
     });
 
     connect(itemDelegate, &ItemDelegate::removeBtnClicked, m_listModel, &ListModel::removeCurrentIndex);

@@ -54,6 +54,7 @@ void ListModel::setCurrentIndex(QModelIndex idx)
 void ListModel::removeCurrentIndex()
 {
     if (m_currentIndex.isValid()) {
+        closeIndex(m_currentIndex);
         QFile file(m_currentIndex.data(ListModel::AppPathRole).toString());
         file.remove();
         file.close();
