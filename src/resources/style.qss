@@ -1,3 +1,7 @@
+QLabel {
+    color: #505050;
+}
+
 QTabBar,
 QTabBar::tab {
     font-size: 16px;

@@ -155,18 +155,7 @@ void HomePage::initUI()
 
     m_systemInfo->setStyleSheet("QLabel { color: #4088C6 }");
     m_networkInfo->setStyleSheet("QLabel { color: #2CA7F8 }");
-    m_platform->setStyleSheet("QLabel { color: #505050 }");
-    m_distribution->setStyleSheet("QLabel { color: #505050 }");
-    m_kernel->setStyleSheet("QLabel { color: #505050 }");
-    m_bootTime->setStyleSheet("QLabel { color: #505050 }");
-    m_cpuModel->setStyleSheet("QLabel { color: #505050 }");
-    m_cpuCoreCount->setStyleSheet("QLabel { color: #505050 }");
-    m_uploadLabel->setStyleSheet("QLabel { color: #505050 }");
-    m_downloadLabel->setStyleSheet("QLabel { color: #505050 }");
     m_processInfo->setStyleSheet("QLabel { color: #31A38C }");
-    m_allProcessLabel->setStyleSheet("QLabel { color: #505050 }");
-    m_downloadTotalLabel->setStyleSheet("QLabel { color: #505050 }");
-    m_uploadTotalLabel->setStyleSheet("QLabel { color: #505050 }");
 
     // init monitor widgets.
     m_cpuMonitorWidget->setTitle("CPU");

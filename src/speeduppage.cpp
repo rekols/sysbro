@@ -18,8 +18,8 @@ SpeedupPage::SpeedupPage(QWidget *parent)
     iconLabel->setPixmap(Utils::renderSVG(":/resources/speedup.svg", QSize(80, 80)));
 
     QLabel *bottomLabel = new QLabel(tr("Turn off unnecessary startup services can enhance boot spped"));
-    m_tipsLabel->setStyleSheet("QLabel { color: #666666; font-size: 30px; }");
-    bottomLabel->setStyleSheet("QLabel { color: #666666; }");
+    m_tipsLabel->setStyleSheet("QLabel { color: #454747; font-size: 30px; }");
+    bottomLabel->setStyleSheet("QLabel { color: #454747; }");
 
     infoLayout->addWidget(m_tipsLabel);
     infoLayout->addWidget(bottomLabel, 0, Qt::AlignTop);
