@@ -27,7 +27,7 @@ ScannedWidget::ScannedWidget(QWidget *parent)
 
 void ScannedWidget::addRoot(const ScannedWidget::Categories categories, const QString title,
                             const QFileInfoList infoList, bool noChild)
-{   
+{
     QTreeWidgetItem *rootItem = new QTreeWidgetItem(m_treeWidget);
     rootItem->setChildIndicatorPolicy(QTreeWidgetItem::ShowIndicator);
     rootItem->setData(2, 0, categories);

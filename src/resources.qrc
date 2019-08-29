@@ -18,5 +18,7 @@
         <file>resources/network.svg</file>
         <file>resources/upload.svg</file>
         <file>resources/download.svg</file>
+        <file>resources/down-arrow.svg</file>
+        <file>resources/up-arrow.svg</file>
     </qresource>
 </RCC>
