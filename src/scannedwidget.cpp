@@ -7,7 +7,6 @@
 #include <QThread>
 #include <QDebug>
 #include <QtConcurrent>
-#include <QMetaType>
 
 ScannedWidget::ScannedWidget(QWidget *parent)
     : QWidget(parent),
@@ -24,8 +23,6 @@ ScannedWidget::ScannedWidget(QWidget *parent)
     setLayout(layout);
 
     connect(m_treeWidget, &QTreeWidget::itemClicked, this, &ScannedWidget::handleItemClicked);
-
-    qRegisterMetaType<QVector<int>>("QVector<int>");
 }
 
 void ScannedWidget::addRoot(const ScannedWidget::Categories categories, const QString title,
