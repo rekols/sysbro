@@ -28,10 +28,12 @@ ScannedWidget::ScannedWidget(QWidget *parent)
 void ScannedWidget::addRoot(const ScannedWidget::Categories categories, const QString title,
                             const QFileInfoList infoList, bool noChild)
 {
-    QTreeWidgetItem *rootItem = new QTreeWidgetItem(m_treeWidget);
+    QTreeWidgetItem *rootItem = new QTreeWidgetItem;
     rootItem->setChildIndicatorPolicy(QTreeWidgetItem::ShowIndicator);
     rootItem->setData(2, 0, categories);
     rootItem->setData(2, 1, title);
+
+    m_treeWidget->addTopLevelItem(rootItem);
 
     if (!infoList.isEmpty()) {
         rootItem->setData(3, 0, infoList.at(0).absoluteDir().path());
