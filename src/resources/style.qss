@@ -50,10 +50,12 @@ QTreeView::branch:open:has-children:!has-siblings,
 QTreeView::branch:open:has-children:has-siblings  {
     border-image: none;
     image: url(':/resources/up-arrow.svg');
+    padding: 4;
 }
 
 QTreeView::branch:has-children:!has-siblings:closed,
 QTreeView::branch:closed:has-children:has-siblings {
     border-image: none;
     image: url(':/resources/down-arrow.svg');
+    padding: 4;
 }
