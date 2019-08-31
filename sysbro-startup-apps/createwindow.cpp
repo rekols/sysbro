@@ -5,7 +5,8 @@
 CreateWindow::CreateWindow(QWidget *parent)
     : DDialog(parent),
       m_appNameEdit(new QLineEdit),
-      m_appExecEdit(new QLineEdit)
+      m_appExecEdit(new QLineEdit),
+      m_appIconEdit(new QLineEdit)
 {
     QWidget *widget = new QWidget;
     QVBoxLayout *layout = new QVBoxLayout;
@@ -13,8 +14,10 @@ CreateWindow::CreateWindow(QWidget *parent)
 
     QLabel *appNameLabel = new QLabel(tr("Application Name:"));
     QLabel *appExecLabel = new QLabel(tr("Application Exec:"));
+    QLabel *appIconLabel = new QLabel(tr("Application Icon:"));
 
     formLayout->addRow(appNameLabel, m_appNameEdit);
+    formLayout->addRow(appIconLabel, m_appIconEdit);
     formLayout->addRow(appExecLabel, m_appExecEdit);
 
     layout->addLayout(formLayout);
@@ -42,6 +45,12 @@ void CreateWindow::setAppExec(const QString &text)
     m_appExecEdit->setCursorPosition(0);
 }
 
+void CreateWindow::setAppIcon(const QString &text)
+{
+    m_appIconEdit->setText(text);
+    m_appIconEdit->setCursorPosition(0);
+}
+
 void CreateWindow::handleButtonClicked(const int index, const QString &text)
 {
     Q_UNUSED(text);
@@ -52,7 +61,7 @@ void CreateWindow::handleButtonClicked(const int index, const QString &text)
             return;
         }
 
-        emit requestNewApp(m_appNameEdit->text(), m_appExecEdit->text());
+        emit requestNewApp(m_appNameEdit->text(), m_appIconEdit->text(), m_appExecEdit->text());
     }
 
     close();

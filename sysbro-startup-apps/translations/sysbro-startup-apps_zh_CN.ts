@@ -4,22 +4,27 @@
 <context>
     <name>CreateWindow</name>
     <message>
-        <location filename="../createwindow.cpp" line="14"/>
+        <location filename="../createwindow.cpp" line="15"/>
         <source>Application Name:</source>
         <translation>应用名称：</translation>
     </message>
     <message>
-        <location filename="../createwindow.cpp" line="15"/>
+        <location filename="../createwindow.cpp" line="16"/>
         <source>Application Exec:</source>
         <translation>应用命令：</translation>
     </message>
     <message>
-        <location filename="../createwindow.cpp" line="23"/>
+        <location filename="../createwindow.cpp" line="17"/>
+        <source>Application Icon:</source>
+        <translation>应用图标：</translation>
+    </message>
+    <message>
+        <location filename="../createwindow.cpp" line="26"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="../createwindow.cpp" line="24"/>
+        <location filename="../createwindow.cpp" line="27"/>
         <source>OK</source>
         <translation>确定</translation>
     </message>
@@ -55,17 +60,17 @@
         <translation>应用自启动管理</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="92"/>
+        <location filename="../mainwindow.cpp" line="96"/>
         <source>Modify</source>
         <translation>修改</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="93"/>
+        <location filename="../mainwindow.cpp" line="97"/>
         <source>Delete</source>
         <translation>删除</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="108"/>
+        <location filename="../mainwindow.cpp" line="112"/>
         <source>Delete all</source>
         <translation>删除所有</translation>
     </message>

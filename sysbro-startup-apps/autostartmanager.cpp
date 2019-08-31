@@ -42,7 +42,7 @@ void AutoStartManager::loadApps()
     for (const QFileInfo &file : files.entryInfoList(QDir::Files)) {
         QString filePath = file.absoluteFilePath();
 
-        if (file.completeSuffix() != "desktop") {
+        if (file.suffix() != "desktop") {
             continue;
         }
 
@@ -108,7 +108,7 @@ void AutoStartManager::setValue(const QString &filePath, const QString &key, con
         }
     }
 
-    if (key == "Exec") {
+    if (key == "Icon") {
         desktop.set("Icon", value);
     }
 

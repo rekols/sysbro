@@ -131,9 +131,11 @@ void MainWindow::popupEditDialog(QModelIndex idx)
     QString filePath = idx.data(ListModel::AppPathRole).toString();
     dlg->setAppExec(idx.data(ListModel::AppExecRole).toString());
     dlg->setAppName(idx.data(ListModel::AppNameRole).toString());
+    dlg->setAppIcon(idx.data(ListModel::AppIconRole).toString());
 
-    connect(dlg, &CreateWindow::requestNewApp, this, [=] (QString appName, QString appExec) {
+    connect(dlg, &CreateWindow::requestNewApp, this, [=] (QString appName, QString appIcon, QString appExec) {
         m_autoStartManager->setValue(filePath, "Name", appName);
+        m_autoStartManager->setValue(filePath, "Icon", appIcon);
         m_autoStartManager->setValue(filePath, "Exec", appExec);
     });
 

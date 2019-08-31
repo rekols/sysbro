@@ -15,15 +15,17 @@ public:
 
     void setAppName(const QString &text);
     void setAppExec(const QString &text);
+    void setAppIcon(const QString &text);
 
 signals:
-    void requestNewApp(const QString appName, const QString appExec);
+    void requestNewApp(const QString appName, const QString appIcon, const QString appExec);
 
 private:
     void handleButtonClicked(const int index, const QString &text);
 
 private:
     QLineEdit *m_appNameEdit;
+    QLineEdit *m_appIconEdit;
     QLineEdit *m_appExecEdit;
 };
 
