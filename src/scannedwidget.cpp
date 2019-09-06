@@ -43,16 +43,23 @@ void ScannedWidget::addRoot(const ScannedWidget::Categories categories, const QS
     quint64 totalSize = 0;
 
     if (!noChild) {
+        int itemCount = 0;
+
         for (const QFileInfo &info : infoList) {
             const QString path = info.absoluteFilePath();
             quint64 fileSize = Utils::getFileSize(path);
 
+            if (fileSize == 0) {
+                continue;
+            }
+
             addChild(path, info.fileName(), fileSize, rootItem);
 
             totalSize += fileSize;
+            ++itemCount;
         }
 
-        rootItem->setText(0, QString("%1 (%2)").arg(title).arg(infoList.size()));
+        rootItem->setText(0, QString("%1 (%2)").arg(title).arg(itemCount));
     } else {
         if (!infoList.isEmpty()) {
             totalSize += Utils::getFileSize(infoList.first().absoluteFilePath());
