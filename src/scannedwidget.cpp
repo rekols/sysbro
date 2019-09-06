@@ -7,6 +7,10 @@
 #include <QThread>
 #include <QDebug>
 #include <QtConcurrent>
+#include <QMenu>
+#include <DDesktopServices>
+
+DWIDGET_USE_NAMESPACE
 
 ScannedWidget::ScannedWidget(QWidget *parent)
     : QWidget(parent),
@@ -17,12 +21,14 @@ ScannedWidget::ScannedWidget(QWidget *parent)
     m_treeWidget->setColumnCount(2);
     m_treeWidget->setColumnWidth(0, 600);
     m_treeWidget->setHeaderLabels({tr("File Name"), tr("File Size")});
+    m_treeWidget->setContextMenuPolicy(Qt::CustomContextMenu);
 
     layout->addWidget(m_treeWidget);
     layout->setContentsMargins(30, 0, 30, 0);
     setLayout(layout);
 
     connect(m_treeWidget, &QTreeWidget::itemClicked, this, &ScannedWidget::handleItemClicked);
+    connect(m_treeWidget, &QTreeWidget::customContextMenuRequested, this, &ScannedWidget::prepareMenu);
 }
 
 void ScannedWidget::addRoot(const ScannedWidget::Categories categories, const QString title,
@@ -126,7 +132,7 @@ void ScannedWidget::clear()
 
 void ScannedWidget::systemClear()
 {
-    m_treeWidget->setEnabled(false);
+    // m_treeWidget->setEnabled(false);
 
     quint64 totalCleanedSize = 0;
     QStringList fileToDeleteList;
@@ -177,7 +183,7 @@ void ScannedWidget::systemClear()
         }
     }
 
-    m_treeWidget->setEnabled(true);
+    // m_treeWidget->setEnabled(true);
 }
 
 void ScannedWidget::handleItemClicked(QTreeWidgetItem *item, const int column)
@@ -193,4 +199,29 @@ void ScannedWidget::handleItemClicked(QTreeWidgetItem *item, const int column)
     for (int i = 0; i < item->childCount(); ++i) {
         item->child(i)->setCheckState(column, item->checkState(column) == Qt::Checked ? Qt::Checked : Qt::Unchecked);
     }
+}
+
+void ScannedWidget::prepareMenu(const QPoint &pos)
+{
+    QTreeWidgetItem *nd = m_treeWidget->itemAt(pos);
+
+    // is top level item
+    if (nd->parent() == nullptr) {
+        return;
+    }
+
+    QString path = nd->data(2, 0).toString();
+    QAction *act = new QAction(tr("Display in file manager"), this);
+    connect(act, &QAction::triggered, this, [=] {
+        if (path.isEmpty() || !QFile::exists(path)) {
+            return;
+        }
+
+        QUrl url = QUrl::fromLocalFile(QFileInfo(path).absoluteFilePath());
+        Dtk::Widget::DDesktopServices::showFileItem(url);
+    });
+
+    QMenu menu(this);
+    menu.addAction(act);
+    menu.exec(m_treeWidget->mapToGlobal(pos));
 }

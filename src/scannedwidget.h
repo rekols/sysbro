@@ -38,6 +38,7 @@ signals:
 
 private:
     void handleItemClicked(QTreeWidgetItem *item, const int column);
+    void prepareMenu(const QPoint &pos);
 
 private:
     TreeWidget *m_treeWidget;

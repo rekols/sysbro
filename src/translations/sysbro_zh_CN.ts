@@ -120,34 +120,34 @@
         <translation>CPU 核数：%1</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="160"/>
-        <location filename="../homepage.cpp" line="173"/>
+        <location filename="../homepage.cpp" line="162"/>
+        <location filename="../homepage.cpp" line="175"/>
         <source>CPU Idle</source>
         <translation>CPU 空闲</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="161"/>
+        <location filename="../homepage.cpp" line="163"/>
         <source>MEMORY</source>
         <translation>内存</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="162"/>
+        <location filename="../homepage.cpp" line="164"/>
         <source>DISK</source>
         <translation>磁盘容量</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="175"/>
+        <location filename="../homepage.cpp" line="177"/>
         <source>CPU Busy</source>
         <translation>CPU 忙碌</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="199"/>
-        <location filename="../homepage.cpp" line="200"/>
+        <location filename="../homepage.cpp" line="201"/>
+        <location filename="../homepage.cpp" line="202"/>
         <source>total</source>
         <translation>总量</translation>
     </message>
     <message>
-        <location filename="../homepage.cpp" line="205"/>
+        <location filename="../homepage.cpp" line="207"/>
         <source>%1 processes are running</source>
         <translation>%1 个进程正在运行</translation>
     </message>
@@ -182,39 +182,44 @@
 <context>
     <name>ScannedWidget</name>
     <message>
-        <location filename="../scannedwidget.cpp" line="19"/>
+        <location filename="../scannedwidget.cpp" line="23"/>
         <source>File Name</source>
         <translation>文件名称</translation>
     </message>
     <message>
-        <location filename="../scannedwidget.cpp" line="19"/>
+        <location filename="../scannedwidget.cpp" line="23"/>
         <source>File Size</source>
         <translation>大小</translation>
     </message>
     <message>
-        <location filename="../scannedwidget.cpp" line="98"/>
+        <location filename="../scannedwidget.cpp" line="113"/>
         <source>Application Caches</source>
         <translation>应用缓存</translation>
     </message>
     <message>
-        <location filename="../scannedwidget.cpp" line="99"/>
+        <location filename="../scannedwidget.cpp" line="114"/>
         <source>Application Log</source>
         <translation>应用日志</translation>
     </message>
     <message>
-        <location filename="../scannedwidget.cpp" line="100"/>
+        <location filename="../scannedwidget.cpp" line="115"/>
         <source>Crash Reports</source>
         <translation>崩溃报告</translation>
     </message>
     <message>
-        <location filename="../scannedwidget.cpp" line="101"/>
+        <location filename="../scannedwidget.cpp" line="116"/>
         <source>Package Caches</source>
         <translation>软件包缓存</translation>
     </message>
     <message>
-        <location filename="../scannedwidget.cpp" line="105"/>
+        <location filename="../scannedwidget.cpp" line="120"/>
         <source>Shell Terminal History</source>
         <translation>Shell 终端历史记录</translation>
+    </message>
+    <message>
+        <location filename="../scannedwidget.cpp" line="214"/>
+        <source>Display in file manager</source>
+        <translation>在文件管理器中显示</translation>
     </message>
 </context>
 <context>
@@ -233,12 +238,12 @@
 <context>
     <name>ServiceModel</name>
     <message>
-        <location filename="../servicemodel.cpp" line="142"/>
+        <location filename="../servicemodel.cpp" line="190"/>
         <source>Service Name</source>
         <translation>服务名称</translation>
     </message>
     <message>
-        <location filename="../servicemodel.cpp" line="144"/>
+        <location filename="../servicemodel.cpp" line="192"/>
         <source>Status</source>
         <translation>当前状态</translation>
     </message>
@@ -303,6 +308,11 @@
         <location filename="../toolslistmodel.cpp" line="13"/>
         <source>File Shredder</source>
         <translation>文件粉碎机</translation>
+    </message>
+    <message>
+        <location filename="../toolslistmodel.cpp" line="16"/>
+        <source>Hardware Info</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
