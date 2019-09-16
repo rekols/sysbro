@@ -59,7 +59,7 @@ QVariant FileModel::headerData(int section, Qt::Orientation orientation, int rol
 
 void FileModel::append(const QStringList &filePaths)
 {
-    int row = m_filePaths.size();
+    // int row = m_filePaths.size();
 
     beginResetModel();
     for (const QString &filePath : filePaths) {
@@ -106,4 +106,3 @@ void FileModel::removeAllFiles()
         emit removeAllFilesFinished(count);
     }
 }
-

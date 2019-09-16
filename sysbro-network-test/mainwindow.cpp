@@ -29,9 +29,9 @@ MainWindow::MainWindow(QWidget *parent)
       m_stackedLayout(new QStackedLayout),
       m_homePage(new HomePage),
       m_networkManager(new NetworkManager),
+      m_progress(new DSpinner),
       m_statusLabel(new QLabel),
-      m_resultLabel(new QLabel),
-      m_progress(new DSpinner)
+      m_resultLabel(new QLabel)
 {
     QWidget *centralWidget = new QWidget;
     centralWidget->setLayout(m_stackedLayout);

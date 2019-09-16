@@ -25,8 +25,8 @@ private:
 
 private:
     QLineEdit *m_appNameEdit;
-    QLineEdit *m_appIconEdit;
     QLineEdit *m_appExecEdit;
+    QLineEdit *m_appIconEdit;
 };
 
 #endif // CREATEWINDOW_H

@@ -156,8 +156,8 @@ void Utils::getMemoryInfo(QString &memory, float &percent)
 
     unsigned long long memTotal = lines.at(0).split(sep).at(1).toLong();
     unsigned long long memAvailable = lines.at(1).split(sep).at(1).toLong();
-    unsigned long long swapTotal = lines.at(2).split(sep).at(1).toLong();
-    unsigned long long swapFree = lines.at(3).split(sep).at(1).toLong();
+    // unsigned long long swapTotal = lines.at(2).split(sep).at(1).toLong();
+    // unsigned long long swapFree = lines.at(3).split(sep).at(1).toLong();
 
     memory = QString("%1 / %2").arg(formatBytes((memTotal - memAvailable) * 1024)).arg(formatBytes(memTotal * 1024));
     percent = (memTotal - memAvailable) * 100.0 / memTotal;
