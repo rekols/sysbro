@@ -44,8 +44,8 @@ CleanerPage::CleanerPage(QWidget *parent)
     topLayout->addWidget(cleanerIcon);
     topLayout->addSpacing(20);
     topLayout->addLayout(tipsLayout);
-    topLayout->addWidget(m_scanButton);
-    topLayout->addWidget(m_clearButton);
+    topLayout->addWidget(m_scanButton, 0, Qt::AlignTop);
+    topLayout->addWidget(m_clearButton, 0, Qt::AlignTop);
     topLayout->setContentsMargins(30, 10, 30, 0);
 
     HorizontalSeparator *hsep = new HorizontalSeparator;

@@ -10,6 +10,7 @@
 #include "speeduppage.h"
 #include "toolspage.h"
 #include "widgets/trayicon.h"
+#include "leftsidebar.h"
 
 DWIDGET_USE_NAMESPACE
 
@@ -27,10 +28,11 @@ protected:
 private:
     void initTrayIcon();
     void activeWindow();
-    void handleTabbarCurrentChanged(int index);
+    void handleLeftSideBarChanged(int index);
 
 private:
     TitleBar *m_titleBar;
+    LeftSideBar *m_leftSideBar;
     QStackedLayout *m_stackedLayout;
     HomePage *m_homePage;
     CleanerPage *m_cleanerPage;

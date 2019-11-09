@@ -63,3 +63,20 @@ QTreeView::branch:closed:has-children:has-siblings {
     image: url(':/resources/down-arrow.svg');
     padding: 4;
 }
+
+#SideButton  {
+    border: none;
+    outline: none;
+    text-align: left;
+    padding-left: 10px;
+    border-radius: 8px;
+}
+
+#SideButton:hover {
+    background-color: #C7E3FF;
+}
+
+#SideButton:checked {
+    background-color: #0081FF;
+    color: #FFFFFF;
+}

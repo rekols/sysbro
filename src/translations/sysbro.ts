@@ -145,6 +145,29 @@
     </message>
 </context>
 <context>
+    <name>LeftSideBar</name>
+    <message>
+        <location filename="../leftsidebar.cpp" line="10"/>
+        <source>Home</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../leftsidebar.cpp" line="10"/>
+        <source>Cleaner</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../leftsidebar.cpp" line="10"/>
+        <source>Speed up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../leftsidebar.cpp" line="11"/>
+        <source>Tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>Main</name>
     <message>
         <location filename="../main.cpp" line="20"/>
@@ -155,7 +178,7 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="16"/>
+        <location filename="../mainwindow.cpp" line="18"/>
         <source>Display tray icon</source>
         <translation type="unfinished"></translation>
     </message>
@@ -252,29 +275,6 @@
     <message>
         <location filename="../speeduppage.cpp" line="53"/>
         <source>Your computer has %1 startup items</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>TitleBar</name>
-    <message>
-        <location filename="../titlebar.cpp" line="18"/>
-        <source>Home</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../titlebar.cpp" line="19"/>
-        <source>Cleaner</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../titlebar.cpp" line="20"/>
-        <source>Speed up</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../titlebar.cpp" line="21"/>
-        <source>Tools</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

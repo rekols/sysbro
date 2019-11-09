@@ -20,5 +20,9 @@
         <file>resources/download.svg</file>
         <file>resources/down-arrow.svg</file>
         <file>resources/up-arrow.svg</file>
+        <file>resources/home.svg</file>
+        <file>resources/cleaning_brush.svg</file>
+        <file>resources/statistics.svg</file>
+        <file>resources/toolbox.svg</file>
     </qresource>
 </RCC>

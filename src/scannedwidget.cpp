@@ -19,7 +19,7 @@ ScannedWidget::ScannedWidget(QWidget *parent)
     QVBoxLayout *layout = new QVBoxLayout;
 
     m_treeWidget->setColumnCount(2);
-    m_treeWidget->setColumnWidth(0, 600);
+    m_treeWidget->setColumnWidth(0, 480);
     m_treeWidget->setHeaderLabels({tr("File Name"), tr("File Size")});
     m_treeWidget->setContextMenuPolicy(Qt::CustomContextMenu);
 

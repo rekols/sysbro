@@ -1,11 +1,13 @@
 #include "mainwindow.h"
 #include "dtitlebar.h"
 #include <QCloseEvent>
+#include <QHBoxLayout>
 #include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent)
     : DMainWindow(parent),
       m_titleBar(new TitleBar),
+      m_leftSideBar(new LeftSideBar),
       m_stackedLayout(new QStackedLayout),
       m_homePage(new HomePage),
       m_cleanerPage(new CleanerPage),
@@ -16,12 +18,18 @@ MainWindow::MainWindow(QWidget *parent)
       m_trayIconAction(new QAction(tr("Display tray icon"), this))
 {
     QWidget *centralWidget = new QWidget;
-    centralWidget->setLayout(m_stackedLayout);
+    QHBoxLayout *mainLayout = new QHBoxLayout;
+
+    mainLayout->setMargin(0);
+    mainLayout->addWidget(m_leftSideBar);
+    mainLayout->addLayout(m_stackedLayout);
+
+    centralWidget->setLayout(mainLayout);
 
     if (titlebar()) {
         titlebar()->setCustomWidget(m_titleBar, Qt::AlignVCenter, 0);
         titlebar()->setBackgroundTransparent(true);
-        titlebar()->setSeparatorVisible(true);
+        titlebar()->setSeparatorVisible(false);
         titlebar()->setFixedHeight(43);
 
         QMenu *menu = new QMenu;
@@ -44,14 +52,14 @@ MainWindow::MainWindow(QWidget *parent)
     setWindowTitle("Sysbro");
     setCentralWidget(centralWidget);
     setBorderColor(QColor("#BFBFBF"));
-    setFixedSize(800, 560);
+    setFixedSize(850, 560);
     initTrayIcon();
     // setMinimumSize(800, 560);
     // resize(800, 560);
 
     connect(m_trayIcon, &TrayIcon::openActionTriggered, this, &MainWindow::activeWindow);
     connect(m_trayIcon, &TrayIcon::exitActionTriggered, qApp, &QApplication::quit);
-    connect(m_titleBar, &TitleBar::tabbarCurrentChanged, this, &MainWindow::handleTabbarCurrentChanged);
+    connect(m_leftSideBar, &LeftSideBar::buttonClicked, this, &MainWindow::handleLeftSideBarChanged);
     connect(m_trayIconAction, &QAction::triggered, this, [=] {
         bool enabled = !m_settings->value("tray_icon").toBool();
         m_settings->setValue("tray_icon", enabled);
@@ -95,7 +103,7 @@ void MainWindow::activeWindow()
     }
 }
 
-void MainWindow::handleTabbarCurrentChanged(int index)
+void MainWindow::handleLeftSideBarChanged(int index)
 {
     if (index == 0) {
         m_homePage->startMonitor();

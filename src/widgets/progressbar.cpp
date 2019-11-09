@@ -38,7 +38,7 @@ ProgressBar::ProgressBar(QWidget *parent)
     m_nullPosition = 0;
     m_borderWidth = 8;
 
-    setFixedSize(200, 200);
+    setFixedSize(170, 170);
 }
 
 void ProgressBar::paintEvent(QPaintEvent *e)

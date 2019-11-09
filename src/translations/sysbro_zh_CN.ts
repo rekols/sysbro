@@ -92,32 +92,32 @@
     <message>
         <location filename="../homepage.cpp" line="130"/>
         <source>Platform: %1</source>
-        <translation>平台：%1</translation>
+        <translation>平台: %1</translation>
     </message>
     <message>
         <location filename="../homepage.cpp" line="131"/>
         <source>Distribution: %1</source>
-        <translation>发行版：%1</translation>
+        <translation>发行版: %1</translation>
     </message>
     <message>
         <location filename="../homepage.cpp" line="132"/>
         <source>Startup time: %1</source>
-        <translation>开机时间：%1</translation>
+        <translation>开机时间: %1</translation>
     </message>
     <message>
         <location filename="../homepage.cpp" line="133"/>
         <source>Kernal Release: %1</source>
-        <translation>内核版本：%1</translation>
+        <translation>内核版本: %1</translation>
     </message>
     <message>
         <location filename="../homepage.cpp" line="134"/>
         <source>CPU Model: %1</source>
-        <translation>CPU 型号：%1</translation>
+        <translation>CPU 型号: %1</translation>
     </message>
     <message>
         <location filename="../homepage.cpp" line="135"/>
         <source>CPU Core: %1</source>
-        <translation>CPU 核数：%1</translation>
+        <translation>CPU 核数: %1</translation>
     </message>
     <message>
         <location filename="../homepage.cpp" line="162"/>
@@ -153,6 +153,29 @@
     </message>
 </context>
 <context>
+    <name>LeftSideBar</name>
+    <message>
+        <location filename="../leftsidebar.cpp" line="10"/>
+        <source>Home</source>
+        <translation>概 览</translation>
+    </message>
+    <message>
+        <location filename="../leftsidebar.cpp" line="10"/>
+        <source>Cleaner</source>
+        <translation>系统清理</translation>
+    </message>
+    <message>
+        <location filename="../leftsidebar.cpp" line="10"/>
+        <source>Speed up</source>
+        <translation>优化加速</translation>
+    </message>
+    <message>
+        <location filename="../leftsidebar.cpp" line="11"/>
+        <source>Tools</source>
+        <translation>工具箱</translation>
+    </message>
+</context>
+<context>
     <name>Main</name>
     <message>
         <location filename="../main.cpp" line="20"/>
@@ -163,7 +186,7 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="16"/>
+        <location filename="../mainwindow.cpp" line="18"/>
         <source>Display tray icon</source>
         <translation>显示托盘图标</translation>
     </message>
@@ -277,24 +300,20 @@
 <context>
     <name>TitleBar</name>
     <message>
-        <location filename="../titlebar.cpp" line="18"/>
         <source>Home</source>
-        <translation>首 页</translation>
+        <translation type="vanished">首 页</translation>
     </message>
     <message>
-        <location filename="../titlebar.cpp" line="19"/>
         <source>Cleaner</source>
-        <translation>系统清理</translation>
+        <translation type="vanished">系统清理</translation>
     </message>
     <message>
-        <location filename="../titlebar.cpp" line="20"/>
         <source>Speed up</source>
-        <translation>优化加速</translation>
+        <translation type="vanished">优化加速</translation>
     </message>
     <message>
-        <location filename="../titlebar.cpp" line="21"/>
         <source>Tools</source>
-        <translation>工具箱</translation>
+        <translation type="vanished">工具箱</translation>
     </message>
 </context>
 <context>

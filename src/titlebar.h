@@ -11,9 +11,6 @@ class TitleBar : public QWidget
 public:
     explicit TitleBar(QWidget *parent = nullptr);
 
-signals:
-    void tabbarCurrentChanged(int index);
-
 private:
     QHBoxLayout *m_layout;
 };
