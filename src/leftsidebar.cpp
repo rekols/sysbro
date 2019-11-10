@@ -1,4 +1,5 @@
 #include "leftsidebar.h"
+#include "widgets/pushbutton.h"
 #include <QPushButton>
 #include <QPainter>
 #include <QMap>
@@ -38,13 +39,15 @@ void LeftSideBar::initButtons()
     };
 
     for (int i = 0; i < m_buttonNameList.size(); ++i) {
-        QPushButton *btn = new QPushButton;
+        PushButton *btn = new PushButton;
         btn->setText(m_buttonNameList.at(i));
         btn->setObjectName("SideButton");
         btn->setCheckable(true);
         btn->setFixedHeight(45);
-        btn->setIcon(QIcon(icons.value(i)));
-        btn->setIconSize(QSize(30, 30));
+        // btn->setIcon(QIcon(icons.value(i)));
+        // btn->setIconSize(QSize(30, 30));
+
+        btn->setIcon(icons.value(i), QSize(30, 30));
 
         m_buttonGroup->addButton(btn, i);
         m_layout->addWidget(btn);
