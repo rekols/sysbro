@@ -36,6 +36,7 @@ void FileItemDelegate::paint(QPainter *painter, const QStyleOptionViewItem &opti
         QString fileName = index.data(FileModel::FileName).toString();
         QRect nameRect = rect;
         nameRect.setLeft(iconPixmap.width() + 15);
+        fileName = painter->fontMetrics().elidedText(fileName, Qt::ElideRight, nameRect.width() - 10);
         painter->drawText(nameRect, Qt::AlignVCenter | Qt::AlignLeft, fileName);
 
     } else if (column == 1) {
