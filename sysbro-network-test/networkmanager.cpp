@@ -34,7 +34,7 @@ void NetworkManager::startTest(int server_index)
     switch (server_index) {
     case 0:
         // 百度服务器
-        m_realUrl = "http://bos.nj.bpc.baidu.com/v1/baiduplayer/player/BaiduPlayer5Setup_5.exe";
+        m_realUrl = "http://issuecdn.baidupcs.com/issue/netdisk/LinuxGuanjia/2.0.2/baidunetdisk_linux_2.0.2.deb";
         break;
     case 1:
         // 阿里服务器
