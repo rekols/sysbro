@@ -1,3 +1,8 @@
+sysbro (0.8.1) unstable; urgency=medium
+  * deepin v20风格化
+
+ -- Rekols <rekols@protonmail.com> Sun, 10 Nov 2019 16:00:30 +0800
+
 sysbro (0.8) unstable; urgency=medium
   * 修复细节
 
