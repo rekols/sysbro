@@ -6,9 +6,9 @@
 #include <QSettings>
 #include "titlebar.h"
 #include "homepage.h"
-#include "cleanerpage.h"
-#include "speeduppage.h"
-#include "toolspage.h"
+#include "cleanup_page/cleanerpage.h"
+#include "speedup_page/speeduppage.h"
+#include "tools_page/toolspage.h"
 #include "widgets/trayicon.h"
 #include "leftsidebar.h"
 

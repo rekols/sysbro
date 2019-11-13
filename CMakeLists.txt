@@ -27,7 +27,10 @@ endif ()
 
 # Sources files
 file(GLOB SRCS "src/*.h" "src/*.cpp"
-               "src/widgets/*.h" "src/widgets/*.cpp")
+               "src/widgets/*.h" "src/widgets/*.cpp"
+               "src/cleanup_page/*.h" "src/cleanup_page/*.cpp"
+               "src/speedup_page/*.h" "src/speedup_page/*.cpp"
+               "src/tools_page/*.h" "src/tools_page/*.cpp")
 
 # Find the library
 find_package(PkgConfig REQUIRED)

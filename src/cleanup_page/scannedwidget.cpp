@@ -1,5 +1,5 @@
 #include "scannedwidget.h"
-#include "utils.h"
+#include "../utils.h"
 #include <QDir>
 #include <QVBoxLayout>
 #include <QTreeWidgetItem>

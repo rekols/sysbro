@@ -1,6 +1,6 @@
 #include "serviceitemdelegate.h"
 #include "speeduppage.h"
-#include "utils.h"
+#include "../utils.h"
 #include <QVBoxLayout>
 #include <QLabel>
 

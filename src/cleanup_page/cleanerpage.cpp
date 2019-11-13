@@ -1,7 +1,7 @@
 #include "cleanerpage.h"
-#include "utils.h"
-#include "widgets/horizontalseparator.h"
-#include "widgets/iconlabel.h"
+#include "../utils.h"
+#include "../widgets/horizontalseparator.h"
+#include "../widgets/iconlabel.h"
 #include <QVBoxLayout>
 #include <QPushButton>
 #include <QLabel>

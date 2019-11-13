@@ -1,6 +1,6 @@
 #include "serviceitemdelegate.h"
 #include "servicemodel.h"
-#include "utils.h"
+#include "../utils.h"
 #include <QStandardItemModel>
 #include <QStyleOptionViewItem>
 #include <QStyleOptionButton>
