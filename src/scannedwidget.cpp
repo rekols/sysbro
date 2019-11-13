@@ -107,6 +107,10 @@ void ScannedWidget::start()
 void ScannedWidget::scan()
 {
     m_totalSize = 0;
+
+    while (m_treeWidget->topLevelItemCount() > 0) {
+        m_treeWidget->takeTopLevelItem(0);
+    }
     m_treeWidget->clear();
 
     // addRoot(TRASH, "Trash", { QFileInfo(QString("%1/.local/share/Trash/").arg(Utils::getHomePath())) }, true);
