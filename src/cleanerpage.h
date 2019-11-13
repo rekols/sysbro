@@ -21,6 +21,7 @@ public:
 
 private:
     void handleScanBtnClicked();
+    void handleClearBtnClicked();
     void handleScanFinished(quint64 totalSize);
     void handleClearFinished(quint64 totalSize);
 

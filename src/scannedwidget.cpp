@@ -101,14 +101,15 @@ void ScannedWidget::addTreeChild(const ScannedWidget::Categories categories, con
 
 void ScannedWidget::start()
 {
-    m_treeWidget->clear();
-
     QtConcurrent::run(this, &ScannedWidget::scan);
 }
 
 void ScannedWidget::scan()
 {
     m_totalSize = 0;
+    m_treeWidget->clear();
+
+    QThread::msleep(200);
 
     // addRoot(TRASH, "Trash", { QFileInfo(QString("%1/.local/share/Trash/").arg(Utils::getHomePath())) }, true);
     addRoot(APPLICATION_CACHES, tr("Application Caches"), Utils::getAppCaches());
@@ -179,6 +180,8 @@ void ScannedWidget::systemClear()
             for (int i = 0; i < m_treeWidget->topLevelItemCount(); ++i) {
                 qDeleteAll(m_treeWidget->topLevelItem(i)->takeChildren());
             }
+
+            QThread::msleep(100);
 
             emit clearFinished(totalCleanedSize);
         }

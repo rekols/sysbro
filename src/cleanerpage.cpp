@@ -118,6 +118,16 @@ void CleanerPage::handleScanBtnClicked()
     m_tips2Label->setText(tr("Scanning, please wait..."));
 }
 
+void CleanerPage::handleClearBtnClicked()
+{
+    m_stackedLayout->setCurrentIndex(1);
+    m_spinner->start();
+
+    m_scannedWidget->clear();
+    m_scanButton->setEnabled(false);
+    m_clearButton->setEnabled(false);
+}
+
 void CleanerPage::handleScanFinished(quint64 totalSize)
 {
     m_tips2Label->setText(QString(tr("Scan is successful, and a total of %1 files were found this time")).arg(Utils::formatBytes(totalSize)));
@@ -126,6 +136,7 @@ void CleanerPage::handleScanFinished(quint64 totalSize)
     m_spinner->stop();
 
     m_scanButton->setEnabled(true);
+    m_clearButton->setEnabled(true);
     m_scanButton->setVisible(false);
     m_clearButton->setVisible(true);
 }
