@@ -163,8 +163,9 @@ void HomePage::initUI()
     m_memoryMonitorWidget->setTitle(tr("MEMORY"));
     m_diskMonitorWidget->setTitle(tr("DISK"));
 
-    m_memoryMonitorWidget->setColor("#18BD9B");
-    m_diskMonitorWidget->setColor("#6F5BEC");
+    m_cpuMonitorWidget->setColor(QColor("#2CA7F8"));
+    m_memoryMonitorWidget->setColor(QColor("#18BD9B"));
+    m_diskMonitorWidget->setColor(QColor("#6F5BEC"));
 }
 
 void HomePage::updateCpuPercent(float cpuPercent)
