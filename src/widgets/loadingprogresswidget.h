@@ -1,5 +1,5 @@
-#ifndef TTKLOADINGPROGRESSWIDGET_H
-#define TTKLOADINGPROGRESSWIDGET_H
+#ifndef LOADINGPROGRESSWIDGET_H
+#define LOADINGPROGRESSWIDGET_H
 
 /* =================================================
  * This file is part of the TTK Widget Tools project
@@ -31,12 +31,12 @@ struct Position
 /*!
 * @author Greedysky <greedysky@163.com>
 */
-class TTKLoadingProgressWidget : public QWidget
+class LoadingProgressWidget : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit TTKLoadingProgressWidget(QWidget *parent = nullptr);
+    explicit LoadingProgressWidget(QWidget *parent = nullptr);
 
     void setDotCount(int count);
     void setDotColor(const QColor &color);
@@ -64,8 +64,6 @@ private:
 
     QList<float> m_ranges;
     QList<Position> m_dots;
-
-
 };
 
-#endif // TTKLOADINGPROGRESSWIDGET_H
+#endif // LOADINGPROGRESSWIDGET_H

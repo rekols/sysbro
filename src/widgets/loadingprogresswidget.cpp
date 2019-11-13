@@ -3,12 +3,12 @@
 #include <qmath.h>
 #include <QPainter>
 
-TTKLoadingProgressWidget::TTKLoadingProgressWidget(QWidget *parent)
+LoadingProgressWidget::LoadingProgressWidget(QWidget *parent)
     : QWidget(parent)
 {
-    setDotColor(QColor(49, 177, 190));
+    setDotColor(QColor(44, 167, 248));
     setDotCount(20);
-    setMaxDiameter(30);
+    setMaxDiameter(10);
     setMinDiameter(2);
 
     m_interval = 50;
@@ -17,47 +17,47 @@ TTKLoadingProgressWidget::TTKLoadingProgressWidget(QWidget *parent)
     connect(&m_timer, SIGNAL(timeout()), SLOT(update()));
 }
 
-void TTKLoadingProgressWidget::setDotCount(int count)
+void LoadingProgressWidget::setDotCount(int count)
 {
     m_count = count;
     update();
 }
 
-void TTKLoadingProgressWidget::setDotColor(const QColor &color)
+void LoadingProgressWidget::setDotColor(const QColor &color)
 {
     m_dotColor = color;
     update();
 }
 
-void TTKLoadingProgressWidget::setMaxDiameter(float max)
+void LoadingProgressWidget::setMaxDiameter(float max)
 {
     m_maxDiameter = max;
     update();
 }
 
-void TTKLoadingProgressWidget::setMinDiameter(float min)
+void LoadingProgressWidget::setMinDiameter(float min)
 {
     m_minDiameter = min;
     update();
 }
 
-void TTKLoadingProgressWidget::start()
+void LoadingProgressWidget::start()
 {
     m_timer.setInterval(m_interval);
     m_timer.start();
 }
 
-void TTKLoadingProgressWidget::stop()
+void LoadingProgressWidget::stop()
 {
     m_timer.stop();
 }
 
-QSize TTKLoadingProgressWidget::sizeHint() const
+QSize LoadingProgressWidget::sizeHint() const
 {
     return QSize(180, 180);
 }
 
-void TTKLoadingProgressWidget::resizeEvent(QResizeEvent *event)
+void LoadingProgressWidget::resizeEvent(QResizeEvent *event)
 {
     Q_UNUSED(event)
 
@@ -78,7 +78,7 @@ void TTKLoadingProgressWidget::resizeEvent(QResizeEvent *event)
     }
 }
 
-void TTKLoadingProgressWidget::paintEvent(QPaintEvent *event)
+void LoadingProgressWidget::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event)
     QPainter painter(this);
@@ -90,7 +90,7 @@ void TTKLoadingProgressWidget::paintEvent(QPaintEvent *event)
     paintDot(painter);
 }
 
-void TTKLoadingProgressWidget::paintDot(QPainter &painter)
+void LoadingProgressWidget::paintDot(QPainter &painter)
 {
     for(int i=0; i<m_count; i++)
     {

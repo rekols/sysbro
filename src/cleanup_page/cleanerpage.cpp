@@ -12,7 +12,7 @@ CleanerPage::CleanerPage(QWidget *parent)
       m_clearButton(new QPushButton(tr("Clean up"))),
       m_scannedWidget(new ScannedWidget),
       m_stackedLayout(new QStackedLayout),
-      m_spinner(new DSpinner),
+      m_spinner(new LoadingProgressWidget),
       m_tips2Label(new QLabel)
 {
     QVBoxLayout *layout = new QVBoxLayout;
@@ -98,7 +98,7 @@ void CleanerPage::init()
     QVBoxLayout *spinnerLayout = new QVBoxLayout;
     spinnerPage->setLayout(spinnerLayout);
     spinnerLayout->addWidget(m_spinner, 0, Qt::AlignCenter);
-    m_spinner->setFixedSize(50, 50);
+    m_spinner->setFixedSize(100, 100);
 
     m_stackedLayout->addWidget(infoPage);
     m_stackedLayout->addWidget(spinnerPage);

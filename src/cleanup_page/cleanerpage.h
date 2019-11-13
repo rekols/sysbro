@@ -6,6 +6,7 @@
 #include <QStackedLayout>
 #include <QPushButton>
 #include "dspinner.h"
+#include "../widgets/loadingprogresswidget.h"
 #include "scannedwidget.h"
 
 DWIDGET_USE_NAMESPACE
@@ -30,7 +31,7 @@ private:
     QPushButton *m_clearButton;
     ScannedWidget *m_scannedWidget;
     QStackedLayout *m_stackedLayout;
-    DSpinner *m_spinner;
+    LoadingProgressWidget *m_spinner;
 
     QLabel *m_tips2Label;
 };
