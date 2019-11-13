@@ -1,6 +1,6 @@
 #include "homepage.h"
-#include "utils.h"
-#include "widgets/horizontalseparator.h"
+#include "../utils.h"
+#include "../widgets/horizontalseparator.h"
 #include <QFormLayout>
 
 HomePage::HomePage(QWidget *parent)

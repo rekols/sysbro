@@ -3,7 +3,7 @@
 
 #include <QWidget>
 #include <QVBoxLayout>
-#include "widgets/monitorwidget.h"
+#include "../widgets/monitorwidget.h"
 #include "monitorthread.h"
 
 class HomePage : public QWidget

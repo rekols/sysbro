@@ -5,7 +5,7 @@
 #include <QStackedLayout>
 #include <QSettings>
 #include "titlebar.h"
-#include "homepage.h"
+#include "home_page/homepage.h"
 #include "cleanup_page/cleanerpage.h"
 #include "speedup_page/speeduppage.h"
 #include "tools_page/toolspage.h"

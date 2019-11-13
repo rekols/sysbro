@@ -1,5 +1,5 @@
 #include "monitorthread.h"
-#include "utils.h"
+#include "../utils.h"
 
 MonitorThread::MonitorThread(QObject *parent)
     : QThread(parent)
