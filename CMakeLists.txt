@@ -57,7 +57,6 @@ set(CMAKE_INSTALL_PREFIX /usr)
 
 add_subdirectory("sysbro-delete-files")
 add_subdirectory("sysbro-service-mgr")
-add_subdirectory("sysbro-express")
 add_subdirectory("sysbro-file-shredder")
 add_subdirectory("sysbro-network-test")
 add_subdirectory("sysbro-startup-apps")
@@ -69,7 +68,7 @@ install(FILES ${QM_FILES}
 
 # Install icon file
 install(FILES src/resources/sysbro.svg DESTINATION share/icons/hicolor/scalable/apps)
-install(FILES src/resources/sysbro-express.svg DESTINATION share/icons/hicolor/scalable/apps)
+# install(FILES src/resources/sysbro-express.svg DESTINATION share/icons/hicolor/scalable/apps)
 install(FILES src/resources/sysbro-file-shredder.svg DESTINATION share/icons/hicolor/scalable/apps)
 install(FILES src/resources/sysbro-network-test.svg DESTINATION share/icons/hicolor/scalable/apps)
 install(FILES src/resources/sysbro-startup-apps.svg DESTINATION share/icons/hicolor/scalable/apps)
@@ -80,7 +79,7 @@ install(FILES src/com.sysbro.pkexec.service.mgr.policy DESTINATION share/polkit-
 
 install(TARGETS sysbro DESTINATION bin)
 install(FILES sysbro.desktop DESTINATION share/applications)
-install(FILES sysbro-express.desktop DESTINATION share/applications)
+# install(FILES sysbro-express.desktop DESTINATION share/applications)
 install(FILES sysbro-file-shredder.desktop DESTINATION share/applications)
 install(FILES sysbro-network-test.desktop DESTINATION share/applications)
 install(FILES sysbro-startup-apps.desktop DESTINATION share/applications)

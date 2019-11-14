@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=快递查询助手
-Exec=sysbro-express                   
-Icon=sysbro-express
-Type=Application
-Terminal=false
-Encoding=UTF-8
-Categories=Utility;
-NoDisplay=true
