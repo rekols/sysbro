@@ -9,7 +9,21 @@ HomePage::HomePage(QWidget *parent)
       m_memoryMonitorWidget(new MonitorWidget),
       m_diskMonitorWidget(new MonitorWidget),
       m_monitorThread(new MonitorThread)
-{   
+{
+    m_systemInfo = new QLabel(tr("SYSTEM INFO"));
+    m_platform = new QLabel;
+    m_distribution = new QLabel;
+    m_bootTime = new QLabel;
+    m_kernel = new QLabel;
+    m_cpuModel = new QLabel;
+    m_networkInfo = new QLabel(tr("NETWORK"));
+    m_uploadLabel = new QLabel("0.0 B/s");
+    m_uploadTotalLabel = new QLabel;
+    m_downloadTotalLabel = new QLabel;
+    m_downloadLabel = new QLabel("0.0 B/s");
+    m_processInfo = new QLabel(tr("PROCESS"));
+    m_allProcessLabel = new QLabel(tr("Loadding..."));
+
     initTopLayout();
     initBottomLayout();
     initUI();
@@ -54,26 +68,12 @@ void HomePage::initTopLayout()
 
 void HomePage::initBottomLayout()
 {
-    QHBoxLayout *bottomLayout = new QHBoxLayout;
-    QVBoxLayout *systemInfoLayout = new QVBoxLayout;
-    QVBoxLayout *rightInfoLayout = new QVBoxLayout;
+    QWidget *widget = new QWidget;
+    QVBoxLayout *layout = new QVBoxLayout;
 
-    m_systemInfo = new QLabel(tr("SYSTEM INFO"));
-    m_platform = new QLabel;
-    m_distribution = new QLabel;
-    m_bootTime = new QLabel;
-    m_kernel = new QLabel;
-    m_cpuModel = new QLabel;
-    m_networkInfo = new QLabel(tr("NETWORK"));
-    m_uploadLabel = new QLabel("0.0 B/s");
-    m_uploadTotalLabel = new QLabel;
-    m_downloadTotalLabel = new QLabel;
-    m_downloadLabel = new QLabel("0.0 B/s");
-    m_processInfo = new QLabel(tr("PROCESS"));
-    m_allProcessLabel = new QLabel(tr("Loadding..."));
+    widget->setLayout(layout);
 
     QFormLayout *infoLayout = new QFormLayout;
-    //infoLayout->addRow(tr("H1"), m_systemInfo);
     infoLayout->addRow(tr("Platform"), m_platform);
     infoLayout->addRow(tr("Distribution"), m_distribution);
     infoLayout->addRow(tr("Startup time"), m_bootTime);
@@ -83,77 +83,57 @@ void HomePage::initBottomLayout()
     infoLayout->setHorizontalSpacing(30);
     infoLayout->setLabelAlignment(Qt::AlignLeft);
 
-//    systemInfoLayout->addWidget(m_systemInfo);
-//    systemInfoLayout->addWidget(m_platform);
-//    systemInfoLayout->addWidget(m_distribution);
-//    systemInfoLayout->addWidget(m_bootTime);
-//    systemInfoLayout->addWidget(m_kernel);
-//    systemInfoLayout->addWidget(m_cpuModel);
-//    systemInfoLayout->addWidget(m_cpuCoreCount);
-//    systemInfoLayout->addStretch();
-
     // network layout.
-    QLabel *networkIcon = new QLabel;
-    QPixmap networkPixmap = Utils::renderSVG(":/resources/network.svg", QSize(16, 16));
-    networkIcon->setFixedSize(16, 16);
-    networkIcon->setPixmap(networkPixmap);
+//    QLabel *networkIcon = new QLabel;
+//    QPixmap networkPixmap = Utils::renderSVG(":/resources/network.svg", QSize(16, 16));
+//    networkIcon->setFixedSize(16, 16);
+//    networkIcon->setPixmap(networkPixmap);
 
-    QLabel *uploadIcon = new QLabel;
-    QPixmap uploadPixmap = Utils::renderSVG(":/resources/upload.svg", QSize(16, 16));
-    uploadIcon->setFixedSize(16, 16);
-    uploadIcon->setPixmap(uploadPixmap);
+//    QLabel *uploadIcon = new QLabel;
+//    QPixmap uploadPixmap = Utils::renderSVG(":/resources/upload.svg", QSize(16, 16));
+//    uploadIcon->setFixedSize(16, 16);
+//    uploadIcon->setPixmap(uploadPixmap);
 
-    QLabel *downloadIcon = new QLabel;
-    QPixmap downloadPixmap = Utils::renderSVG(":/resources/download.svg", QSize(16, 16));
-    downloadIcon->setFixedSize(16, 16);
-    downloadIcon->setPixmap(downloadPixmap);
+//    QLabel *downloadIcon = new QLabel;
+//    QPixmap downloadPixmap = Utils::renderSVG(":/resources/download.svg", QSize(16, 16));
+//    downloadIcon->setFixedSize(16, 16);
+//    downloadIcon->setPixmap(downloadPixmap);
 
     QWidget *uploadWidget = new QWidget;
     QHBoxLayout *uploadLayout = new QHBoxLayout(uploadWidget);
     uploadLayout->setMargin(0);
-    uploadLayout->addWidget(uploadIcon);
+    // uploadLayout->addWidget(uploadIcon);
     uploadLayout->addWidget(m_uploadLabel);
     uploadLayout->addWidget(m_uploadTotalLabel);
-    uploadLayout->addSpacing(200);
 
     QWidget *downloadWidget = new QWidget;
     QHBoxLayout *downloadLayout = new QHBoxLayout(downloadWidget);
     downloadLayout->setMargin(0);
-    downloadLayout->addWidget(downloadIcon);
+    // downloadLayout->addWidget(downloadIcon);
     downloadLayout->addWidget(m_downloadLabel);
     downloadLayout->addWidget(m_downloadTotalLabel);
-    downloadLayout->addSpacing(200);
 
+    uploadWidget->setFixedWidth(200);
+    downloadWidget->setFixedWidth(200);
+
+    // add widgets
     infoLayout->addRow(tr("Upload"), uploadWidget);
     infoLayout->addRow(tr("Download"), downloadWidget);
 
-//    QFormLayout *networkLayout = new QFormLayout;
-//    networkLayout->setVerticalSpacing(10);
-//    networkLayout->setHorizontalSpacing(15);
-//    networkLayout->addRow(uploadWidget, m_uploadTotalLabel);
-//    networkLayout->addRow(downloadWidget, m_downloadTotalLabel);
+    layout->addSpacing(20);
+    layout->addLayout(infoLayout);
+    layout->addSpacing(25);
 
-    rightInfoLayout->addWidget(m_networkInfo);
-//    rightInfoLayout->addLayout(networkLayout);
-    rightInfoLayout->addSpacing(10);
-    // rightInfoLayout->addWidget(m_processInfo);
-    // rightInfoLayout->addWidget(m_allProcessLabel);
-    rightInfoLayout->addStretch();
+    layout->setContentsMargins(QMargins(30, 20, 20, 20));
 
-    bottomLayout->addSpacing(20);
-    bottomLayout->addLayout(infoLayout);
-    bottomLayout->addSpacing(25);
-    //bottomLayout->addLayout(rightInfoLayout);
-    //bottomLayout->addSpacing(25);
-
-    m_layout->addLayout(bottomLayout);
+    m_layout->addWidget(widget);
     m_layout->addStretch();
 }
 
 void HomePage::initUI()
 {
-    QString strCpuModel("");
-    QString strCpuCore("");
+    QString strCpuModel;
+    QString strCpuCore;
     Utils::getCpuInfo(strCpuModel, strCpuCore);
 
     strCpuModel = strCpuModel.trimmed();
