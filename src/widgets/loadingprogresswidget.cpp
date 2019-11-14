@@ -70,8 +70,7 @@ void LoadingProgressWidget::resizeEvent(QResizeEvent *event)
     m_dots.clear();
     m_ranges.clear();
 
-    for(int i=0; i<m_count; i++)
-    {
+    for (int i = 0; i < m_count; ++i) {
         m_ranges << m_maxDiameter / 2 - i * gap;
         const float radian = -angleGap * i * M_PI / 180.0;
         m_dots.append({half + centerDistance * qCos(radian), half - centerDistance * qSin(radian)});
@@ -92,12 +91,12 @@ void LoadingProgressWidget::paintEvent(QPaintEvent *event)
 
 void LoadingProgressWidget::paintDot(QPainter &painter)
 {
-    for(int i=0; i<m_count; i++)
-    {
+    for (int i = 0; i < m_count; i++) {
         painter.setPen(m_dotColor);
         const float radian = m_ranges.at((m_index + m_count - i) % m_count);
         const Position &position = m_dots.at(i);
         painter.drawEllipse(QPointF(position.x, position.y), radian, radian);
     }
+
     m_index++;
 }

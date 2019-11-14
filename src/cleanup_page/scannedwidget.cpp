@@ -24,7 +24,7 @@ ScannedWidget::ScannedWidget(QWidget *parent)
     m_treeWidget->setContextMenuPolicy(Qt::CustomContextMenu);
 
     layout->addWidget(m_treeWidget);
-    layout->setContentsMargins(30, 0, 30, 0);
+    layout->setContentsMargins(10, 0, 20, 0);
     setLayout(layout);
 
     connect(m_treeWidget, &QTreeWidget::itemClicked, this, &ScannedWidget::handleItemClicked);
@@ -180,8 +180,6 @@ void ScannedWidget::systemClear()
             for (int i = 0; i < m_treeWidget->topLevelItemCount(); ++i) {
                 qDeleteAll(m_treeWidget->topLevelItem(i)->takeChildren());
             }
-
-            QThread::msleep(100);
 
             emit clearFinished(totalCleanedSize);
         }

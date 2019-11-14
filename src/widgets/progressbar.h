@@ -20,8 +20,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef PROGRESS_BAR_H
-#define PROGRESS_BAR_H
+#ifndef PROGRESSBAR_H
+#define PROGRESSBAR_H
 
 #include <QWidget>
 
@@ -35,8 +35,10 @@ public:
 public Q_SLOTS:
     float currentValue();
     void setValue(float percent);
-    void setTitle(QString text);
-    void setColor(QColor colour);
+    void setTitle(const QString &text);
+    void setProgressColor(const QColor &colour);
+
+    virtual QSize sizeHint() const override;
 
 protected:
     void paintEvent(QPaintEvent *);
@@ -53,4 +55,4 @@ private:
     int m_borderWidth;
 };
 
-#endif // PROGRESS_BAR_H
+#endif // PROGRESSBAR_H

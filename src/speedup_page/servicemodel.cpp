@@ -63,7 +63,7 @@ void ServiceModel::loadServices()
     QString output = process->readAllStandardOutput();
     QStringList lines = output.split('\n').filter(QRegularExpression("[^@].service"));;
 
-    for (QString line : lines) {
+    for (const QString &line : lines) {
         QStringList l = line.trimmed().split(QRegularExpression("\\s+"));
 
         QString name = l.first().trimmed().replace(".service", "");

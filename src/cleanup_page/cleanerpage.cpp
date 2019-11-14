@@ -42,11 +42,11 @@ CleanerPage::CleanerPage(QWidget *parent)
     tipsLayout->addWidget(m_tips2Label, 0, Qt::AlignTop);
 
     topLayout->addWidget(cleanerIcon);
-    topLayout->addSpacing(20);
+    topLayout->addSpacing(15);
     topLayout->addLayout(tipsLayout);
     topLayout->addWidget(m_scanButton, 0, Qt::AlignTop);
     topLayout->addWidget(m_clearButton, 0, Qt::AlignTop);
-    topLayout->setContentsMargins(30, 10, 30, 0);
+    topLayout->setContentsMargins(20, 10, 20, 0);
 
     HorizontalSeparator *hsep = new HorizontalSeparator;
     hsep->setFixedWidth(700);
@@ -92,12 +92,15 @@ void CleanerPage::init()
     infoLayout->addWidget(logsLabel);
     infoLayout->addWidget(crashLabel);
     infoLayout->addWidget(packagesLabel);
+    infoLayout->addSpacing(15);
 
     // loaddding bar.
     QWidget *spinnerPage = new QWidget;
     QVBoxLayout *spinnerLayout = new QVBoxLayout;
     spinnerPage->setLayout(spinnerLayout);
-    spinnerLayout->addWidget(m_spinner, 0, Qt::AlignCenter);
+    spinnerLayout->addSpacing(80);
+    spinnerLayout->addWidget(m_spinner, 0, Qt::AlignHCenter);
+    spinnerLayout->addStretch();
     m_spinner->setFixedSize(100, 100);
 
     m_stackedLayout->addWidget(infoPage);

@@ -1,6 +1,5 @@
 #include "homepage.h"
 #include "../utils.h"
-#include "../widgets/horizontalseparator.h"
 #include <QFormLayout>
 
 HomePage::HomePage(QWidget *parent)
@@ -11,11 +10,50 @@ HomePage::HomePage(QWidget *parent)
       m_diskMonitorWidget(new MonitorWidget),
       m_monitorThread(new MonitorThread)
 {   
-    QHBoxLayout *topLayout = new QHBoxLayout;
-    topLayout->addWidget(m_cpuMonitorWidget);
-    topLayout->addWidget(m_memoryMonitorWidget);
-    topLayout->addWidget(m_diskMonitorWidget);
+    initTopLayout();
+    initBottomLayout();
+    initUI();
 
+    setLayout(m_layout);
+
+    connect(m_monitorThread, &MonitorThread::updateCpuPercent, this, &HomePage::updateCpuPercent);
+    connect(m_monitorThread, &MonitorThread::updateMemory, this, &HomePage::updateMemory);
+    connect(m_monitorThread, &MonitorThread::updateDisk, this, &HomePage::updateDisk);
+    connect(m_monitorThread, &MonitorThread::updateNetworkSpeed, this, &HomePage::updateNetworkSpeed);
+    connect(m_monitorThread, &MonitorThread::updateNetworkTotal, this, &HomePage::updateNetworkTotal);
+    // connect(m_monitorThread, &MonitorThread::updateProcessNumber, this, &HomePage::updateProcessNumber);
+}
+
+void HomePage::startMonitor()
+{
+    m_monitorThread->start();
+}
+
+void HomePage::stopMonitor()
+{
+    // Don't update the data when switching to other pages.
+    if (m_monitorThread->isRunning()) {
+        m_monitorThread->terminate();
+    }
+}
+
+void HomePage::initTopLayout()
+{
+    QHBoxLayout *topLayout = new QHBoxLayout;
+    topLayout->addSpacing(20);
+    topLayout->addWidget(m_cpuMonitorWidget);
+    topLayout->addStretch();
+    topLayout->addWidget(m_memoryMonitorWidget);
+    topLayout->addStretch();
+    topLayout->addWidget(m_diskMonitorWidget);
+    topLayout->addStretch();
+
+    m_layout->addLayout(topLayout);
+    m_layout->addStretch();
+}
+
+void HomePage::initBottomLayout()
+{
     QHBoxLayout *bottomLayout = new QHBoxLayout;
     QVBoxLayout *systemInfoLayout = new QVBoxLayout;
     QVBoxLayout *rightInfoLayout = new QVBoxLayout;
@@ -26,7 +64,6 @@ HomePage::HomePage(QWidget *parent)
     m_bootTime = new QLabel;
     m_kernel = new QLabel;
     m_cpuModel = new QLabel;
-    m_cpuCoreCount = new QLabel;
     m_networkInfo = new QLabel(tr("NETWORK"));
     m_uploadLabel = new QLabel("0.0 B/s");
     m_uploadTotalLabel = new QLabel;
@@ -35,14 +72,25 @@ HomePage::HomePage(QWidget *parent)
     m_processInfo = new QLabel(tr("PROCESS"));
     m_allProcessLabel = new QLabel(tr("Loadding..."));
 
-    systemInfoLayout->addWidget(m_systemInfo);
-    systemInfoLayout->addWidget(m_platform);
-    systemInfoLayout->addWidget(m_distribution);
-    systemInfoLayout->addWidget(m_bootTime);
-    systemInfoLayout->addWidget(m_kernel);
-    systemInfoLayout->addWidget(m_cpuModel);
-    systemInfoLayout->addWidget(m_cpuCoreCount);
-    systemInfoLayout->addStretch();
+    QFormLayout *infoLayout = new QFormLayout;
+    //infoLayout->addRow(tr("H1"), m_systemInfo);
+    infoLayout->addRow(tr("Platform"), m_platform);
+    infoLayout->addRow(tr("Distribution"), m_distribution);
+    infoLayout->addRow(tr("Startup time"), m_bootTime);
+    infoLayout->addRow(tr("Kernal Release"), m_kernel);
+    infoLayout->addRow(tr("Processor"), m_cpuModel);
+    // infoLayout->setVerticalSpacing(10);
+    infoLayout->setHorizontalSpacing(30);
+    infoLayout->setLabelAlignment(Qt::AlignLeft);
+
+//    systemInfoLayout->addWidget(m_systemInfo);
+//    systemInfoLayout->addWidget(m_platform);
+//    systemInfoLayout->addWidget(m_distribution);
+//    systemInfoLayout->addWidget(m_bootTime);
+//    systemInfoLayout->addWidget(m_kernel);
+//    systemInfoLayout->addWidget(m_cpuModel);
+//    systemInfoLayout->addWidget(m_cpuCoreCount);
+//    systemInfoLayout->addStretch();
 
     // network layout.
     QLabel *networkIcon = new QLabel;
@@ -65,60 +113,41 @@ HomePage::HomePage(QWidget *parent)
     uploadLayout->setMargin(0);
     uploadLayout->addWidget(uploadIcon);
     uploadLayout->addWidget(m_uploadLabel);
+    uploadLayout->addWidget(m_uploadTotalLabel);
+    uploadLayout->addSpacing(200);
 
     QWidget *downloadWidget = new QWidget;
     QHBoxLayout *downloadLayout = new QHBoxLayout(downloadWidget);
     downloadLayout->setMargin(0);
     downloadLayout->addWidget(downloadIcon);
     downloadLayout->addWidget(m_downloadLabel);
+    downloadLayout->addWidget(m_downloadTotalLabel);
+    downloadLayout->addSpacing(200);
 
-    QFormLayout *networkLayout = new QFormLayout;
-    networkLayout->setVerticalSpacing(10);
-    networkLayout->setHorizontalSpacing(15);
-    networkLayout->addRow(uploadWidget, m_uploadTotalLabel);
-    networkLayout->addRow(downloadWidget, m_downloadTotalLabel);
+    infoLayout->addRow(tr("Upload"), uploadWidget);
+    infoLayout->addRow(tr("Download"), downloadWidget);
+
+//    QFormLayout *networkLayout = new QFormLayout;
+//    networkLayout->setVerticalSpacing(10);
+//    networkLayout->setHorizontalSpacing(15);
+//    networkLayout->addRow(uploadWidget, m_uploadTotalLabel);
+//    networkLayout->addRow(downloadWidget, m_downloadTotalLabel);
 
     rightInfoLayout->addWidget(m_networkInfo);
-    rightInfoLayout->addLayout(networkLayout);
+//    rightInfoLayout->addLayout(networkLayout);
     rightInfoLayout->addSpacing(10);
-    rightInfoLayout->addWidget(m_processInfo);
-    rightInfoLayout->addWidget(m_allProcessLabel);
+    // rightInfoLayout->addWidget(m_processInfo);
+    // rightInfoLayout->addWidget(m_allProcessLabel);
     rightInfoLayout->addStretch();
 
+    bottomLayout->addSpacing(20);
+    bottomLayout->addLayout(infoLayout);
     bottomLayout->addSpacing(25);
-    bottomLayout->addLayout(systemInfoLayout);
-    bottomLayout->addSpacing(25);
-    bottomLayout->addLayout(rightInfoLayout);
-    bottomLayout->addSpacing(25);
+    //bottomLayout->addLayout(rightInfoLayout);
+    //bottomLayout->addSpacing(25);
 
-    m_layout->addLayout(topLayout);
-    m_layout->addStretch();
-    m_layout->addWidget(new HorizontalSeparator);
     m_layout->addLayout(bottomLayout);
     m_layout->addStretch();
-
-    initUI();
-    setLayout(m_layout);
-
-    connect(m_monitorThread, &MonitorThread::updateCpuPercent, this, &HomePage::updateCpuPercent);
-    connect(m_monitorThread, &MonitorThread::updateMemory, this, &HomePage::updateMemory);
-    connect(m_monitorThread, &MonitorThread::updateDisk, this, &HomePage::updateDisk);
-    connect(m_monitorThread, &MonitorThread::updateNetworkSpeed, this, &HomePage::updateNetworkSpeed);
-    connect(m_monitorThread, &MonitorThread::updateNetworkTotal, this, &HomePage::updateNetworkTotal);
-    connect(m_monitorThread, &MonitorThread::updateProcessNumber, this, &HomePage::updateProcessNumber);
-}
-
-void HomePage::startMonitor()
-{
-    m_monitorThread->start();
-}
-
-void HomePage::stopMonitor()
-{
-    // Don't update the data when switching to other pages.
-    if (m_monitorThread->isRunning()) {
-        m_monitorThread->terminate();
-    }
 }
 
 void HomePage::initUI()
@@ -127,12 +156,13 @@ void HomePage::initUI()
     QString strCpuCore("");
     Utils::getCpuInfo(strCpuModel, strCpuCore);
 
-    m_platform->setText(tr("Platform: %1").arg(Utils::getPlatform()));
-    m_distribution->setText(tr("Distribution: %1").arg(Utils::getDistribution()));
-    m_bootTime->setText(tr("Startup time: %1").arg(Utils::getBootTime()));
-    m_kernel->setText(tr("Kernal Release: %1").arg(Utils::getKernel()));
-    m_cpuModel->setText(tr("CPU Model: %1").arg(strCpuModel));
-    m_cpuCoreCount->setText(tr("CPU Core: %1").arg(strCpuCore));
+    strCpuModel = strCpuModel.trimmed();
+
+    m_platform->setText(Utils::getPlatform());
+    m_distribution->setText(Utils::getDistribution());
+    m_bootTime->setText(Utils::getBootTime());
+    m_kernel->setText(Utils::getKernelVersion());
+    m_cpuModel->setText(QString("%1 x %2").arg(strCpuModel).arg(strCpuCore));
 
     QFont font;
     font.setPointSize(18);
@@ -146,7 +176,6 @@ void HomePage::initUI()
     m_bootTime->setFont(font);
     m_kernel->setFont(font);
     m_cpuModel->setFont(font);
-    m_cpuCoreCount->setFont(font);
     m_uploadLabel->setFont(font);
     m_downloadLabel->setFont(font);
     m_allProcessLabel->setFont(font);

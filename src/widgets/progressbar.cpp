@@ -26,19 +26,16 @@
 #include <QDebug>
 
 ProgressBar::ProgressBar(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_title(""),
+      m_color(QColor("#2CA7F8")),
+      m_minValue(0),
+      m_maxValue(100),
+      m_value(0),
+      m_nullPosition(0),
+      m_borderWidth(5)
 {
-    m_title = "";
-    m_color = QColor("#2CA7F8");
 
-    m_minValue = 0;
-    m_maxValue = 100;
-    m_value = 0;
-
-    m_nullPosition = 0;
-    m_borderWidth = 8;
-
-    setFixedSize(170, 170);
 }
 
 void ProgressBar::paintEvent(QPaintEvent *e)
@@ -84,7 +81,7 @@ void ProgressBar::paintEvent(QPaintEvent *e)
     /* draw percent text*/
     font.setPointSize(15);
     painter.setFont(font);
-    painter.setPen(pen);
+    painter.setPen(Qt::black);
 
     QRectF percentRect(-radius, (-radius) + 35, radius * 2, radius * 2);
     QString strPercent = QString::number(m_value, 'r', 1) + "%";
@@ -103,16 +100,21 @@ void ProgressBar::setValue(float percent)
     update();
 }
 
-void ProgressBar::setTitle(QString text)
+void ProgressBar::setTitle(const QString &text)
 {
     m_title = text;
 
     update();
 }
 
-void ProgressBar::setColor(QColor colour)
+void ProgressBar::setProgressColor(const QColor &colour)
 {
     m_color = colour;
 
     update();
+}
+
+QSize ProgressBar::sizeHint() const
+{
+    return QSize(160, 160);
 }

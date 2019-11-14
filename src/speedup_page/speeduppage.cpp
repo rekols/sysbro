@@ -26,11 +26,11 @@ SpeedupPage::SpeedupPage(QWidget *parent)
 
     topLayout->addSpacing(10);
     topLayout->addWidget(iconLabel, 0, Qt::AlignTop);
-    topLayout->addSpacing(20);
+    topLayout->addSpacing(15);
     topLayout->addLayout(infoLayout);
     topLayout->addStretch();
 
-    layout->setContentsMargins(30, 20, 30, 0);
+    layout->setContentsMargins(20, 20, 20, 0);
     layout->addLayout(topLayout);
     layout->addSpacing(20);
     layout->addWidget(m_listView);

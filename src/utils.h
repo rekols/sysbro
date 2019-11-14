@@ -16,7 +16,7 @@ public:
     static QString getUserName();
     static QString getPlatform();
     static QString getDistribution();
-    static QString getKernel();
+    static QString getKernelVersion();
     static QString getBootTime();
     static QString getDebianVersion();
 

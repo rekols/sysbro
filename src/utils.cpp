@@ -11,6 +11,12 @@
 #include <QFile>
 #include <QDir>
 
+#ifdef Q_OS_UNIX
+#include <sys/utsname.h>
+#endif
+
+#include <memory>
+
 Utils::Utils(QObject *parent) : QObject(parent)
 {
 
@@ -58,8 +64,15 @@ QString Utils::getUserName()
 
 QString Utils::getPlatform()
 {
+    struct utsname u;
+    QString kernelType;
+
+    if (uname(&u) == 0) {
+        kernelType = QString::fromLatin1(u.sysname);
+    }
+
     return QString("%1 %2")
-           .arg(QSysInfo::kernelType())
+           .arg(kernelType)
            .arg(QSysInfo::currentCpuArchitecture());
 }
 
@@ -68,9 +81,16 @@ QString Utils::getDistribution()
     return QSysInfo::prettyProductName();
 }
 
-QString Utils::getKernel()
+QString Utils::getKernelVersion()
 {
-    return QSysInfo::kernelVersion();
+    struct utsname u;
+    QString kernelVersion;
+
+    if (uname(&u) == 0) {
+        kernelVersion = QString::fromLatin1(u.release);
+    }
+
+    return kernelVersion;
 }
 
 QString Utils::getBootTime()
@@ -311,14 +331,14 @@ QString Utils::getHomePath()
 
 QString exec(const QString &cmd, QStringList args)
 {
-    QProcess *process = new QProcess;
+    std::unique_ptr<QProcess> process(new QProcess);
 
     if (args.isEmpty())
         process->start(cmd);
     else
         process->start(cmd, args);
 
-    process->waitForFinished();
+    process->waitForFinished(-1);
     QString out = process->readAllStandardOutput();
     QString error = process->errorString();
 

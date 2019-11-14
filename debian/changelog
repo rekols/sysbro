@@ -1,3 +1,11 @@
+sysbro (0.9) unstable; urgency=medium
+  * 首页重新设计
+  * 一些代码重构
+  * 修复清理程序崩溃
+  * 网络测速器修复
+
+ -- Rekols <rekols@protonmail.com> Thu, 14 Nov 2019 14:43:00 +0800
+
 sysbro (0.8.1) unstable; urgency=medium
   * deepin v20风格化
 

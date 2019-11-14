@@ -22,8 +22,8 @@ void MonitorThread::run()
         Utils::getMemoryInfo(memory, memoryPercent);
         Utils::getDiskInfo(disk, diskPercent);
 
-        QList<int> pidList = Utils::getTaskPIDList();
-        emit updateProcessNumber(pidList.size() + 1);
+        // QList<int> pidList = Utils::getTaskPIDList();
+        // emit updateProcessNumber(pidList.size() + 1);
 
         emit updateMemory(memory, memoryPercent);
         emit updateDisk(disk, diskPercent);

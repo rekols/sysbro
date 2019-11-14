@@ -3,7 +3,7 @@
 
 #include <QWidget>
 #include <QVBoxLayout>
-#include "../widgets/monitorwidget.h"
+#include "monitorwidget.h"
 #include "monitorthread.h"
 
 class HomePage : public QWidget
@@ -17,6 +17,8 @@ public:
     void stopMonitor();
 
 private:
+    void initTopLayout();
+    void initBottomLayout();
     void initUI();
 
 private:
@@ -40,7 +42,6 @@ private:
     QLabel *m_bootTime;
     QLabel *m_kernel;
     QLabel *m_cpuModel;
-    QLabel *m_cpuCoreCount;
     QLabel *m_networkInfo;
     QLabel *m_uploadLabel;
     QLabel *m_uploadTotalLabel;

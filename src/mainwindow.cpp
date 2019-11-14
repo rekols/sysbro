@@ -3,6 +3,7 @@
 #include <QCloseEvent>
 #include <QHBoxLayout>
 #include <QDebug>
+#include <QPainter>
 
 MainWindow::MainWindow(QWidget *parent)
     : DMainWindow(parent),
@@ -30,7 +31,7 @@ MainWindow::MainWindow(QWidget *parent)
         titlebar()->setCustomWidget(m_titleBar, Qt::AlignVCenter, 0);
         titlebar()->setBackgroundTransparent(true);
         titlebar()->setSeparatorVisible(false);
-        titlebar()->setFixedHeight(43);
+        titlebar()->setFixedHeight(40);
 
         QMenu *menu = new QMenu;
         menu->addAction(m_trayIconAction);
@@ -52,8 +53,9 @@ MainWindow::MainWindow(QWidget *parent)
     setWindowTitle("Sysbro");
     setCentralWidget(centralWidget);
     setBorderColor(QColor("#BFBFBF"));
-    setFixedSize(850, 560);
+    setFixedSize(820, 550);
     initTrayIcon();
+    setWindowRadius(20);
     // setMinimumSize(800, 560);
     // resize(800, 560);
 
@@ -81,6 +83,29 @@ void MainWindow::closeEvent(QCloseEvent *event)
         event->accept();
     }
 }
+
+//void MainWindow::paintEvent(QPaintEvent *event)
+//{
+//    QPainter painter(this);
+
+//    painter.setPen(Qt::NoPen);
+//    painter.setBrush(QColor("#FFFFFF"));
+
+//    const QRect titlebarRect = QRect(0, 0, rect().width(), titlebar()->height());
+//    painter.drawRect(titlebarRect);
+
+//    const QRect rect1 = QRect(0, titlebar()->height() + 1, rect().width(), 1);
+//    painter.setBrush(QColor("#F1F1F1"));
+//    painter.drawRect(rect1);
+
+//    const QRect rect2 = QRect(0, titlebar()->height() + 2, rect().width(), 1);
+//    painter.setBrush(QColor("#F5F5F5"));
+//    painter.drawRect(rect2);
+
+//    const QRect bgRect = QRect(0, titlebar()->height() + 3, rect().width(), rect().height());
+//    painter.setBrush(QColor("#FAFAFA"));
+//    painter.drawRect(bgRect);
+//}
 
 void MainWindow::initTrayIcon()
 {

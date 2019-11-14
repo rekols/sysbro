@@ -24,6 +24,7 @@ public:
 
 protected:
     void closeEvent(QCloseEvent *event);
+    // void paintEvent(QPaintEvent *event);
 
 private:
     void initTrayIcon();

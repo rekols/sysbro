@@ -70,6 +70,7 @@ QTreeView::branch:closed:has-children:has-siblings {
     text-align: left;
     padding-left: 10px;
     border-radius: 8px;
+    color: #414C6B;
 }
 
 #SideButton:hover {
