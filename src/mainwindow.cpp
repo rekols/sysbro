@@ -22,6 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
     QHBoxLayout *mainLayout = new QHBoxLayout;
 
     mainLayout->setMargin(0);
+    mainLayout->setSpacing(0);
     mainLayout->addWidget(m_leftSideBar);
     mainLayout->addLayout(m_stackedLayout);
 

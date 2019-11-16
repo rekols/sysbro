@@ -24,5 +24,8 @@
         <file>resources/cleaning_brush.svg</file>
         <file>resources/statistics.svg</file>
         <file>resources/toolbox.svg</file>
+        <file>resources/cpu.svg</file>
+        <file>resources/memory.svg</file>
+        <file>resources/sd_card.svg</file>
     </qresource>
 </RCC>

@@ -4,7 +4,6 @@
 MonitorThread::MonitorThread(QObject *parent)
     : QThread(parent)
 {
-
 }
 
 void MonitorThread::run()
@@ -25,6 +24,7 @@ void MonitorThread::run()
         // QList<int> pidList = Utils::getTaskPIDList();
         // emit updateProcessNumber(pidList.size() + 1);
 
+        emit updateCpuTemperature(Utils::getCpuTemperature());
         emit updateMemory(memory, memoryPercent);
         emit updateDisk(disk, diskPercent);
 

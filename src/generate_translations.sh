@@ -2,7 +2,7 @@
 # this file is used to auto-generate .qm file from .ts file.
 # author: shibowen at linuxdeepin.com
 
-ts_list=(`ls src/translations/*.ts` `ls sysbro-startup-apps/translations/*.ts` `ls sysbro-file-shredder/translations/*.ts`)
+ts_list=(`ls ../src/translations/*.ts` `ls ../startup-apps/translations/*.ts` `ls ../file-shredder/translations/*.ts`)
 
 for ts in "${ts_list[@]}"
 do

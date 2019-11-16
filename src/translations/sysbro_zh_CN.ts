@@ -62,7 +62,7 @@
 <context>
     <name>HomePage</name>
     <message>
-        <location filename="../home_page/homepage.cpp" line="61"/>
+        <location filename="../home_page/homepage.cpp" line="14"/>
         <source>SYSTEM INFO</source>
         <translation>系统信息</translation>
     </message>
@@ -75,84 +75,89 @@
         <translation type="vanished">下载</translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="67"/>
+        <location filename="../home_page/homepage.cpp" line="20"/>
         <source>NETWORK</source>
         <translation>网络</translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="72"/>
+        <location filename="../home_page/homepage.cpp" line="25"/>
         <source>PROCESS</source>
         <translation>进程</translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="73"/>
+        <location filename="../home_page/homepage.cpp" line="26"/>
         <source>Loadding...</source>
         <translation>加载中...</translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="77"/>
+        <location filename="../home_page/homepage.cpp" line="92"/>
         <source>Platform</source>
         <translation>系统平台</translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="78"/>
+        <location filename="../home_page/homepage.cpp" line="93"/>
         <source>Distribution</source>
         <translation>发行版</translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="79"/>
+        <location filename="../home_page/homepage.cpp" line="94"/>
         <source>Startup time</source>
         <translation>启动时间</translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="80"/>
+        <location filename="../home_page/homepage.cpp" line="95"/>
         <source>Kernal Release</source>
         <translation>内核版本</translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="81"/>
+        <location filename="../home_page/homepage.cpp" line="96"/>
         <source>Processor</source>
         <translation>处理器</translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="127"/>
+        <location filename="../home_page/homepage.cpp" line="149"/>
         <source>Upload</source>
         <translation>上传</translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="128"/>
+        <location filename="../home_page/homepage.cpp" line="150"/>
         <source>Download</source>
         <translation>下载</translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="191"/>
-        <location filename="../home_page/homepage.cpp" line="205"/>
+        <location filename="../home_page/homepage.cpp" line="187"/>
+        <source>CPU</source>
+        <translation>中央处理器</translation>
+    </message>
+    <message>
+        <location filename="../home_page/homepage.cpp" line="188"/>
+        <location filename="../home_page/homepage.cpp" line="202"/>
         <source>CPU Idle</source>
         <translation>CPU 空闲</translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="192"/>
+        <location filename="../home_page/homepage.cpp" line="189"/>
         <source>MEMORY</source>
         <translation>内存</translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="193"/>
+        <location filename="../home_page/homepage.cpp" line="190"/>
         <source>DISK</source>
-        <translation>磁盘容量</translation>
+        <translation>磁盘</translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="207"/>
+        <location filename="../home_page/homepage.cpp" line="204"/>
         <source>CPU Busy</source>
         <translation>CPU 忙碌</translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="231"/>
-        <location filename="../home_page/homepage.cpp" line="232"/>
+        <location filename="../home_page/homepage.cpp" line="228"/>
+        <location filename="../home_page/homepage.cpp" line="229"/>
         <source>total</source>
         <translation>总量</translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="237"/>
+        <location filename="../home_page/homepage.cpp" line="234"/>
         <source>%1 processes are running</source>
         <translation>%1 个进程正在运行</translation>
     </message>

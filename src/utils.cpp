@@ -16,6 +16,7 @@
 #endif
 
 #include <memory>
+#include <fstream>
 
 Utils::Utils(QObject *parent) : QObject(parent)
 {
@@ -253,6 +254,31 @@ void Utils::getNetworkBandWidth(unsigned long long &receiveBytes, unsigned long 
     }
 
     file.close();
+}
+
+double Utils::getCpuTemperature()
+{
+    // ref: https://www.embeddedarm.com/blog/reading-cpu-temperature-and-controlling-led-with-c-via-sysfs/
+
+    std::string val;
+    std::string preparedTemp;
+    double temperature;
+
+    std::ifstream temperatureFile("/sys/class/thermal/thermal_zone0/temp");
+
+    if (temperatureFile.is_open()) {
+        // The temperature is stored in 5 digits.  The first two are degrees in C.  The rest are decimal precision.
+        temperatureFile >> val;
+
+        temperatureFile.close();
+
+        preparedTemp = val.insert(2, 1, '.');
+        temperature = std::stod(preparedTemp);
+
+        return temperature;
+    } else {
+        return 0;
+    }
 }
 
 QString Utils::formatBytes(unsigned long long bytes)

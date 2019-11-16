@@ -16,12 +16,16 @@ public:
     void startMonitor();
     void stopMonitor();
 
+protected:
+    void paintEvent(QPaintEvent *event);
+
 private:
     void initTopLayout();
     void initBottomLayout();
     void initUI();
 
 private:
+    void updateCpuTemperature(double value);
     void updateCpuPercent(float cpuPercent);
     void updateMemory(QString memory, float percent);
     void updateDisk(QString disk, float percent);

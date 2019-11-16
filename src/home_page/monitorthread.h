@@ -19,6 +19,7 @@ signals:
     void updateNetworkSpeed(const QString upload, const QString download);
     void updateNetworkTotal(const QString upload, const QString download);
     void updateProcessNumber(int num);
+    void updateCpuTemperature(double value);
 };
 
 #endif // MONITORTHREAD_H

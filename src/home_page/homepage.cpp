@@ -1,6 +1,7 @@
 #include "homepage.h"
 #include "../utils.h"
 #include <QFormLayout>
+#include <QPainter>
 
 HomePage::HomePage(QWidget *parent)
     : QWidget(parent),
@@ -31,6 +32,7 @@ HomePage::HomePage(QWidget *parent)
     setLayout(m_layout);
 
     connect(m_monitorThread, &MonitorThread::updateCpuPercent, this, &HomePage::updateCpuPercent);
+    connect(m_monitorThread, &MonitorThread::updateCpuTemperature, this, &HomePage::updateCpuTemperature);
     connect(m_monitorThread, &MonitorThread::updateMemory, this, &HomePage::updateMemory);
     connect(m_monitorThread, &MonitorThread::updateDisk, this, &HomePage::updateDisk);
     connect(m_monitorThread, &MonitorThread::updateNetworkSpeed, this, &HomePage::updateNetworkSpeed);
@@ -51,6 +53,16 @@ void HomePage::stopMonitor()
     }
 }
 
+void HomePage::paintEvent(QPaintEvent *event)
+{
+    QWidget::paintEvent(event);
+
+    QPainter painter(this);
+    painter.setPen(Qt::NoPen);
+    painter.setBrush(QColor("#F8F8F8"));
+    painter.drawRect(rect());
+}
+
 void HomePage::initTopLayout()
 {
     QHBoxLayout *topLayout = new QHBoxLayout;
@@ -62,6 +74,11 @@ void HomePage::initTopLayout()
     topLayout->addWidget(m_diskMonitorWidget);
     topLayout->addStretch();
 
+    m_cpuMonitorWidget->setIcon(":/resources/cpu.svg", QSize(40, 40));
+    m_memoryMonitorWidget->setIcon(":/resources/memory.svg", QSize(40, 40));
+    m_diskMonitorWidget->setIcon(":/resources/sd_card.svg", QSize(40, 40));
+
+    m_layout->addSpacing(20);
     m_layout->addLayout(topLayout);
     m_layout->addStretch();
 }
@@ -70,7 +87,6 @@ void HomePage::initBottomLayout()
 {
     QWidget *widget = new QWidget;
     QVBoxLayout *layout = new QVBoxLayout;
-
     widget->setLayout(layout);
 
     QFormLayout *infoLayout = new QFormLayout;
@@ -99,6 +115,20 @@ void HomePage::initBottomLayout()
 //    downloadIcon->setFixedSize(16, 16);
 //    downloadIcon->setPixmap(downloadPixmap);
 
+    // set infomation.
+    QString strCpuModel;
+    QString strCpuCore;
+    Utils::getCpuInfo(strCpuModel, strCpuCore);
+
+    strCpuModel = strCpuModel.trimmed();
+
+    m_platform->setText(Utils::getPlatform());
+    m_distribution->setText(Utils::getDistribution());
+    m_bootTime->setText(Utils::getBootTime());
+    m_kernel->setText(Utils::getKernelVersion());
+    m_cpuModel->setText(QString("%1 x %2").arg(strCpuModel).arg(strCpuCore));
+
+    // download
     QWidget *uploadWidget = new QWidget;
     QHBoxLayout *uploadLayout = new QHBoxLayout(uploadWidget);
     uploadLayout->setMargin(0);
@@ -113,8 +143,8 @@ void HomePage::initBottomLayout()
     downloadLayout->addWidget(m_downloadLabel);
     downloadLayout->addWidget(m_downloadTotalLabel);
 
-    uploadWidget->setFixedWidth(200);
-    downloadWidget->setFixedWidth(200);
+    uploadWidget->setFixedWidth(m_cpuModel->sizeHint().width());
+    downloadWidget->setFixedWidth(m_cpuModel->sizeHint().width());
 
     // add widgets
     infoLayout->addRow(tr("Upload"), uploadWidget);
@@ -132,18 +162,6 @@ void HomePage::initBottomLayout()
 
 void HomePage::initUI()
 {
-    QString strCpuModel;
-    QString strCpuCore;
-    Utils::getCpuInfo(strCpuModel, strCpuCore);
-
-    strCpuModel = strCpuModel.trimmed();
-
-    m_platform->setText(Utils::getPlatform());
-    m_distribution->setText(Utils::getDistribution());
-    m_bootTime->setText(Utils::getBootTime());
-    m_kernel->setText(Utils::getKernelVersion());
-    m_cpuModel->setText(QString("%1 x %2").arg(strCpuModel).arg(strCpuCore));
-
     QFont font;
     font.setPointSize(18);
     m_systemInfo->setFont(font);
@@ -172,20 +190,25 @@ void HomePage::initUI()
     m_memoryMonitorWidget->setTitle(tr("MEMORY"));
     m_diskMonitorWidget->setTitle(tr("DISK"));
 
-    m_cpuMonitorWidget->setColor(QColor("#2CA7F8"));
-    m_memoryMonitorWidget->setColor(QColor("#18BD9B"));
-    m_diskMonitorWidget->setColor(QColor("#6F5BEC"));
+//    m_cpuMonitorWidget->setColor(QColor("#2CA7F8"));
+//    m_memoryMonitorWidget->setColor(QColor("#18BD9B"));
+    //    m_diskMonitorWidget->setColor(QColor("#6F5BEC"));
+}
+
+void HomePage::updateCpuTemperature(double value)
+{
+    m_cpuMonitorWidget->setTips(QString("%1°C").arg(value));
 }
 
 void HomePage::updateCpuPercent(float cpuPercent)
 {
     m_cpuMonitorWidget->setPercentValue(cpuPercent);
 
-    if (cpuPercent > 0 && cpuPercent < 50) {
-        m_cpuMonitorWidget->setTips(tr("CPU Idle"));
-    } else if (cpuPercent >= 50 && cpuPercent < 100) {
-        m_cpuMonitorWidget->setTips(tr("CPU Busy"));
-    }
+//    if (cpuPercent > 0 && cpuPercent < 50) {
+//        m_cpuMonitorWidget->setTips(tr("CPU Idle"));
+//    } else if (cpuPercent >= 50 && cpuPercent < 100) {
+//        m_cpuMonitorWidget->setTips(tr("CPU Busy"));
+//    }
 }
 
 void HomePage::updateMemory(QString memory, float percent)
