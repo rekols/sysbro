@@ -2,7 +2,7 @@
 
 A system assistant for deepin/Ubuntu18.10.
 
-![](screenshots/20191114185557.png)
+![](screenshots/20191116163955.png)
 
 [Downloads](https://github.com/rekols/sysbro/releases)
 
