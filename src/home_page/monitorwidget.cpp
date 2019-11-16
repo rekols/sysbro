@@ -4,7 +4,7 @@
 MonitorWidget::MonitorWidget(QWidget *parent)
     : RoundedWidget(parent),
       m_layout(new QVBoxLayout),
-      // m_progressAnimation(new QVariantAnimation),
+      m_animation(new QVariantAnimation),
       // m_progress(new ProgressBar),
       m_iconLabel(new QLabel),
       m_titleLabel(new QLabel),
@@ -16,8 +16,8 @@ MonitorWidget::MonitorWidget(QWidget *parent)
     font.setBold(true);
     m_percentLabel->setFont(font);
 
-    // m_progressAnimation->setDuration(500);
-    // m_progressAnimation->setEasingCurve(QEasingCurve::OutCirc);
+    m_animation->setDuration(500);
+    m_animation->setEasingCurve(QEasingCurve::OutCirc);
 
     m_layout->setMargin(0);
     m_layout->setSpacing(0);
@@ -35,18 +35,19 @@ MonitorWidget::MonitorWidget(QWidget *parent)
     setFixedSize(176, 183);
     setBackgroundColor(Qt::white);
 
-    // connect(m_progressAnimation, &QVariantAnimation::valueChanged, this, [=] (const QVariant &value) {
-    //     m_progress->setValue(value.toFloat());
-    // });
+     connect(m_animation, &QVariantAnimation::valueChanged, this, [=] (const QVariant &value) {
+         m_percentLabel->setText(QString::number(value.toFloat(), 'r', 1) + "%");
+     });
 }
 
 void MonitorWidget::setPercentValue(const float &value)
 {
-    m_percentLabel->setText(QString::number(value, 'r', 1) + "%");
-//    m_progressAnimation->stop();
-//    m_progressAnimation->setStartValue(m_progress->currentValue());
-//    m_progressAnimation->setEndValue(value);
-//    m_progressAnimation->start();
+    float currentValue = m_percentLabel->text().remove('%').toFloat();
+
+    m_animation->stop();
+    m_animation->setStartValue(currentValue);
+    m_animation->setEndValue(value);
+    m_animation->start();
 }
 
 void MonitorWidget::setTitle(const QString &text)

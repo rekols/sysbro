@@ -23,7 +23,7 @@ public:
 
 private:
     QVBoxLayout *m_layout;
-    // QVariantAnimation *m_progressAnimation;
+    QVariantAnimation *m_animation;
     // ProgressBar *m_progress;
     QLabel *m_iconLabel;
     QLabel *m_titleLabel;
