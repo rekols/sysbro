@@ -6,9 +6,10 @@ A system assistant for deepin/Ubuntu18.10.
 
 [Downloads](https://github.com/rekols/sysbro/releases)
 
-项目地址：[https://rekols.github.io/sysbro/index.html](https://rekols.github.io/sysbro/index.html)
+官方网址：[https://rekols.github.io/sysbro/index.html](https://rekols.github.io/sysbro/index.html)
 
-Gitgee: [https://gitee.com/rekols/sysbro](https://gitee.com/rekols/sysbro)
+Github: [https://github.com/rekols/sysbro](https://github.com/rekols/sysbro)
+Gitee: [https://gitee.com/rekols/sysbro](https://gitee.com/rekols/sysbro)
 
 ## Dependencies
 
