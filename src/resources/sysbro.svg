@@ -16,8 +16,8 @@
    viewBox="0 0 33.866666 33.866668"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="ssss.svg">
+   inkscape:version="0.92.1 r15371"
+   sodipodi:docname="new.svg">
   <defs
      id="defs2">
     <linearGradient
@@ -216,15 +216,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="7.9195959"
-     inkscape:cx="59.720909"
-     inkscape:cy="51.754938"
+     inkscape:zoom="5.6"
+     inkscape:cx="46.239279"
+     inkscape:cy="61.408953"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
      units="px"
      inkscape:window-width="1920"
-     inkscape:window-height="972"
+     inkscape:window-height="968"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -252,10 +252,11 @@
      transform="translate(0,-263.13332)">
     <circle
        style="opacity:1;fill:url(#linearGradient886);fill-opacity:1;stroke:url(#radialGradient6767);stroke-width:2;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="path827"
+       id="yuan"
        cx="16.536459"
        cy="280.04919"
-       r="15.213541" />
+       r="15.213541"
+       inkscape:label="#path827" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#1e59b3;stroke-width:1.52254415;stroke-opacity:1;filter:url(#filter1235);opacity:0.417"
        inkscape:connector-curvature="0"
@@ -263,8 +264,8 @@
        id="path1217" />
     <path
        id="path1158-5"
-       d="m 5.071282,278.18779 h 4.3140622 l 2.5374978,9.6433 3.552903,-13.95737 3.045088,9.8971 2.791517,-9.8971 2.791519,9.8971 h 4.821427"
+       d="m 5.8114867,278.31567 h 3.8679056 l 2.2750717,7.32311 3.185465,-10.59921 2.730167,7.51584 2.502821,-7.51584 2.502822,7.51584 h 4.322799"
        inkscape:connector-curvature="0"
-       style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1.52254415;stroke-opacity:1" />
+       style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:1.25631797;stroke-opacity:1" />
   </g>
 </svg>

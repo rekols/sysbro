@@ -12,7 +12,7 @@ Gitgee: [https://gitee.com/rekols/sysbro](https://gitee.com/rekols/sysbro)
 
 ## Dependencies
 
-* sudo apt install g++ qt5-default qttools5-dev-tools libdtkwidget-dev
+* sudo apt install g++ qt5-default qttools5-dev-tools libdtkwidget-dev libsensors4-dev
 
 ## Build
 

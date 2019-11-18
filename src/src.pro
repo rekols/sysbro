@@ -13,6 +13,8 @@ INCLUDEPATH += .
 CONFIG += c++11 link_pkgconfig
 PKGCONFIG += dtkwidget
 
+LIBS += -lsensors
+
 # Input
 HEADERS += leftsidebar.h \
            mainwindow.h \
@@ -40,7 +42,10 @@ HEADERS += leftsidebar.h \
            widgets/progressbar.h \
            widgets/pushbutton.h \
            widgets/roundedwidget.h \
-           widgets/trayicon.h
+           widgets/trayicon.h \
+           sensors_wrap/sensors.h \
+           sensors_wrap/chip.h \
+           sensors_wrap/feature.h
 
 SOURCES += leftsidebar.cpp \
            main.cpp \
@@ -69,7 +74,10 @@ SOURCES += leftsidebar.cpp \
            widgets/progressbar.cpp \
            widgets/pushbutton.cpp \
            widgets/roundedwidget.cpp \
-           widgets/trayicon.cpp
+           widgets/trayicon.cpp \
+           sensors_wrap/sensors.cpp \
+           sensors_wrap/chip.cpp \
+           sensors_wrap/feature.cpp
 
 RESOURCES += resources.qrc
 

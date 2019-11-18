@@ -1,9 +1,11 @@
 #include "monitorthread.h"
 #include "../utils.h"
+#include <QDebug>
 
 MonitorThread::MonitorThread(QObject *parent)
     : QThread(parent)
 {
+    m_detectedChips = m_sensors.getDetectedChips();
 }
 
 void MonitorThread::run()
@@ -24,7 +26,11 @@ void MonitorThread::run()
         // QList<int> pidList = Utils::getTaskPIDList();
         // emit updateProcessNumber(pidList.size() + 1);
 
-        emit updateCpuTemperature(Utils::getCpuTemperature());
+        Chip firstChip = m_detectedChips.first();
+        Feature firstFeature = firstChip.getFeatures().first();
+        emit updateCpuTemperature(firstFeature.getValue(SENSORS_SUBFEATURE_TEMP_INPUT));
+
+        // emit updateCpuTemperature(Utils::getCpuTemperature());
         emit updateMemory(memory, memoryPercent);
         emit updateDisk(disk, diskPercent);
 

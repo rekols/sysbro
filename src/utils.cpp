@@ -259,6 +259,7 @@ void Utils::getNetworkBandWidth(unsigned long long &receiveBytes, unsigned long 
 double Utils::getCpuTemperature()
 {
     // ref: https://www.embeddedarm.com/blog/reading-cpu-temperature-and-controlling-led-with-c-via-sysfs/
+    //      https://github.com/torvalds/linux/blob/master/Documentation/hwmon/sysfs-interface.rst
 
     std::string val;
     std::string preparedTemp;
