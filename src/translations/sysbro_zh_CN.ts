@@ -90,74 +90,71 @@
         <translation>加载中...</translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="92"/>
+        <location filename="../home_page/homepage.cpp" line="93"/>
         <source>Platform</source>
         <translation>系统平台</translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="93"/>
+        <location filename="../home_page/homepage.cpp" line="94"/>
         <source>Distribution</source>
         <translation>发行版</translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="94"/>
+        <location filename="../home_page/homepage.cpp" line="95"/>
         <source>Startup time</source>
         <translation>启动时间</translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="95"/>
+        <location filename="../home_page/homepage.cpp" line="96"/>
         <source>Kernal Release</source>
         <translation>内核版本</translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="96"/>
+        <location filename="../home_page/homepage.cpp" line="97"/>
         <source>Processor</source>
         <translation>处理器</translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="149"/>
+        <location filename="../home_page/homepage.cpp" line="150"/>
         <source>Upload</source>
         <translation>上传</translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="150"/>
+        <location filename="../home_page/homepage.cpp" line="151"/>
         <source>Download</source>
         <translation>下载</translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="187"/>
         <source>CPU</source>
-        <translation>中央处理器</translation>
+        <translation type="vanished">中央处理器</translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="188"/>
-        <location filename="../home_page/homepage.cpp" line="202"/>
+        <location filename="../home_page/homepage.cpp" line="189"/>
         <source>CPU Idle</source>
         <translation>CPU 空闲</translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="189"/>
+        <location filename="../home_page/homepage.cpp" line="190"/>
         <source>MEMORY</source>
         <translation>内存</translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="190"/>
+        <location filename="../home_page/homepage.cpp" line="191"/>
         <source>DISK</source>
         <translation>磁盘</translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="204"/>
         <source>CPU Busy</source>
-        <translation>CPU 忙碌</translation>
+        <translation type="vanished">CPU 忙碌</translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="228"/>
-        <location filename="../home_page/homepage.cpp" line="229"/>
+        <location filename="../home_page/homepage.cpp" line="234"/>
+        <location filename="../home_page/homepage.cpp" line="235"/>
         <source>total</source>
         <translation>总量</translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="234"/>
+        <location filename="../home_page/homepage.cpp" line="240"/>
         <source>%1 processes are running</source>
         <translation>%1 个进程正在运行</translation>
     </message>
@@ -311,7 +308,7 @@
     <name>TitleBar</name>
     <message>
         <source>Home</source>
-        <translation type="vanished">首 页</translation>
+        <translation type="vanished">首页</translation>
     </message>
     <message>
         <source>Cleaner</source>

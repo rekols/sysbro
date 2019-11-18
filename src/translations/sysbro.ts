@@ -82,74 +82,63 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="92"/>
+        <location filename="../home_page/homepage.cpp" line="93"/>
         <source>Platform</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="93"/>
+        <location filename="../home_page/homepage.cpp" line="94"/>
         <source>Distribution</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="94"/>
+        <location filename="../home_page/homepage.cpp" line="95"/>
         <source>Startup time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="95"/>
+        <location filename="../home_page/homepage.cpp" line="96"/>
         <source>Kernal Release</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="96"/>
+        <location filename="../home_page/homepage.cpp" line="97"/>
         <source>Processor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="149"/>
+        <location filename="../home_page/homepage.cpp" line="150"/>
         <source>Upload</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="150"/>
+        <location filename="../home_page/homepage.cpp" line="151"/>
         <source>Download</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="187"/>
-        <source>CPU</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../home_page/homepage.cpp" line="188"/>
-        <location filename="../home_page/homepage.cpp" line="202"/>
+        <location filename="../home_page/homepage.cpp" line="189"/>
         <source>CPU Idle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="189"/>
+        <location filename="../home_page/homepage.cpp" line="190"/>
         <source>MEMORY</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="190"/>
+        <location filename="../home_page/homepage.cpp" line="191"/>
         <source>DISK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="204"/>
-        <source>CPU Busy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../home_page/homepage.cpp" line="228"/>
-        <location filename="../home_page/homepage.cpp" line="229"/>
+        <location filename="../home_page/homepage.cpp" line="234"/>
+        <location filename="../home_page/homepage.cpp" line="235"/>
         <source>total</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="234"/>
+        <location filename="../home_page/homepage.cpp" line="240"/>
         <source>%1 processes are running</source>
         <translation type="unfinished"></translation>
     </message>

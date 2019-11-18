@@ -17,7 +17,7 @@
    version="1.1"
    id="svg8"
    inkscape:version="0.92.1 r15371"
-   sodipodi:docname="new.svg">
+   sodipodi:docname="sysbro.svg">
   <defs
      id="defs2">
     <linearGradient
@@ -185,19 +185,6 @@
        id="f-0"
        xlink:href="#b-7"
        gradientTransform="matrix(0.30054371,0,0,0.30054371,-32.703036,231.56935)" />
-    <filter
-       inkscape:collect="always"
-       style="color-interpolation-filters:sRGB"
-       id="filter1235"
-       x="-0.14551367"
-       width="1.2910273"
-       y="-0.24869191"
-       height="1.4973838">
-      <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="1.4462854"
-         id="feGaussianBlur1237" />
-    </filter>
     <radialGradient
        inkscape:collect="always"
        xlink:href="#linearGradient6761"
@@ -217,17 +204,17 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="5.6"
-     inkscape:cx="46.239279"
+     inkscape:cx="15.524993"
      inkscape:cy="61.408953"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
      units="px"
-     inkscape:window-width="1920"
-     inkscape:window-height="968"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="1"
+     inkscape:window-width="637"
+     inkscape:window-height="431"
+     inkscape:window-x="1159"
+     inkscape:window-y="772"
+     inkscape:window-maximized="0"
      showguides="false">
     <inkscape:grid
        type="xygrid"
@@ -241,7 +228,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -257,11 +244,6 @@
        cy="280.04919"
        r="15.213541"
        inkscape:label="#path827" />
-    <path
-       style="fill:none;fill-rule:evenodd;stroke:#1e59b3;stroke-width:1.52254415;stroke-opacity:1;filter:url(#filter1235);opacity:0.417"
-       inkscape:connector-curvature="0"
-       d="m 5.071282,278.18779 h 4.3140622 l 2.5374978,9.6433 3.552903,-13.95737 3.045088,9.8971 2.791517,-9.8971 2.791519,9.8971 h 4.821427"
-       id="path1217" />
     <path
        id="path1158-5"
        d="m 5.8114867,278.31567 h 3.8679056 l 2.2750717,7.32311 3.185465,-10.59921 2.730167,7.51584 2.502821,-7.51584 2.502822,7.51584 h 4.322799"
