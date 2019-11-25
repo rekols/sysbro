@@ -7,8 +7,9 @@ TEMPLATE = subdirs
 
 SUBDIRS += \
            src \
-           delete-files \
-           file-shredder \
            network-test \
-           service-manager \
-           startup-apps
+           startup-apps \
+           file-shredder \
+           screen-checker \
+           delete-files \
+           service-manager

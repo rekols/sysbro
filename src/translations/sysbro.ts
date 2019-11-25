@@ -376,6 +376,11 @@
     </message>
     <message>
         <location filename="../tools_page/toolslistmodel.cpp" line="16"/>
+        <source>Screen Checker</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../tools_page/toolslistmodel.cpp" line="17"/>
         <source>Hardware Info</source>
         <translation type="unfinished"></translation>
     </message>

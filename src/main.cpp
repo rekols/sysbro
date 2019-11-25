@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     a.setProductName("Sysbro");
     a.setApplicationDescription(DApplication::translate("Main", "Sysbro is a system assistant that monitors CPU, memory and more..."));
 
-    if (!a.setSingleInstance("assistant")) {
+    if (!a.setSingleInstance("sysbro")) {
         return 0;
     }
 

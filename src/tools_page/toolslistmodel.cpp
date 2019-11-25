@@ -6,13 +6,14 @@ ToolsListModel::ToolsListModel(QObject *parent)
       m_currentIndex(QModelIndex())
 {
     m_list << "sysbro-startup-apps" << "sysbro-file-shredder"
-           << "sysbro-network-test";
+           << "sysbro-network-test" << "sysbro-screen-checker";
 
     m_nameMap = {
         {"sysbro-startup-apps", tr("App start-up management")},
         {"sysbro-file-shredder", tr("File Shredder")},
         {"sysbro-network-test", "网速测试"},
         {"sysbro-express", "快递查询助手"},
+        {"sysbro-screen-checker", tr("Screen Checker")},
         {"sysbro-info", tr("Hardware Info")}
     };
 
