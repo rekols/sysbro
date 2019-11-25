@@ -1,6 +1,5 @@
 #include "cleanerpage.h"
 #include "../utils.h"
-#include "../widgets/horizontalseparator.h"
 #include "../widgets/iconlabel.h"
 #include <QVBoxLayout>
 #include <QPushButton>
@@ -48,12 +47,8 @@ CleanerPage::CleanerPage(QWidget *parent)
     topLayout->addWidget(m_clearButton, 0, Qt::AlignTop);
     topLayout->setContentsMargins(20, 10, 20, 0);
 
-    HorizontalSeparator *hsep = new HorizontalSeparator;
-    hsep->setFixedWidth(700);
-
     layout->addLayout(topLayout);
     layout->addSpacing(20);
-    layout->addWidget(hsep, 0, Qt::AlignHCenter);
     layout->addSpacing(10);
     layout->addLayout(m_stackedLayout);
 

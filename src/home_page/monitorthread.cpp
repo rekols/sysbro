@@ -36,7 +36,7 @@ void MonitorThread::run()
 
         Utils::getCpuTime(prevWorkTime, prevTotalTime);
         Utils::getNetworkBandWidth(prevRecv, prevSend);
-        sleep(2);
+        QThread::msleep(1800);
         Utils::getCpuTime(currentWorkTime, currentTotalTime);
         Utils::getNetworkBandWidth(recv, send);
 
@@ -45,7 +45,7 @@ void MonitorThread::run()
         unsigned long long downloadSpeed = ((recv - prevRecv)) / 2;
 
         emit updateNetworkTotal(Utils::formatBytes(send), Utils::formatBytes(recv));
-        emit updateNetworkSpeed(Utils::formatBytes(uploadSpeed), Utils::formatBytes(downloadSpeed));
+        emit updateNetworkSpeed(Utils::formatBytes(uploadSpeed, true), Utils::formatBytes(downloadSpeed, true));
         emit updateCpuPercent((currentWorkTime - prevWorkTime) * 100.0 / (currentTotalTime - prevTotalTime));
     }
 }

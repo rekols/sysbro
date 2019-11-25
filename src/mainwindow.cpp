@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
       m_leftSideBar(new LeftSideBar),
       m_stackedLayout(new QStackedLayout),
       m_homePage(new HomePage),
+      m_infoPage(new InfoPage),
       m_cleanerPage(new CleanerPage),
       m_speedUpPage(new SpeedupPage),
       m_toolsPage(new ToolsPage),
@@ -45,6 +46,7 @@ MainWindow::MainWindow(QWidget *parent)
     m_homePage->startMonitor();
 
     m_stackedLayout->addWidget(m_homePage);
+    m_stackedLayout->addWidget(m_infoPage);
     m_stackedLayout->addWidget(m_cleanerPage);
     m_stackedLayout->addWidget(m_speedUpPage);
     m_stackedLayout->addWidget(m_toolsPage);
@@ -53,10 +55,11 @@ MainWindow::MainWindow(QWidget *parent)
 
     setWindowTitle("Sysbro");
     setCentralWidget(centralWidget);
-    setBorderColor(QColor("#BFBFBF"));
+    setBorderColor(QColor("#C3C3C3"));
     setFixedSize(820, 550);
     initTrayIcon();
     setWindowRadius(20);
+    setShadowOffset(QPoint(0, 0));
     // setMinimumSize(800, 560);
     // resize(800, 560);
 

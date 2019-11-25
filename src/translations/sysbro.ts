@@ -4,57 +4,57 @@
 <context>
     <name>CleanerPage</name>
     <message>
-        <location filename="../cleanup_page/cleanerpage.cpp" line="11"/>
+        <location filename="../cleanup_page/cleanerpage.cpp" line="10"/>
         <source>Scan now</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../cleanup_page/cleanerpage.cpp" line="12"/>
+        <location filename="../cleanup_page/cleanerpage.cpp" line="11"/>
         <source>Clean up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../cleanup_page/cleanerpage.cpp" line="27"/>
+        <location filename="../cleanup_page/cleanerpage.cpp" line="26"/>
         <source>Clean up disk space</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../cleanup_page/cleanerpage.cpp" line="28"/>
+        <location filename="../cleanup_page/cleanerpage.cpp" line="27"/>
         <source>Support scanning the following items</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../cleanup_page/cleanerpage.cpp" line="76"/>
+        <location filename="../cleanup_page/cleanerpage.cpp" line="71"/>
         <source>Application Caches</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../cleanup_page/cleanerpage.cpp" line="80"/>
+        <location filename="../cleanup_page/cleanerpage.cpp" line="75"/>
         <source>Application Logs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../cleanup_page/cleanerpage.cpp" line="84"/>
+        <location filename="../cleanup_page/cleanerpage.cpp" line="79"/>
         <source>Crash Reports</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../cleanup_page/cleanerpage.cpp" line="88"/>
+        <location filename="../cleanup_page/cleanerpage.cpp" line="83"/>
         <source>Package Caches</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../cleanup_page/cleanerpage.cpp" line="121"/>
+        <location filename="../cleanup_page/cleanerpage.cpp" line="116"/>
         <source>Scanning, please wait...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../cleanup_page/cleanerpage.cpp" line="136"/>
+        <location filename="../cleanup_page/cleanerpage.cpp" line="131"/>
         <source>Scan is successful, and a total of %1 files were found this time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../cleanup_page/cleanerpage.cpp" line="149"/>
+        <location filename="../cleanup_page/cleanerpage.cpp" line="144"/>
         <source>Clean up successfully, clean up a total of %1 files</source>
         <translation type="unfinished"></translation>
     </message>
@@ -62,94 +62,131 @@
 <context>
     <name>HomePage</name>
     <message>
-        <location filename="../home_page/homepage.cpp" line="14"/>
+        <location filename="../home_page/homepage.cpp" line="16"/>
         <source>SYSTEM INFO</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="20"/>
+        <location filename="../home_page/homepage.cpp" line="22"/>
         <source>NETWORK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="25"/>
+        <location filename="../home_page/homepage.cpp" line="27"/>
         <source>PROCESS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="26"/>
+        <location filename="../home_page/homepage.cpp" line="28"/>
         <source>Loadding...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="93"/>
+        <location filename="../home_page/homepage.cpp" line="116"/>
         <source>Platform</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="94"/>
+        <location filename="../home_page/homepage.cpp" line="117"/>
         <source>Distribution</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="95"/>
+        <location filename="../home_page/homepage.cpp" line="118"/>
         <source>Startup time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="96"/>
+        <location filename="../home_page/homepage.cpp" line="119"/>
         <source>Kernal Release</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="97"/>
+        <location filename="../home_page/homepage.cpp" line="120"/>
         <source>Processor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="150"/>
+        <location filename="../home_page/homepage.cpp" line="99"/>
+        <location filename="../home_page/homepage.cpp" line="173"/>
         <source>Upload</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="151"/>
+        <location filename="../home_page/homepage.cpp" line="100"/>
+        <location filename="../home_page/homepage.cpp" line="174"/>
         <source>Download</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="189"/>
+        <location filename="../home_page/homepage.cpp" line="212"/>
         <source>CPU Idle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="190"/>
+        <location filename="../home_page/homepage.cpp" line="213"/>
         <source>MEMORY</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="191"/>
+        <location filename="../home_page/homepage.cpp" line="214"/>
         <source>DISK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="234"/>
-        <location filename="../home_page/homepage.cpp" line="235"/>
+        <location filename="../home_page/homepage.cpp" line="90"/>
+        <location filename="../home_page/homepage.cpp" line="91"/>
+        <location filename="../home_page/homepage.cpp" line="257"/>
+        <location filename="../home_page/homepage.cpp" line="258"/>
         <source>total</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../home_page/homepage.cpp" line="240"/>
+        <location filename="../home_page/homepage.cpp" line="263"/>
         <source>%1 processes are running</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>LeftSideBar</name>
+    <name>InfoPage</name>
     <message>
-        <location filename="../leftsidebar.cpp" line="12"/>
-        <source>Home</source>
+        <location filename="../info_page/infopage.cpp" line="36"/>
+        <source>Computer Model</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../info_page/infopage.cpp" line="37"/>
+        <source>Device Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../info_page/infopage.cpp" line="38"/>
+        <source>Host Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../info_page/infopage.cpp" line="39"/>
+        <source>User Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../info_page/infopage.cpp" line="40"/>
+        <source>Platform</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../info_page/infopage.cpp" line="41"/>
+        <source>Distribution</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../info_page/infopage.cpp" line="42"/>
+        <source>Kernal Release</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>LeftSideBar</name>
     <message>
         <location filename="../leftsidebar.cpp" line="12"/>
         <source>Cleaner</source>
@@ -158,6 +195,16 @@
     <message>
         <location filename="../leftsidebar.cpp" line="12"/>
         <source>Speed up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../leftsidebar.cpp" line="12"/>
+        <source>Monitor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../leftsidebar.cpp" line="12"/>
+        <source>Info</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -177,7 +224,7 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../mainwindow.cpp" line="19"/>
+        <location filename="../mainwindow.cpp" line="20"/>
         <source>Display tray icon</source>
         <translation type="unfinished"></translation>
     </message>
@@ -274,6 +321,44 @@
     <message>
         <location filename="../speedup_page/speeduppage.cpp" line="53"/>
         <source>Your computer has %1 startup items</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SystemInfo</name>
+    <message>
+        <location filename="../info_page/systeminfo.cpp" line="16"/>
+        <location filename="../info_page/systeminfo.cpp" line="17"/>
+        <location filename="../info_page/systeminfo.cpp" line="18"/>
+        <location filename="../info_page/systeminfo.cpp" line="47"/>
+        <location filename="../info_page/systeminfo.cpp" line="74"/>
+        <location filename="../info_page/systeminfo.cpp" line="129"/>
+        <source>Unknown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../info_page/systeminfo.cpp" line="87"/>
+        <source>Virtual Machine</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../info_page/systeminfo.cpp" line="91"/>
+        <source>Desktop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../info_page/systeminfo.cpp" line="99"/>
+        <source>Laptop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../info_page/systeminfo.cpp" line="102"/>
+        <source>portable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../info_page/systeminfo.cpp" line="105"/>
+        <source>Server</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

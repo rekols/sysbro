@@ -40,14 +40,19 @@ MonitorWidget::MonitorWidget(QWidget *parent)
      });
 }
 
-void MonitorWidget::setPercentValue(const float &value)
+void MonitorWidget::setValue(const float &value)
 {
-    float currentValue = m_percentLabel->text().remove('%').toFloat();
+    float currentValue = m_percentLabel->text().remove('%').simplified().toFloat();
 
     m_animation->stop();
     m_animation->setStartValue(currentValue);
     m_animation->setEndValue(value);
     m_animation->start();
+}
+
+void MonitorWidget::setValue(const QString &text)
+{
+    m_percentLabel->setText(text);
 }
 
 void MonitorWidget::setTitle(const QString &text)

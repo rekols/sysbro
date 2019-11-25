@@ -1,5 +1,5 @@
 QLabel {
-    color: #505050;
+    color: #4F5368;
 }
 
 QTabBar,
@@ -64,13 +64,31 @@ QTreeView::branch:closed:has-children:has-siblings {
     padding: 4;
 }
 
+QPushButton {
+    border-radius: 8px;
+    background: #E4E4E4;
+    border: 1px solid #E4E4E4;
+    color: #414D68;
+}
+
+QPushButton:hover{
+    background: #CDCDCD;
+    border: 1px solid #CDCDCD;
+}
+
+QPushButton:pressed{
+    background: #A8B5CD;
+    border: 2px solid #0081FF;
+}
+
 #SideButton  {
     border: none;
     outline: none;
     text-align: left;
     padding-left: 10px;
     border-radius: 8px;
-    color: #414C6B;
+    color: #414D68;
+    background: transparent;
 }
 
 #SideButton:hover {

@@ -6,6 +6,7 @@
 #include <QSettings>
 #include "titlebar.h"
 #include "home_page/homepage.h"
+#include "info_page/infopage.h"
 #include "cleanup_page/cleanerpage.h"
 #include "speedup_page/speeduppage.h"
 #include "tools_page/toolspage.h"
@@ -36,6 +37,7 @@ private:
     LeftSideBar *m_leftSideBar;
     QStackedLayout *m_stackedLayout;
     HomePage *m_homePage;
+    InfoPage *m_infoPage;
     CleanerPage *m_cleanerPage;
     SpeedupPage *m_speedUpPage;
     ToolsPage *m_toolsPage;

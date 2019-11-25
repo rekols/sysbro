@@ -5,7 +5,7 @@
 RoundedWidget::RoundedWidget(QWidget *parent)
     : QWidget(parent),
       m_backgroundColor(QColor(230, 242, 255)),
-      m_radius(12)
+      m_radius(16)
 {
 }
 

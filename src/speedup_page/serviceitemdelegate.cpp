@@ -24,7 +24,7 @@ void ServiceItemDelegate::paint(QPainter *painter, const QStyleOptionViewItem &o
     painter->setRenderHint(QPainter::Antialiasing);
 
     if (option.state & QStyle::State_Selected) {
-        painter->fillRect(option.rect, QColor("#D0E8FA"));
+        painter->fillRect(option.rect, QColor("#E0E0E0"));
         painter->setPen(QColor("#000000"));
     } else {
         painter->setPen(QColor("#303030"));

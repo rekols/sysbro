@@ -282,22 +282,22 @@ double Utils::getCpuTemperature()
     }
 }
 
-QString Utils::formatBytes(unsigned long long bytes)
+QString Utils::formatBytes(unsigned long long bytes, bool space)
 {
     if (bytes < 1024)
-        return QString::number(bytes, 'r', 1) + "B";
+        return QString::number(bytes, 'r', 1) + (space ? " " : "") + "B";
 
     else if (bytes / 1024 < 1024)
-        return QString::number(bytes / 1024.0, 'r', 1) + "KB";
+        return QString::number(bytes / 1024.0, 'r', 1) + (space ? " " : "") + "KB";
 
     else if (bytes / 1024 / 1024 < 1024)
-        return QString::number(bytes / 1024.0 / 1024.0, 'r', 1) + "MB";
+        return QString::number(bytes / 1024.0 / 1024.0, 'r', 1) + (space ? " " : "") + "MB";
 
     else if (bytes / 1024 / 1024 / 1024 < 1024)
-        return QString::number(bytes / 1024.0 / 1024.0 / 1024.0, 'r', 1) + "GB";
+        return QString::number(bytes / 1024.0 / 1024.0 / 1024.0, 'r', 1) + (space ? " " : "") + "GB";
 
     else if (bytes / 1024 / 1024 / 1024 / 1024 < 1024)
-        return QString::number(bytes / 1024.0 / 1024.0 / 1024.0 / 1024.0, 'r', 1) + "TB";
+        return QString::number(bytes / 1024.0 / 1024.0 / 1024.0 / 1024.0, 'r', 1) + (space ? " " : "") + "TB";
 
     return QString("");
 }

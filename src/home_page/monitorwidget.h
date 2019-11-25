@@ -15,7 +15,8 @@ class MonitorWidget : public RoundedWidget
 public:
     explicit MonitorWidget(QWidget *parent = nullptr);
 
-    void setPercentValue(const float &value);
+    void setValue(const float &value);
+    void setValue(const QString &text);
     void setTitle(const QString &text);
     void setTips(const QString &text);
     void setColor(const QColor &color);

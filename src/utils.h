@@ -26,7 +26,7 @@ public:
     static void getDiskInfo(QString &disk, float &percent);
     static void getNetworkBandWidth(unsigned long long &receiveBytes, unsigned long long &sendBytes);
     static double getCpuTemperature();
-    static QString formatBytes(unsigned long long bytes);
+    static QString formatBytes(unsigned long long bytes, bool space = false);
     static quint64 getFileSize(const QString &path);
 
     static QFileInfoList getDpkgPackages();

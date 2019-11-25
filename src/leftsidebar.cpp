@@ -9,7 +9,7 @@ LeftSideBar::LeftSideBar(QWidget *parent)
       m_layout(new QVBoxLayout),
       m_buttonGroup(new QButtonGroup)
 {
-    m_buttonNameList << tr("Home") << tr("Cleaner") << tr("Speed up")
+    m_buttonNameList << tr("Monitor") << tr("Info") << tr("Cleaner") << tr("Speed up")
                      << tr("Tools");
     m_layout->setMargin(10);
 
@@ -33,9 +33,10 @@ void LeftSideBar::initButtons()
 {
     const QMap<int, QString> icons = {
         {0, ":/resources/home.svg"},
-        {1, ":/resources/cleaning_brush.svg"},
-        {2, ":/resources/statistics.svg"},
-        {3, ":/resources/toolbox.svg"}
+        {1, ":/resources/info.svg"},
+        {2, ":/resources/cleaning_brush.svg"},
+        {3, ":/resources/statistics.svg"},
+        {4, ":/resources/toolbox.svg"}
     };
 
     for (int i = 0; i < m_buttonNameList.size(); ++i) {

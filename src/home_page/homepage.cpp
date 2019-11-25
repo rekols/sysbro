@@ -9,6 +9,8 @@ HomePage::HomePage(QWidget *parent)
       m_cpuMonitorWidget(new MonitorWidget),
       m_memoryMonitorWidget(new MonitorWidget),
       m_diskMonitorWidget(new MonitorWidget),
+      m_networkUploadWidget(new MonitorWidget),
+      m_networkDownloadWidget(new MonitorWidget),
       m_monitorThread(new MonitorThread)
 {
     m_systemInfo = new QLabel(tr("SYSTEM INFO"));
@@ -26,7 +28,7 @@ HomePage::HomePage(QWidget *parent)
     m_allProcessLabel = new QLabel(tr("Loadding..."));
 
     initTopLayout();
-    initBottomLayout();
+    //initBottomLayout();
     initUI();
 
     setLayout(m_layout);
@@ -74,12 +76,33 @@ void HomePage::initTopLayout()
     topLayout->addWidget(m_diskMonitorWidget);
     topLayout->addStretch();
 
+    QHBoxLayout *twoLayout = new QHBoxLayout;
+    twoLayout->addSpacing(20);
+    twoLayout->addWidget(m_networkUploadWidget);
+    twoLayout->addSpacing(20);
+    twoLayout->addWidget(m_networkDownloadWidget);
+    twoLayout->addStretch();
+
     m_cpuMonitorWidget->setIcon(":/resources/cpu.svg", QSize(40, 40));
     m_memoryMonitorWidget->setIcon(":/resources/memory.svg", QSize(40, 40));
     m_diskMonitorWidget->setIcon(":/resources/sd_card.svg", QSize(40, 40));
 
+    m_networkUploadWidget->setTips(QString("%1 %2").arg(tr("total")).arg("0K"));
+    m_networkDownloadWidget->setTips(QString("%1 %2").arg(tr("total")).arg("0K"));
+
+    m_networkUploadWidget->setValue("0.0 B/s");
+    m_networkDownloadWidget->setValue("0.0 B/s");
+
+    m_networkUploadWidget->setIcon(":/resources/upload_icon.svg", QSize(40, 40));
+    m_networkDownloadWidget->setIcon(":/resources/download_icon.svg", QSize(40, 40));
+
+    m_networkUploadWidget->setTitle(tr("Upload"));
+    m_networkDownloadWidget->setTitle(tr("Download"));
+
     m_layout->addSpacing(20);
     m_layout->addLayout(topLayout);
+    m_layout->addSpacing(20);
+    m_layout->addLayout(twoLayout);
     m_layout->addStretch();
 }
 
@@ -202,7 +225,7 @@ void HomePage::updateCpuTemperature(double value)
 
 void HomePage::updateCpuPercent(float cpuPercent)
 {
-    m_cpuMonitorWidget->setPercentValue(cpuPercent);
+    m_cpuMonitorWidget->setValue(cpuPercent);
 
 //    if (cpuPercent > 0 && cpuPercent < 50) {
 //        m_cpuMonitorWidget->setTips(tr("CPU Idle"));
@@ -214,29 +237,28 @@ void HomePage::updateCpuPercent(float cpuPercent)
 void HomePage::updateMemory(QString memory, float percent)
 {
     m_memoryMonitorWidget->setTips(memory);
-    m_memoryMonitorWidget->setPercentValue(percent);
+    m_memoryMonitorWidget->setValue(percent);
 }
 
 void HomePage::updateDisk(QString disk, float percent)
 {
     m_diskMonitorWidget->setTips(disk);
-    m_diskMonitorWidget->setPercentValue(percent);
+    m_diskMonitorWidget->setValue(percent);
 }
 
 void HomePage::updateNetworkSpeed(QString upload, QString download)
 {
-    m_uploadLabel->setText(upload + "/s");
-    m_downloadLabel->setText(download + "/s");
+    m_networkUploadWidget->setValue(upload + "/s");
+    m_networkDownloadWidget->setValue(download + "/s");
 }
 
 void HomePage::updateNetworkTotal(QString upload, QString download)
 {
-    m_uploadTotalLabel->setText(tr("total") + " " + upload);
-    m_downloadTotalLabel->setText(tr("total") + " " + download);
+    m_networkUploadWidget->setTips(QString("%1 %2").arg(tr("total")).arg(upload));
+    m_networkDownloadWidget->setTips(QString("%1 %2").arg(tr("total")).arg(download));
 }
 
 void HomePage::updateProcessNumber(int num)
 {
     m_allProcessLabel->setText(tr("%1 processes are running").arg(num));
 }
-

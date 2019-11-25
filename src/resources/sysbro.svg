@@ -13,7 +13,7 @@
    viewBox="0 0 128 128"
    version="1.1"
    id="svg3812"
-   sodipodi:docname="dde-introduction.svg"
+   sodipodi:docname="sysbro.svg"
    inkscape:version="0.92.1 r15371">
   <metadata
      id="metadata3816">
@@ -35,16 +35,16 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1135"
-     inkscape:window-height="731"
+     inkscape:window-width="1920"
+     inkscape:window-height="968"
      id="namedview3814"
      showgrid="false"
      inkscape:zoom="1.84375"
-     inkscape:cx="-30.372881"
+     inkscape:cx="-195.52543"
      inkscape:cy="64"
-     inkscape:window-x="504"
-     inkscape:window-y="181"
-     inkscape:window-maximized="0"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
      inkscape:current-layer="g3810" />
   <defs
      id="defs3788">
@@ -147,8 +147,8 @@
        fill="url(#dde-introduction-b)" />
     <path
        inkscape:connector-curvature="0"
-       style="stroke:#ffffff;stroke-width:4.05670547;stroke-linecap:round;stroke-linejoin:round"
-       d="m 20.207261,65.361453 c 0,0 5.674255,9.717624 11.226601,9.717624 12.49278,0 4.947425,-34.417728 17.440204,-34.417728 12.492779,0 6.518373,34.417729 19.011153,34.417729 8.32852,0 12.804269,-14.175349 19.315923,-16.632952 6.475518,-2.443965 -1.314405,17.168459 10.032755,16.138686"
+       style="stroke:#ffffff;stroke-width:4.00370455;stroke-linecap:round;stroke-linejoin:round"
+       d="m 21.266188,66.502844 c 0,0 5.518406,9.732679 10.918251,9.732679 12.149654,0 4.81154,-34.471047 16.961193,-34.471047 12.149653,0 6.339339,34.471047 18.488993,34.471047 8.09977,0 8.113605,-15.824427 14.44641,-18.285838 6.297662,-2.44775 3.603053,18.279802 14.638552,17.248433"
        id="path39"
        sodipodi:nodetypes="cssssc" />
   </g>

@@ -38,6 +38,8 @@ private:
     MonitorWidget *m_cpuMonitorWidget;
     MonitorWidget *m_memoryMonitorWidget;
     MonitorWidget *m_diskMonitorWidget;
+    MonitorWidget *m_networkUploadWidget;
+    MonitorWidget *m_networkDownloadWidget;
     MonitorThread *m_monitorThread;
 
     QLabel *m_systemInfo;

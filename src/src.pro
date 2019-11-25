@@ -45,7 +45,10 @@ HEADERS += leftsidebar.h \
            widgets/trayicon.h \
            sensors_wrap/sensors.h \
            sensors_wrap/chip.h \
-           sensors_wrap/feature.h
+           sensors_wrap/feature.h \
+           info_page/infopage.h \
+    widgets/roundedlabel.h \
+    info_page/systeminfo.h
 
 SOURCES += leftsidebar.cpp \
            main.cpp \
@@ -77,7 +80,10 @@ SOURCES += leftsidebar.cpp \
            widgets/trayicon.cpp \
            sensors_wrap/sensors.cpp \
            sensors_wrap/chip.cpp \
-           sensors_wrap/feature.cpp
+           sensors_wrap/feature.cpp \
+           info_page/infopage.cpp \
+    widgets/roundedlabel.cpp \
+    info_page/systeminfo.cpp
 
 RESOURCES += resources.qrc
 

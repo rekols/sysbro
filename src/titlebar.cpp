@@ -21,7 +21,7 @@ TitleBar::TitleBar(QWidget *parent)
 //    tabbar->addTab(tr("Tools"));
 
     m_layout->setMargin(0);
-    m_layout->addSpacing(11);
+    m_layout->addSpacing(10);
     m_layout->addWidget(iconLabel);
     m_layout->addSpacing(10);
 //    m_layout->addWidget(tabbar);

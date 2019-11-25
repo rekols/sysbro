@@ -3,6 +3,7 @@
         <file>resources/style.qss</file>
         <file>resources/sysbro.svg</file>
         <file>resources/cleaner.svg</file>
+        <file>resources/info.svg</file>
         <file>resources/crash.svg</file>
         <file>resources/app_cache.svg</file>
         <file>resources/app_logs.svg</file>
@@ -27,5 +28,7 @@
         <file>resources/cpu.svg</file>
         <file>resources/memory.svg</file>
         <file>resources/sd_card.svg</file>
+        <file>resources/upload_icon.svg</file>
+        <file>resources/download_icon.svg</file>
     </qresource>
 </RCC>
