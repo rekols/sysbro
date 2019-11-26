@@ -150,38 +150,63 @@
 <context>
     <name>InfoPage</name>
     <message>
-        <location filename="../info_page/infopage.cpp" line="36"/>
+        <location filename="../info_page/infopage.cpp" line="57"/>
         <source>Computer Model</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../info_page/infopage.cpp" line="37"/>
+        <location filename="../info_page/infopage.cpp" line="58"/>
         <source>Device Type</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../info_page/infopage.cpp" line="38"/>
+        <location filename="../info_page/infopage.cpp" line="59"/>
         <source>Host Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../info_page/infopage.cpp" line="39"/>
+        <location filename="../info_page/infopage.cpp" line="60"/>
         <source>User Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../info_page/infopage.cpp" line="40"/>
+        <location filename="../info_page/infopage.cpp" line="61"/>
         <source>Platform</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../info_page/infopage.cpp" line="41"/>
+        <location filename="../info_page/infopage.cpp" line="62"/>
         <source>Distribution</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../info_page/infopage.cpp" line="42"/>
+        <location filename="../info_page/infopage.cpp" line="63"/>
         <source>Kernal Release</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../info_page/infopage.cpp" line="77"/>
+        <source>CPU Model</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../info_page/infopage.cpp" line="78"/>
+        <source>CPU Vendor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../info_page/infopage.cpp" line="79"/>
+        <source>CPU Core Count</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../info_page/infopage.cpp" line="80"/>
+        <source>CPU max MHz</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../info_page/infopage.cpp" line="81"/>
+        <source>CPU min MHz</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

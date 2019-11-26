@@ -38,7 +38,7 @@ Chip::Chip(const sensors_chip_name* sensorsChipName)
         mName = QString::fromLatin1(buf);
     }
 
-    qDebug() << "Detected chip:" << mName;
+    // qDebug() << "Detected chip:" << mName;
 
     const sensors_feature* feature;
     int featureNr = 0;

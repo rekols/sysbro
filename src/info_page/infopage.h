@@ -11,6 +11,9 @@ class InfoPage : public QWidget
 public:
     explicit InfoPage(QWidget *parent = 0);
 
+protected:
+    void paintEvent(QPaintEvent *event);
+
 private:
     void initInfo();
 

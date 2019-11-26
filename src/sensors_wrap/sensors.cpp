@@ -50,7 +50,7 @@ Sensors::Sensors()
             mDetectedChips.push_back(chipName);
         }
 
-        qDebug() << "lm_sensors library initialized";
+        // qDebug() << "lm_sensors library initialized";
     }
 }
 
@@ -66,7 +66,7 @@ Sensors::~Sensors()
         mSensorsInitialized = false;
         sensors_cleanup();
 
-        qDebug() << "lm_sensors library cleanup";
+        // qDebug() << "lm_sensors library cleanup";
     }
 }
 
