@@ -31,7 +31,10 @@ InfoPage::InfoPage(QWidget *parent)
     scrollArea->setStyleSheet("QScrollArea {background-color: transparent;}");
     scrollArea->viewport()->setStyleSheet("background-color: transparent;");
 
+    layout->setMargin(0);
+    layout->addSpacing(30);
     layout->addWidget(scrollArea);
+    layout->addSpacing(30);
     setLayout(layout);
 
     QTimer::singleShot(500, this, &InfoPage::initInfo);
@@ -45,6 +48,10 @@ void InfoPage::paintEvent(QPaintEvent *event)
     painter.setPen(Qt::NoPen);
     painter.setBrush(QColor("#F8F8F8"));
     painter.drawRect(rect());
+
+    QRect rounded_rect = rect().marginsRemoved(QMargins(20, 20, 20, 20));
+    painter.setBrush(QColor("#FFFFFF"));
+    painter.drawRoundedRect(rounded_rect, 16, 16);
 }
 
 void InfoPage::initInfo()
@@ -52,7 +59,6 @@ void InfoPage::initInfo()
     // productName, productFamily, productVersion
     QStringList productInfo = SystemInfo::getProductInfo();
     QString computerModel = QString("%1 %2").arg(productInfo.at(1)).arg(productInfo.at(0));
-    RoundedWidget *overviewWidget = new RoundedWidget;
     QFormLayout *overviewLayout = new QFormLayout;
     overviewLayout->addRow(new InfoLabel(tr("Computer Model")), new InfoLabel(computerModel));
     overviewLayout->addRow(new InfoLabel(tr("Device Type")), new InfoLabel(SystemInfo::getDeviceType()));
@@ -63,10 +69,8 @@ void InfoPage::initInfo()
     overviewLayout->addRow(new InfoLabel(tr("Kernal Release")), new InfoLabel(Utils::getKernelVersion()));
 
     overviewLayout->setHorizontalSpacing(100);
-    overviewLayout->setVerticalSpacing(20);
-    overviewLayout->setMargin(20);
-    overviewWidget->setBackgroundColor(Qt::white);
-    overviewWidget->setLayout(overviewLayout);
+    overviewLayout->setVerticalSpacing(15);
+    overviewLayout->setMargin(0);
 
     // cpu info.
     CpuInfo cpuInfo;
@@ -82,6 +86,6 @@ void InfoPage::initInfo()
 
     // ---------------------------
 
-    m_contentLayout->addWidget(overviewWidget);
-    m_contentLayout->addSpacing(10);
+    m_contentLayout->addLayout(overviewLayout);
+    m_contentLayout->setContentsMargins(QMargins(40, 10, 40, 40));
 }
