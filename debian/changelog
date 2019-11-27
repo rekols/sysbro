@@ -1,3 +1,10 @@
+sysbro (0.9.9) unstable; urgency=medium
+  * 首页更改为资源监控
+  * 工具箱加入屏幕检查工具
+  * 加入信息中心
+
+ -- Rekols <rekols@protonmail.com> Wed, 27 Nov 2019 12:32:00 +0800
+
 sysbro (0.9.5) unstable; urgency=medium
   * 首页重新设计
   * 加入CPU温度显示
