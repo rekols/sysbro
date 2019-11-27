@@ -11,7 +11,7 @@ TARGET = sysbro
 INCLUDEPATH += .
 
 CONFIG += c++11 link_pkgconfig
-PKGCONFIG += dtkwidget
+PKGCONFIG += dtkwidget libpci
 
 LIBS += -lsensors
 
@@ -50,7 +50,8 @@ HEADERS += leftsidebar.h \
     widgets/roundedlabel.h \
     info_page/systeminfo.h \
     info_page/cpuinfo.h \
-    info_page/infolabel.h
+    info_page/infolabel.h \
+    info_page/pciinfo.h
 
 SOURCES += leftsidebar.cpp \
            main.cpp \
@@ -87,7 +88,8 @@ SOURCES += leftsidebar.cpp \
     widgets/roundedlabel.cpp \
     info_page/systeminfo.cpp \
     info_page/cpuinfo.cpp \
-    info_page/infolabel.cpp
+    info_page/infolabel.cpp \
+    info_page/pciinfo.cpp
 
 RESOURCES += resources.qrc
 

@@ -65,7 +65,7 @@ QString SystemInfo::getUserName()
     return userName;
 }
 
-QString SystemInfo::getDeviceType()
+QString SystemInfo::getComputerType()
 {
     // src: http://www.dmtf.org/sites/default/files/standards/documents/DSP0134_2.7.0.pdf
     // https://www.404techsupport.com/2012/03/pizza-box-lunch-box-and-other-pc-case-form-factors-identified-by-wmi/

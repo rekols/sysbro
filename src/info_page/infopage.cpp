@@ -10,6 +10,7 @@
 #include <QTimer>
 
 #include "infolabel.h"
+#include "pciinfo.h"
 #include "cpuinfo.h"
 
 InfoPage::InfoPage(QWidget *parent)
@@ -61,7 +62,7 @@ void InfoPage::initInfo()
     QString computerModel = QString("%1 %2").arg(productInfo.at(1)).arg(productInfo.at(0));
     QFormLayout *overviewLayout = new QFormLayout;
     overviewLayout->addRow(new InfoLabel(tr("Computer Model")), new InfoLabel(computerModel));
-    overviewLayout->addRow(new InfoLabel(tr("Device Type")), new InfoLabel(SystemInfo::getDeviceType()));
+    overviewLayout->addRow(new InfoLabel(tr("Computer Type")), new InfoLabel(SystemInfo::getComputerType()));
     overviewLayout->addRow(new InfoLabel(tr("Host Name")), new InfoLabel(SystemInfo::getHostName()));
     overviewLayout->addRow(new InfoLabel(tr("User Name")), new InfoLabel(SystemInfo::getUserName()));
     overviewLayout->addRow(new InfoLabel(tr("Platform")), new InfoLabel(Utils::getPlatform()));
@@ -69,7 +70,7 @@ void InfoPage::initInfo()
     overviewLayout->addRow(new InfoLabel(tr("Kernal Release")), new InfoLabel(Utils::getKernelVersion()));
 
     overviewLayout->setHorizontalSpacing(100);
-    overviewLayout->setVerticalSpacing(15);
+    overviewLayout->setVerticalSpacing(7);
     overviewLayout->setMargin(0);
 
     // cpu info.
@@ -77,14 +78,22 @@ void InfoPage::initInfo()
     const int cpuCoreCount = cpuInfo.getCpuCoreCount();
 
     overviewLayout->addRow(" ", (QWidget *)nullptr);
-
     overviewLayout->addRow(new InfoLabel(tr("CPU Model")), new InfoLabel(cpuInfo.getCpuModel(0)));
     overviewLayout->addRow(new InfoLabel(tr("CPU Vendor")), new InfoLabel(cpuInfo.getCpuVendor(0)));
     overviewLayout->addRow(new InfoLabel(tr("CPU Core Count")), new InfoLabel(QString::number(cpuCoreCount)));
     overviewLayout->addRow(new InfoLabel(tr("CPU max MHz")), new InfoLabel(QString::number(cpuInfo.getCpuMaxMHz())));
     overviewLayout->addRow(new InfoLabel(tr("CPU min MHz")), new InfoLabel(QString::number(cpuInfo.getCpuMinMHz())));
+    overviewLayout->addRow(" ", (QWidget *)nullptr);
 
     // ---------------------------
+
+    PCIInfo pciInfo;
+    for (PCIInfo::DeviceInfo &info : pciInfo.devices()) {
+        overviewLayout->addRow(new InfoLabel(tr("Device Name")), new InfoLabel(info.name));
+        overviewLayout->addRow(new InfoLabel(tr("Device Type")), new InfoLabel(info.className));
+        overviewLayout->addRow(new InfoLabel(tr("Device Vendor")), new InfoLabel(info.vendor));
+        overviewLayout->addRow(" ", (QWidget *)nullptr);
+    }
 
     m_contentLayout->addLayout(overviewLayout);
     m_contentLayout->setContentsMargins(QMargins(40, 10, 40, 40));

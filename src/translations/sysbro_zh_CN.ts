@@ -166,64 +166,79 @@
 <context>
     <name>InfoPage</name>
     <message>
-        <location filename="../info_page/infopage.cpp" line="57"/>
+        <location filename="../info_page/infopage.cpp" line="64"/>
         <source>Computer Model</source>
         <translation>电脑型号</translation>
     </message>
     <message>
-        <location filename="../info_page/infopage.cpp" line="58"/>
-        <source>Device Type</source>
-        <translation>电脑类型</translation>
+        <location filename="../info_page/infopage.cpp" line="92"/>
+        <source>Device Name</source>
+        <translation>设备名称</translation>
     </message>
     <message>
-        <location filename="../info_page/infopage.cpp" line="59"/>
+        <location filename="../info_page/infopage.cpp" line="93"/>
+        <source>Device Type</source>
+        <translation>设备类型</translation>
+    </message>
+    <message>
+        <location filename="../info_page/infopage.cpp" line="66"/>
         <source>Host Name</source>
         <translation>主机名称</translation>
     </message>
     <message>
-        <location filename="../info_page/infopage.cpp" line="60"/>
+        <location filename="../info_page/infopage.cpp" line="65"/>
+        <source>Computer Type</source>
+        <translation>电脑类型</translation>
+    </message>
+    <message>
+        <location filename="../info_page/infopage.cpp" line="67"/>
         <source>User Name</source>
         <translation>用户名</translation>
     </message>
     <message>
-        <location filename="../info_page/infopage.cpp" line="61"/>
+        <location filename="../info_page/infopage.cpp" line="68"/>
         <source>Platform</source>
         <translation>系统平台</translation>
     </message>
     <message>
-        <location filename="../info_page/infopage.cpp" line="62"/>
+        <location filename="../info_page/infopage.cpp" line="69"/>
         <source>Distribution</source>
         <translation>发行版</translation>
     </message>
     <message>
-        <location filename="../info_page/infopage.cpp" line="63"/>
+        <location filename="../info_page/infopage.cpp" line="70"/>
         <source>Kernal Release</source>
         <translation>内核</translation>
     </message>
     <message>
-        <location filename="../info_page/infopage.cpp" line="77"/>
+        <location filename="../info_page/infopage.cpp" line="81"/>
         <source>CPU Model</source>
         <translation>CPU型号</translation>
     </message>
     <message>
-        <location filename="../info_page/infopage.cpp" line="78"/>
+        <location filename="../info_page/infopage.cpp" line="82"/>
         <source>CPU Vendor</source>
         <translation>CPU供应商</translation>
     </message>
     <message>
-        <location filename="../info_page/infopage.cpp" line="79"/>
+        <location filename="../info_page/infopage.cpp" line="83"/>
         <source>CPU Core Count</source>
         <translation>CPU核数</translation>
     </message>
     <message>
-        <location filename="../info_page/infopage.cpp" line="80"/>
+        <location filename="../info_page/infopage.cpp" line="84"/>
         <source>CPU max MHz</source>
         <translation>CPU最大兆赫</translation>
     </message>
     <message>
-        <location filename="../info_page/infopage.cpp" line="81"/>
+        <location filename="../info_page/infopage.cpp" line="85"/>
         <source>CPU min MHz</source>
         <translation>CPU最小兆赫</translation>
+    </message>
+    <message>
+        <location filename="../info_page/infopage.cpp" line="94"/>
+        <source>Device Vendor</source>
+        <translation>设备供应商</translation>
     </message>
 </context>
 <context>

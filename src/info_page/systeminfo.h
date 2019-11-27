@@ -14,7 +14,7 @@ public:
     static QStringList getProductInfo();
     static QString getHostName();
     static QString getUserName();
-    static QString getDeviceType();
+    static QString getComputerType();
     static QString getKernel();
     static QString getDistribution();
 };
