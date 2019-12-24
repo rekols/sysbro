@@ -8,6 +8,17 @@ extern "C" {
 #include <pci/pci.h>
 }
 
+static QMap<QString, QString> PCIClass_ZHCN = {
+    {"Network controller", "网卡"},
+    {"PCI bridge", "PCI桥"},
+    {"Non-Volatile memory controller", "非易失性存储器控制器"},
+    {"Memory controller", "内存"},
+    {"SATA controller", "SATA控制器"},
+    {"USB controller", "USB控制器"},
+    {"VGA compatible controller", "VGA兼容控制器"},
+    {"Audio device", "音频设备"}
+};
+
 PCIInfo::PCIInfo(QObject *parent)
     : QObject(parent)
 {

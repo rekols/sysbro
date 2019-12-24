@@ -8,7 +8,7 @@ class InfoLabel : public QLabel
     Q_OBJECT
 
 public:
-    explicit InfoLabel(const QString &text = "", QWidget *parent = 0);
+    explicit InfoLabel(const QString &text = "", bool selectable = false, QWidget *parent = 0);
 
 signals:
 

@@ -12,6 +12,7 @@ LeftSideBar::LeftSideBar(QWidget *parent)
     m_buttonNameList << tr("Monitor") << tr("Info") << tr("Cleaner") << tr("Speed up")
                      << tr("Tools");
     m_layout->setMargin(10);
+    m_layout->setSpacing(5);
 
     setLayout(m_layout);
     setFixedWidth(160);
