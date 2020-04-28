@@ -1,11 +1,9 @@
 #include "homepage.h"
 #include <QVBoxLayout>
 #include <QApplication>
+#include <QPushButton>
 #include <QImageReader>
 #include <QLabel>
-#include "dlinkbutton.h"
-
-DWIDGET_USE_NAMESPACE
 
 static QPixmap renderSVG(const QString &path, const QSize &size)
 {
@@ -39,7 +37,7 @@ HomePage::HomePage(QWidget *parent)
     QPixmap splitPixmap = renderSVG(":/images/split_line.svg", QSize(214, 2));
     splitLine->setPixmap(splitPixmap);
 
-    DLinkButton *btn = new DLinkButton("立即测速");
+    QPushButton *btn = new QPushButton("立即测速");
     QLabel *tipsLabel = new QLabel("测速前请关闭占用网络资源的软件");
 
     m_comboBox->addItem("百度服务器");
@@ -67,7 +65,7 @@ HomePage::HomePage(QWidget *parent)
 
     setLayout(layout);
 
-    connect(btn, &DLinkButton::clicked, this, [=] {
+    connect(btn, &QPushButton::clicked, this, [=] {
         emit startButtonClicked(m_comboBox->currentIndex());
     });
     connect(m_comboBox, static_cast<void(QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &HomePage::handleCurrentIndexChanged);

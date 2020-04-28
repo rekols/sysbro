@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include "dtitlebar.h"
-#include "dlinkbutton.h"
 #include <QVBoxLayout>
 #include <QApplication>
 #include <QImageReader>
@@ -51,7 +50,7 @@ MainWindow::MainWindow(QWidget *parent)
     QVBoxLayout *resultLayout = new QVBoxLayout;
     QLabel *successIconLabel = new QLabel;
     QPixmap iconPixmap = renderSVG(":/images/success.svg", QSize(128, 128));
-    DLinkButton *returnBtn = new DLinkButton("返回首页");
+    QPushButton *returnBtn = new QPushButton("返回首页");
     successIconLabel->setPixmap(iconPixmap);
     resultLayout->addSpacing(45);
     resultLayout->addWidget(successIconLabel, 0, Qt::AlignHCenter);
@@ -67,7 +66,7 @@ MainWindow::MainWindow(QWidget *parent)
     QLabel *failedIconLabel = new QLabel;
     QPixmap failedIconPixmap = renderSVG(":/images/failed.svg", QSize(100, 100));
     QLabel *failedTipsLabel = new QLabel("网络连接失败，请检查您的网络");
-    DLinkButton *restartButton = new DLinkButton("重新测速");
+    QPushButton *restartButton = new QPushButton("重新测速");
 
     failedIconLabel->setPixmap(failedIconPixmap);
     failedPage->setLayout(failedLayout);

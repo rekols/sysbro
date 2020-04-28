@@ -30,10 +30,9 @@ MainWindow::MainWindow(QWidget *parent)
     centralWidget->setLayout(mainLayout);
 
     if (titlebar()) {
-        titlebar()->setCustomWidget(m_titleBar, Qt::AlignVCenter, 0);
-        titlebar()->setBackgroundTransparent(true);
+        titlebar()->setCustomWidget(m_titleBar, false);
         titlebar()->setSeparatorVisible(false);
-        titlebar()->setFixedHeight(40);
+        titlebar()->setSwitchThemeMenuVisible(false);
 
         QMenu *menu = new QMenu;
         menu->addAction(m_trayIconAction);
@@ -58,8 +57,6 @@ MainWindow::MainWindow(QWidget *parent)
     setBorderColor(QColor("#C3C3C3"));
     setFixedSize(820, 550);
     initTrayIcon();
-    setWindowRadius(20);
-    setShadowOffset(QPoint(0, 0));
     // setMinimumSize(800, 560);
     // resize(800, 560);
 

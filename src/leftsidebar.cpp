@@ -26,8 +26,8 @@ void LeftSideBar::paintEvent(QPaintEvent *e)
     QPainter painter(this);
 
     painter.setPen(Qt::NoPen);
-    painter.setBrush(QColor("#F5F5F5"));
-    painter.drawRect(QRect(rect().width() - 1, 0, 1, rect().height()));
+    painter.setBrush(QColor("#FFFFFF"));
+    painter.drawRect(rect());
 }
 
 void LeftSideBar::initButtons()

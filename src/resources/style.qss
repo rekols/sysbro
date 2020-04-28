@@ -81,6 +81,10 @@ QPushButton:pressed{
     border: 2px solid #0081FF;
 }
 
+QListView {
+    background: transparent;
+}
+
 #SideButton  {
     border: none;
     outline: none;
@@ -92,7 +96,7 @@ QPushButton:pressed{
 }
 
 #SideButton:hover {
-    background-color: #C7E3FF;
+    background-color: #E3E3E3;
 }
 
 #SideButton:checked {

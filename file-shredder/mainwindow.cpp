@@ -3,9 +3,9 @@
 #include "utils.h"
 #include "fileview.h"
 #include "fileitemdelegate.h"
-#include "dlinkbutton.h"
 #include "ddialog.h"
 #include "dtoast.h"
+#include <QPushButton>
 #include <QVBoxLayout>
 #include <QFileDialog>
 #include <QDropEvent>
@@ -43,7 +43,7 @@ MainWindow::MainWindow(QWidget *parent)
     fileView->setModel(m_fileModel);
 
     QHBoxLayout *bottomLayout = new QHBoxLayout;
-    DLinkButton *addButton = new DLinkButton(tr("Add file"));
+    QPushButton *addButton = new QPushButton(tr("Add file"));
     bottomLayout->addWidget(addButton, 0, Qt::AlignLeft);
     bottomLayout->addWidget(m_deleteBtn, 0, Qt::AlignRight);
 
@@ -71,7 +71,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(m_fileModel, &FileModel::removeAllFilesFinished, this, &MainWindow::popupSuccessDialog);
     connect(m_deleteBtn, &QPushButton::clicked, m_fileModel, &FileModel::removeAllFiles);
     connect(fileView, &FileView::removeItem, m_fileModel, &FileModel::removeItem);
-    connect(addButton, &DLinkButton::clicked, this, &MainWindow::popupFileDialog);
+    connect(addButton, &QPushButton::clicked, this, &MainWindow::popupFileDialog);
 }
 
 MainWindow::~MainWindow()

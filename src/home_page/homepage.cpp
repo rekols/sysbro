@@ -70,11 +70,12 @@ void HomePage::initTopLayout()
     QHBoxLayout *topLayout = new QHBoxLayout;
     topLayout->addSpacing(20);
     topLayout->addWidget(m_cpuMonitorWidget);
-    topLayout->addStretch();
+    topLayout->addSpacing(20);
     topLayout->addWidget(m_memoryMonitorWidget);
     topLayout->addStretch();
     topLayout->addWidget(m_diskMonitorWidget);
     topLayout->addStretch();
+    topLayout->setSpacing(0);
 
     QHBoxLayout *twoLayout = new QHBoxLayout;
     twoLayout->addSpacing(20);
@@ -82,6 +83,7 @@ void HomePage::initTopLayout()
     twoLayout->addSpacing(20);
     twoLayout->addWidget(m_networkDownloadWidget);
     twoLayout->addStretch();
+    twoLayout->setSpacing(0);
 
     m_cpuMonitorWidget->setIcon(":/resources/cpu.svg", QSize(40, 40));
     m_memoryMonitorWidget->setIcon(":/resources/memory.svg", QSize(40, 40));
